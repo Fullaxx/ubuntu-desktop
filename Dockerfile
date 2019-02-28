@@ -10,11 +10,11 @@ MAINTAINER Brett Kuskie <fullaxx@gmail.com>
 ENV DEBIAN_FRONTEND noninteractive
 ENV LANG C
 
-# 
-# tightvncserver xfonts-base
+# Alternative to tigervnc-standalone-server tigervnc-common
+# tightvncserver
 
 # ------------------------------------------------------------------------------
-# Install base and clean up
+# Install tigervnc and clean up
 RUN apt-get update && apt-get install -y --no-install-recommends \
 tigervnc-standalone-server tigervnc-common xfonts-base \
 locales openbox fbpanel xterm wget curl ca-certificates && \
@@ -25,7 +25,8 @@ apt-get clean && rm -rf /var/lib/apt/lists/* /var/tmp/* /tmp/*
 
 # ------------------------------------------------------------------------------
 # Install scripts and configuration
-COPY app.sh /root/
+COPY tiger.sh /root/
+COPY tight.sh /root/
 COPY conf/xstartup /root/.vnc/
 COPY conf/autostart /root/.config/openbox/
 COPY conf/menu.xml /root/.config/openbox/
@@ -42,4 +43,4 @@ EXPOSE 5901
 
 # ------------------------------------------------------------------------------
 # Define default command
-CMD ["/root/app.sh"]
+CMD ["/root/tiger.sh"]
