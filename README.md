@@ -1,2 +1,16 @@
-# ubuntu-desktop
-Ubuntu 18.04 (Bionic) Desktop running Openbox in VNC
+# Ubuntu 18.04 (Bionic) Desktop running Openbox in VNC
+
+## Base Docker Image
+Ubuntu 18.04 (x64)
+
+## Get the image from Docker Hub
+
+    docker pull fullaxx/ubuntu-desktop
+
+## Run the image on port 5901
+
+    docker run -d -p 5901:5901 fullaxx/ubuntu-desktop
+
+## Build it locally using the github repository
+
+    docker build -t="fullaxx/ubuntu-desktop" github.com/Fullaxx/ubuntu-desktop
