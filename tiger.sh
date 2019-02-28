@@ -6,4 +6,4 @@ VNCDEPTH="-depth 24"
 
 chmod 0600 ${VNCDIR}/passwd
 
-tigervncserver -fg ${VNCRES} ${VNCDEPTH} -xstartup ${VNCDIR}/xstartup
+tigervncserver -fg -localhost no ${VNCRES} ${VNCDEPTH} -xstartup ${VNCDIR}/xstartup

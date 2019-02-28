@@ -9,7 +9,7 @@ Ubuntu 18.04 (x64)
 
 ## Run the image on port 5901
 
-    docker run -d --network=host fullaxx/ubuntu-desktop
+    docker run -d -p 5901:5901 fullaxx/ubuntu-desktop
 
 ## Connect using vncviewer
 
