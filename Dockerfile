@@ -16,15 +16,11 @@ ENV LANG C
 # ------------------------------------------------------------------------------
 # Install tigervnc and clean up
 RUN apt-get update && apt-get install -y --no-install-recommends \
-tigervnc-standalone-server tigervnc-common xfonts-base x11-utils \
+tigervnc-standalone-server tigervnc-common \
+xfonts-base x11-utils x11-xserver-utils \
 locales openbox fbpanel xterm wget curl ca-certificates && \
 sed -e 's/# en_US.UTF-8/en_US.UTF-8/' -i /etc/locale.gen && locale-gen && \
 apt-get clean && rm -rf /var/lib/apt/lists/* /var/tmp/* /tmp/*
-
-# ------------------------------------------------------------------------------
-# Create directories and configure VNC
-RUN mkdir -p /root/.vnc /root/.config/{openbox,fbpanel} /root/scripts && \
-echo vncpass | vncpasswd -f > /root/.vnc/passwd
 
 # ------------------------------------------------------------------------------
 # Install scripts and configuration files
@@ -33,6 +29,10 @@ COPY conf/xstartup /root/.vnc/
 COPY conf/autostart conf/menu.xml /root/.config/openbox/
 COPY conf/fbpaneldefault /root/.config/fbpanel/default
 COPY scripts/*.sh /root/scripts/
+
+# ------------------------------------------------------------------------------
+# Set the VNC password
+RUN echo vncpass | vncpasswd -f > /root/.vnc/passwd
 
 # ------------------------------------------------------------------------------
 # Expose ports
