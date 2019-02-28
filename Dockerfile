@@ -16,26 +16,23 @@ ENV LANG C
 # ------------------------------------------------------------------------------
 # Install tigervnc and clean up
 RUN apt-get update && apt-get install -y --no-install-recommends \
-tigervnc-standalone-server tigervnc-common xfonts-base \
+tigervnc-standalone-server tigervnc-common xfonts-base x11-utils \
 locales openbox fbpanel xterm wget curl ca-certificates && \
-mkdir -p /root/.vnc /root/.config/{openbox,fbpanel} /root/scripts && \
-echo vncpass | vncpasswd -f > /root/.vnc/passwd && \
 sed -e 's/# en_US.UTF-8/en_US.UTF-8/' -i /etc/locale.gen && locale-gen && \
 apt-get clean && rm -rf /var/lib/apt/lists/* /var/tmp/* /tmp/*
 
 # ------------------------------------------------------------------------------
-# Install scripts and configuration
-COPY tiger.sh /root/
-COPY tight.sh /root/
+# Create directories and configure VNC
+RUN mkdir -p /root/.vnc /root/.config/{openbox,fbpanel} /root/scripts && \
+echo vncpass | vncpasswd -f > /root/.vnc/passwd
+
+# ------------------------------------------------------------------------------
+# Install scripts and configuration files
+COPY tiger.sh tight.sh /root/
 COPY conf/xstartup /root/.vnc/
-COPY conf/autostart /root/.config/openbox/
-COPY conf/menu.xml /root/.config/openbox/
+COPY conf/autostart conf/menu.xml /root/.config/openbox/
 COPY conf/fbpaneldefault /root/.config/fbpanel/default
-COPY scripts/firefox.sh /root/scripts/
-COPY scripts/seamonkey.sh /root/scripts/
-COPY scripts/chromium.sh /root/scripts/
-COPY scripts/chrome.sh /root/scripts/
-COPY scripts/vivaldi.sh /root/scripts/
+COPY scripts/*.sh /root/scripts/
 
 # ------------------------------------------------------------------------------
 # Expose ports
