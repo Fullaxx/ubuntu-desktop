@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<openbox_menu xmlns="http://openbox.org/3.4/menu">
+
+<menu id="apps-terminals-menu" label="Terminals">
+	<item label="xterm"><action name="Execute"><command>xterm</command></action></item>
+	<item label="uxterm"><action name="Execute"><command>uxterm</command></action></item>
+	<item label="st"><action name="Execute"><command>st</command></action></item>
+	<item label="tilix"><action name="Execute"><command>tilix</command></action></item>
+</menu>
+
+<menu id="apps-browsers-menu" label="Browsers">
+	<item label="Chrome"><action name="Execute"><command>/root/scripts/chrome.sh</command></action></item>
+	<item label="Chromium"><action name="Execute"><command>/root/scripts/chromium.sh</command></action></item>
+	<item label="Vivaldi"><action name="Execute"><command>/root/scripts/vivaldi.sh</command></action></item>
+	<item label="Firefox"><action name="Execute"><command>/root/scripts/firefox.sh</command></action></item>
+	<!-- <item label="Seamonkey"><action name="Execute"><command>/root/scripts/seamonkey.sh</command></action></item> -->
+</menu>
+
+<menu id="system-menu" label="System">
+  <item label="Reconfigure Openbox">
+    <action name="Reconfigure" />
+  </item>
+</menu>
+
+<menu id="root-menu" label="Openbox 3">
+	<separator label="Terminals" />
+	<item label="xterm"><action name="Execute"><command>xterm</command></action></item>
+	<separator label="Applications" />
+	<menu id="apps-terminals-menu"/>
+	<menu id="apps-browsers-menu"/>
+	<separator label="System" />
+	<menu id="system-menu"/>
+	<separator />
+	<item label="Log Out">
+		<action name="Exit">
+			<prompt>yes</prompt>
+		</action>
+	</item>
+</menu>
+
+</openbox_menu>

@@ -1,0 +1,10 @@
+#
+# These things are run when an Openbox X Session is started.
+# You may place a similar script in $HOME/.config/openbox/autostart
+# to run user-specific things.
+#
+
+# https://github.com/jessfraz/dockerfiles/issues/4
+xhost local:root
+
+fbpanel &
