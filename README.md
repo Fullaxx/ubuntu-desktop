@@ -13,8 +13,6 @@ Ubuntu 18.04 (x64)
 
 ## Connect using vncviewer
 
-default password is vncpass
-
     vncviewer :1
     vncviewer 127.0.0.1:1
     vncviewer 127.0.0.1:5901

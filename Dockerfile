@@ -10,9 +10,6 @@ MAINTAINER Brett Kuskie <fullaxx@gmail.com>
 ENV DEBIAN_FRONTEND noninteractive
 ENV LANG C
 
-# Alternative to tigervnc-standalone-server tigervnc-common
-# tightvncserver
-
 # ------------------------------------------------------------------------------
 # Install tigervnc and clean up
 RUN apt-get update && apt-get install -y --no-install-recommends \
@@ -29,10 +26,6 @@ COPY conf/xstartup /root/.vnc/
 COPY conf/autostart conf/menu.xml /root/.config/openbox/
 COPY conf/fbpaneldefault /root/.config/fbpanel/default
 COPY scripts/*.sh /root/scripts/
-
-# ------------------------------------------------------------------------------
-# Set the VNC password
-RUN echo vncpass | vncpasswd -f > /root/.vnc/passwd
 
 # ------------------------------------------------------------------------------
 # Expose ports
