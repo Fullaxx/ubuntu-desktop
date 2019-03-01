@@ -21,11 +21,11 @@ apt-get clean && rm -rf /var/lib/apt/lists/* /var/tmp/* /tmp/*
 
 # ------------------------------------------------------------------------------
 # Install scripts and configuration files
-COPY tiger.sh tight.sh /root/
+COPY tiger.sh tight.sh /app/
+COPY scripts/*.sh /app/scripts/
 COPY conf/xstartup /root/.vnc/
 COPY conf/autostart conf/menu.xml /root/.config/openbox/
 COPY conf/fbpaneldefault /root/.config/fbpanel/default
-COPY scripts/*.sh /root/scripts/
 
 # ------------------------------------------------------------------------------
 # Expose ports
@@ -33,4 +33,4 @@ EXPOSE 5901
 
 # ------------------------------------------------------------------------------
 # Define default command
-CMD ["/root/tiger.sh"]
+CMD ["/app/tiger.sh"]
