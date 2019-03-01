@@ -28,6 +28,7 @@ Using the Read-Only password function requires a Read-Write password to be set
 ## Connect using vncviewer
 
     vncviewer 127.0.0.1:5901
+    Right-Click on the desktop to activate the Openbox menu system
 
 ## Build it locally using the github repository
 
