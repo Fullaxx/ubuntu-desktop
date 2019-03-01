@@ -22,6 +22,7 @@ Ubuntu 18.04 (x64)
 
 ## Run the image on localhost port 5901 with Read-Write password and Read-Only password
 Using the Read-Only password function requires a Read-Write password to be set
+
     docker run -d -p 127.0.0.1:5901:5901 -e VNCPASS='vncpass' -e VNCPASSRO='readonly' fullaxx/ubuntu-desktop
 
 ## Connect using vncviewer
