@@ -13,4 +13,4 @@ if [ "$?" -ne "0" ]; then
   xterm -T AptGetInstall -g 100x30 -e apt-get install -y ${BINARY}
 fi
 
-${BINARY}
+${BINARY} -e "bash -l"
