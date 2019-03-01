@@ -9,8 +9,6 @@ export DEBIAN_FRONTEND="noninteractive"
 BINARYLOC=`which ${BINARY}`
 if [ "$?" -ne "0" ]; then
   set -e
-#  xmessage "Installing Vivaldi ..." &
-#  gxmessage "Installing Vivaldi ..." &
 
   xterm -T Download -g 100x30 -e wget ${URL} -O ${DEB}
   xterm -T dPkgInstall -g 100x30 -e dpkg -i ${DEB}

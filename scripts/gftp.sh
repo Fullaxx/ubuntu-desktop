@@ -1,6 +1,6 @@
 #!/bin/bash
 
-BINARY="tilix"
+BINARY="gftp"
 export DEBIAN_FRONTEND="noninteractive"
 
 BINARYLOC=`which ${BINARY}`
@@ -11,4 +11,4 @@ if [ "$?" -ne "0" ]; then
   xterm -T AptGetInstall -g 100x30 -e apt-get install -y ${BINARY}
 fi
 
-${BINARY} -e "bash -l"
+${BINARY}

@@ -10,14 +10,6 @@
 	<item label="terminator"><action name="Execute"><command>/app/scripts/terminator.sh</command></action></item>
 </menu>
 
-<menu id="apps-browsers-menu" label="Browsers">
-	<item label="Chrome"><action name="Execute"><command>/app/scripts/chrome.sh</command></action></item>
-	<item label="Chromium"><action name="Execute"><command>/app/scripts/chromium.sh</command></action></item>
-	<item label="Vivaldi"><action name="Execute"><command>/app/scripts/vivaldi.sh</command></action></item>
-	<item label="Firefox"><action name="Execute"><command>/app/scripts/firefox.sh</command></action></item>
-	<!-- <item label="Seamonkey"><action name="Execute"><command>/app/scripts/seamonkey.sh</command></action></item> -->
-</menu>
-
 <menu id="apps-editors-menu" label="Editors">
 	<item label="Gedit"><action name="Execute"><command>/app/scripts/gedit.sh</command></action></item>
 	<item label="LibreOffice"><action name="Execute"><command>/app/scripts/libreoffice.sh</command></action></item>
@@ -26,9 +18,31 @@
 	<item label="VSCode"><action name="Execute"><command>/app/scripts/vscode.sh</command></action></item>
 </menu>
 
-<menu id="apps-bittorrent-menu" label="BitTorrent">
+<menu id="apps-network-browsers-menu" label="Browsers">
+	<item label="Chrome"><action name="Execute"><command>/app/scripts/chrome.sh</command></action></item>
+	<item label="Chromium"><action name="Execute"><command>/app/scripts/chromium.sh</command></action></item>
+	<item label="Vivaldi"><action name="Execute"><command>/app/scripts/vivaldi.sh</command></action></item>
+	<item label="Firefox"><action name="Execute"><command>/app/scripts/firefox.sh</command></action></item>
+	<!-- <item label="Seamonkey"><action name="Execute"><command>/app/scripts/seamonkey.sh</command></action></item> -->
+</menu>
+
+<menu id="apps-network-bittorrent-menu" label="BitTorrent">
 	<item label="Deluge"><action name="Execute"><command>/app/scripts/deluge.sh</command></action></item>
 	<item label="QBitTorrent"><action name="Execute"><command>/app/scripts/qbittorrent.sh</command></action></item>
+	<item label="Ktorrent"><action name="Execute"><command>/app/scripts/ktorrent.sh</command></action></item>
+	<item label="TransmissionGtk"><action name="Execute"><command>/app/scripts/transmissiongtk.sh</command></action></item>
+	<item label="Bitstormlite"><action name="Execute"><command>/app/scripts/bitstormlite.sh</command></action></item>
+</menu>
+
+<menu id="apps-network-tools-menu" label="Tools">
+	<item label="Gftp"><action name="Execute"><command>/app/scripts/gftp.sh</command></action></item>
+	<item label="Zenmap"><action name="Execute"><command>/app/scripts/zenmap.sh</command></action></item>
+</menu>
+
+<menu id="apps-network-menu" label="Network">
+	<menu id="apps-network-browsers-menu"/>
+	<menu id="apps-network-bittorrent-menu"/>
+	<menu id="apps-network-tools-menu"/>
 </menu>
 
 <menu id="system-menu" label="System">
@@ -42,9 +56,8 @@
 	<item label="xterm"><action name="Execute"><command>xterm</command></action></item>
 	<separator label="Applications" />
 	<menu id="apps-terminals-menu"/>
-	<menu id="apps-browsers-menu"/>
 	<menu id="apps-editors-menu"/>
-	<menu id="apps-bittorrent-menu"/>
+	<menu id="apps-network-menu"/>
 	<separator label="System" />
 	<menu id="system-menu"/>
 	<separator />

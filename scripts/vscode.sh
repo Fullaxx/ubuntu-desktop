@@ -6,8 +6,6 @@ export DEBIAN_FRONTEND="noninteractive"
 BINARYLOC=`which ${BINARY}`
 if [ "$?" -ne "0" ]; then
   set -e
-#  xmessage "Installing VSCode ..." &
-#  gxmessage "Installing VSCode ..." &
 
   xterm -T AptGetUpdate -g 100x30 -e apt-get update
   xterm -T AptGetInstall -g 100x30 -e apt-get install -y gnupg2 software-properties-common apt-transport-https wget libasound2
