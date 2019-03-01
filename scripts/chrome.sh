@@ -17,4 +17,6 @@ if [ "$?" -ne "0" ]; then
   rm ${DEB}
 fi
 
-${BINARY} --no-sandbox
+# https://www.ghacks.net/2013/10/06/list-useful-google-chrome-command-line-switches/
+# https://peter.sh/experiments/chromium-command-line-switches/
+${BINARY} --no-sandbox --disable-gpu --disable-accelerated-2d-canvas --disable-gpu-rasterization

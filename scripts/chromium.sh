@@ -11,4 +11,4 @@ if [ "$?" -ne "0" ]; then
   xterm -T AptGetInstall -g 100x30 -e apt-get install -y ${BINARY}
 fi
 
-${BINARY} --no-sandbox
+${BINARY} --no-sandbox --disable-gpu --disable-accelerated-2d-canvas --disable-gpu-rasterization
