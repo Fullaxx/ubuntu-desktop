@@ -16,6 +16,11 @@ if [ -n "${VNCPASS}" ]; then
   VNCAUTH=""
 fi
 
+# Necessary for many applications
+# (i.e. Chrome, terminator, ktorrent, ...)
+/etc/init.d/x11-common start
+/etc/init.d/dbus start
+
 tigervncserver -fg -localhost no ${VNCAUTH} \
 -geometry ${VNCRES} \
 -depth ${VNCDEPTH} \

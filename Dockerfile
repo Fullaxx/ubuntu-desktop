@@ -14,7 +14,7 @@ ENV LANG C
 # Install tigervnc and clean up
 RUN apt-get update && apt-get install -y --no-install-recommends \
 tigervnc-standalone-server tigervnc-common \
-xfonts-base x11-utils x11-xserver-utils \
+xfonts-base x11-utils x11-xserver-utils dbus-x11 \
 locales openbox fbpanel xterm wget curl ca-certificates && \
 sed -e 's/# en_US.UTF-8/en_US.UTF-8/' -i /etc/locale.gen && locale-gen && \
 apt-get clean && rm -rf /var/lib/apt/lists/* /var/tmp/* /tmp/*
