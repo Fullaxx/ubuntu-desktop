@@ -5,6 +5,7 @@ export DEBIAN_FRONTEND="noninteractive"
 
 BINARYLOC=`which ${BINARY}`
 if [ "$?" -ne "0" ]; then
+  set -e
 #  xmessage "Installing Firefox ..." &
 #  gxmessage "Installing Firefox ..." &
 
