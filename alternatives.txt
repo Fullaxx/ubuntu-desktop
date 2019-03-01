@@ -1,6 +1,2 @@
 # Alternative to (tigervnc-standalone-server tigervnc-common)
 # tightvncserver
-
-# ------------------------------------------------------------------------------
-# Set the VNC password
-# RUN echo vncpass | vncpasswd -f > /root/.vnc/passwd
