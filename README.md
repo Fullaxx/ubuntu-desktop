@@ -7,6 +7,7 @@
 ```
 docker pull fullaxx/ubuntu-desktop
 ```
+
 ## Run the image
 Run the image on localhost port 5901 with default configuration
 ```
@@ -28,10 +29,12 @@ Run the image with Read-Write and Read-Only password (Using R/O pass requires R/
 ```
 docker run -d -p 127.0.0.1:5901:5901 -e VNCPASS='vncpass' -e VNCPASSRO='readonly' fullaxx/ubuntu-desktop
 ```
+
 ## Connect using vncviewer
 ```
 vncviewer 127.0.0.1:5901
 ```
+
 ## Using Openbox
 Right-Click to activate the Openbox menu system. You will find a number of convenience scripts for running applications.
 
@@ -46,6 +49,7 @@ Editors:
 
 Torrenting:
 * qbittorrent, ktorrent, deluge, transmission-gtk, bitstormlite
+
 
 ## Build it locally using the github repository
 ```
