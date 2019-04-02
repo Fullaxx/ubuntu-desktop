@@ -1,20 +1,16 @@
 #!/bin/bash
 
-URL="https://downloads.vivaldi.com/stable/vivaldi-stable_2.3.1440.57-1_amd64.deb"
-DEB="/tmp/vivaldi.deb"
-
 BINARY="vivaldi-stable"
-export DEBIAN_FRONTEND="noninteractive"
 
 BINARYLOC=`which ${BINARY}`
 if [ "$?" -ne "0" ]; then
   set -e
 
-  xterm -T Download -g 100x30 -e wget ${URL} -O ${DEB}
-  xterm -T dPkgInstall -g 100x30 -e dpkg -i ${DEB}
-  xterm -T AptGetUpdate -g 100x30 -e apt-get update
-  xterm -T AptGetInstall -g 100x30 -e apt-get install -f -y
-  rm ${DEB}
+  xterm -T InstallVivaldi -g 100x30 -e sudo /app/scripts/install_vivaldi.sh
 fi
 
-${BINARY} --no-sandbox
+if [ -n "${USER}" ]; then
+  ${BINARY}
+else
+  ${BINARY} --no-sandbox
+fi

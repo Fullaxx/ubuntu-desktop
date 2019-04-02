@@ -1,0 +1,5 @@
+# Allow members of group sudo to execute /usr/bin/apt-get
+%sudo ALL=(ALL) NOPASSWD: /usr/bin/apt-get
+%sudo ALL=(ALL) NOPASSWD: /app/scripts/install_chrome.sh
+%sudo ALL=(ALL) NOPASSWD: /app/scripts/install_vivaldi.sh
+%sudo ALL=(ALL) NOPASSWD: /app/scripts/install_vscode.sh

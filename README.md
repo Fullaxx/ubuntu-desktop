@@ -29,6 +29,10 @@ Run the image with Read-Write and Read-Only password (Using R/O pass requires R/
 ```
 docker run -d -p 127.0.0.1:5901:5901 -e VNCPASS='vncpass' -e VNCPASSRO='readonly' fullaxx/ubuntu-desktop
 ```
+Run the image as a non-root user account
+```
+docker run -d -p 127.0.0.1:5901:5901 -e VNCUSER='guest' -e VNCUID='1000' fullaxx/ubuntu-desktop
+```
 
 ## Connect using vncviewer
 ```

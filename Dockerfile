@@ -11,21 +11,36 @@ ENV DEBIAN_FRONTEND noninteractive
 ENV LANG C
 
 # ------------------------------------------------------------------------------
-# Install tigervnc and clean up
-RUN apt-get update && apt-get install -y --no-install-recommends \
-tigervnc-standalone-server tigervnc-common \
-xfonts-base x11-utils x11-xserver-utils dbus-x11 \
-locales openbox fbpanel xterm wget curl ca-certificates && \
-sed -e 's/# en_US.UTF-8/en_US.UTF-8/' -i /etc/locale.gen && locale-gen && \
-apt-get clean && rm -rf /var/lib/apt/lists/* /var/tmp/* /tmp/*
+# Install tigervnc,openbox and clean up
+RUN apt-get update && \
+    apt-get install -y --no-install-recommends \
+      ca-certificates \
+      curl \
+      dbus-x11 \
+      fbpanel \
+      locales \
+      openbox \
+      sudo \
+      tigervnc-common \
+      tigervnc-standalone-server \
+      wget \
+      x11-utils \
+      x11-xserver-utils \
+      xfonts-base \
+      xterm && \
+    sed -e 's/# en_US.UTF-8/en_US.UTF-8/' -i /etc/locale.gen && \
+    locale-gen && \
+    apt-get clean && \
+    rm -rf /var/lib/apt/lists/* /var/tmp/* /tmp/*
 
 # ------------------------------------------------------------------------------
 # Install scripts and configuration files
-COPY tiger.sh tight.sh /app/
+COPY tiger.sh /app/
 COPY scripts/*.sh /app/scripts/
-COPY conf/xstartup /root/.vnc/
-COPY conf/autostart conf/menu.xml /root/.config/openbox/
-COPY conf/fbpaneldefault /root/.config/fbpanel/default
+COPY conf/xstartup /usr/share/ubuntu-desktop/vnc/
+COPY conf/autostart conf/menu.xml /usr/share/ubuntu-desktop/openbox/
+COPY conf/fbpaneldefault /usr/share/ubuntu-desktop/fbpanel/default
+COPY conf/sudo /usr/share/ubuntu-desktop/sudo
 
 # ------------------------------------------------------------------------------
 # Expose ports

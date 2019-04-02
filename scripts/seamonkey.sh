@@ -1,8 +1,8 @@
 #!/bin/bash
 # https://sourceforge.net/p/ubuntuzilla/wiki/Main_Page/
 
-BINARY="seamonkey"
 export DEBIAN_FRONTEND="noninteractive"
+BINARY="seamonkey"
 
 BINARYLOC=`which ${BINARY}`
 if [ "$?" -ne "0" ]; then
