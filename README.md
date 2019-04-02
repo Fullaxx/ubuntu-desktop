@@ -8,6 +8,45 @@
 docker pull fullaxx/ubuntu-desktop
 ```
 
+## VNC Options
+Optional: Set Depth 16 \
+Default: 24
+```
+-e VNCDEPTH='16'
+```
+Optional: Set 1920x1080 Resolution \
+Default: 1280x800
+```
+-e VNCRES='1920x1080'
+```
+Optional: Set Password Authentication \
+Default: No Authentication
+```
+-e VNCPASS='vncpass'
+```
+Optional: Set Read-Write and Read-Only password \
+Default: No Authentication
+```
+-e VNCPASS='vncpass' -e VNCPASSRO='readonly'
+```
+Optional: Run as a non-root user \
+Default: root (UID: 0)
+```
+-e VNCUSER='guest' -e VNCUID='1000'
+```
+
+## TimeZone Configuration
+Set the timezone to be used inside the container \
+Default: UTC
+```
+-e TZ='Asia/Tokyo'
+-e TZ='Europe/London'
+-e TZ='America/Los_Angeles'
+-e TZ='America/Denver'
+-e TZ='America/Chicago'
+-e TZ='America/New_York'
+```
+
 ## Run the image
 Run the image on localhost port 5901 with default configuration
 ```
@@ -32,6 +71,10 @@ docker run -d -p 127.0.0.1:5901:5901 -e VNCPASS='vncpass' -e VNCPASSRO='readonly
 Run the image as a non-root user account
 ```
 docker run -d -p 127.0.0.1:5901:5901 -e VNCUSER='guest' -e VNCUID='1000' fullaxx/ubuntu-desktop
+```
+Run the image in Tokyo
+```
+docker run -d -p 127.0.0.1:5901:5901 -e TZ='Asia/Tokyo' fullaxx/ubuntu-desktop
 ```
 
 ## Connect using vncviewer
