@@ -17,7 +17,7 @@ if [ -n "${VNCPASS}" ]; then
 fi
 
 if [ -n "${USER}" ]; then
-  chown -R ${USER}.${USER} ${HOME}
+  chown -R ${USER}.${GROUP} ${HOME}
   SUDOUSEROPTION="-u ${USER}"
 fi
 

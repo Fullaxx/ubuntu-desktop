@@ -13,8 +13,17 @@ rm -f /tmp/.X11-unix/*
 /etc/init.d/dbus start
 
 if [ -n "${VNCUSER}" ] && [ -n "${VNCUID}" ]; then
-  useradd -u ${VNCUID} -G sudo -s /bin/bash -m -d /home/${VNCUSER} ${VNCUSER}
+  # Check if VNCGROUP and VNCGID are set or set to VNCUSER and VNCUID
+  if [ -z "${VNCGROUP}" ]; then
+    VNCGROUP=${VNCUSER}
+  fi
+  if [ -z "${VNCGID}" ]; then
+    VNCGID=${VNCUID}
+  fi
+  groupadd -g ${VNCGID} ${VNCGROUP}
+  useradd -u ${VNCUID} -g ${VNCGID} -G sudo -s /bin/bash -m -d /home/${VNCUSER} ${VNCUSER}
   export USER="${VNCUSER}"
+  export GROUP="${VNCGROUP}"
   if [ -n "${ACCTPASS}" ]; then
     echo "${VNCUSER}:${ACCTPASS}" | chpasswd
     unset ACCTPASS
