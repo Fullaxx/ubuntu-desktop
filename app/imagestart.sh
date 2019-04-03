@@ -22,6 +22,10 @@ if [ -n "${VNCUSER}" ] && [ -n "${VNCUID}" ]; then
   fi
   groupadd -g ${VNCGID} ${VNCGROUP}
   useradd -u ${VNCUID} -g ${VNCGID} -G sudo -s /bin/bash -m -d /home/${VNCUSER} ${VNCUSER}
+
+  if [ -n ${VNCUMASK} ]; then
+    echo "umask ${VNCUMASK}" >> /home/${VNCUSER}/.bashrc
+  fi
   export USER="${VNCUSER}"
   export GROUP="${VNCGROUP}"
   if [ -n "${ACCTPASS}" ]; then
