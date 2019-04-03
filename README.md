@@ -92,11 +92,13 @@ Browsers:
 * chrome, chromium, firefox, vivaldi
 
 Editors:
-* gedit, medit, libreoffice, bluefish, geany, vscode, xfw
+* gedit, medit, libreoffice, bluefish, geany, vscode, XFW
 
 Torrenting:
 * qbittorrent, ktorrent, deluge, transmission-gtk, bitstormlite
 
+File Managers:
+* Caja, XFE
 
 ## Build it locally using the github repository
 ```
