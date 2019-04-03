@@ -36,7 +36,7 @@ RUN apt-get update && \
 
 # ------------------------------------------------------------------------------
 # Install scripts and configuration files
-COPY app.sh tiger.sh imagestart.sh /app/
+COPY app/app.sh app/imagestart.sh app/tiger.sh /app/
 COPY scripts/*.sh /app/scripts/
 COPY conf/xstartup /usr/share/ubuntu-desktop/vnc/
 COPY conf/autostart conf/menu.xml /usr/share/ubuntu-desktop/openbox/
