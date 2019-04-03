@@ -36,7 +36,7 @@ RUN apt-get update && \
 
 # ------------------------------------------------------------------------------
 # Install scripts and configuration files
-COPY tiger.sh /app/
+COPY app.sh tiger.sh imagestart.sh /app/
 COPY scripts/*.sh /app/scripts/
 COPY conf/xstartup /usr/share/ubuntu-desktop/vnc/
 COPY conf/autostart conf/menu.xml /usr/share/ubuntu-desktop/openbox/
@@ -49,4 +49,4 @@ EXPOSE 5901
 
 # ------------------------------------------------------------------------------
 # Define default command
-CMD ["/app/tiger.sh"]
+CMD ["/app/app.sh"]
