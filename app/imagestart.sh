@@ -3,14 +3,31 @@
 # sudo configuration for ubuntu-desktop
 install -m 0440 /usr/share/ubuntu-desktop/sudo /etc/sudoers.d/ubuntudesktop
 
+# Delete old temp files in case the images was restarted
+rm -f /tmp/.X*-lock
+rm -f /tmp/.X11-unix/*
+
 # Necessary for many applications
 # (i.e. Chrome, terminator, ktorrent, ...)
 /etc/init.d/x11-common start
 /etc/init.d/dbus start
 
 if [ -n "${VNCUSER}" ] && [ -n "${VNCUID}" ]; then
-  useradd -u ${VNCUID} -G sudo -s /bin/bash -m -d /home/${VNCUSER} ${VNCUSER}
+  # Check if VNCGROUP and VNCGID are set or set to VNCUSER and VNCUID
+  if [ -z "${VNCGROUP}" ]; then
+    VNCGROUP=${VNCUSER}
+  fi
+  if [ -z "${VNCGID}" ]; then
+    VNCGID=${VNCUID}
+  fi
+  groupadd -g ${VNCGID} ${VNCGROUP}
+  useradd -u ${VNCUID} -g ${VNCGID} -G sudo -s /bin/bash -m -d /home/${VNCUSER} ${VNCUSER}
+
+  if [ -n ${VNCUMASK} ]; then
+    echo "umask ${VNCUMASK}" >> /home/${VNCUSER}/.bashrc
+  fi
   export USER="${VNCUSER}"
+  export GROUP="${VNCGROUP}"
   if [ -n "${ACCTPASS}" ]; then
     echo "${VNCUSER}:${ACCTPASS}" | chpasswd
     unset ACCTPASS
