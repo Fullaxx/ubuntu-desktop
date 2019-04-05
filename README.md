@@ -41,6 +41,12 @@ Default: same as VNCUSER and VNCUID
 -e VNCGROUP='guests' -e VNCGID='1001'
 ```
 
+Optional: Set umask to define permission for new files \
+Default: 022
+```
+-e VNCUMASK='0002'
+```
+
 ## TimeZone Configuration
 Set the timezone to be used inside the container \
 Default: UTC
