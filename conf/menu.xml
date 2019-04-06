@@ -6,8 +6,9 @@
 	<item label="xterm"><action name="Execute"><command>xterm</command></action></item>
 	<item label="uxterm"><action name="Execute"><command>uxterm</command></action></item>
 	<!-- <item label="st"><action name="Execute"><command>st</command></action></item> -->
-	<item label="tilix"><action name="Execute"><command>/app/scripts/tilix.sh</command></action></item>
+	<item label="terminology"><action name="Execute"><command>/app/scripts/terminology.sh</command></action></item>
 	<item label="terminator"><action name="Execute"><command>/app/scripts/terminator.sh</command></action></item>
+	<item label="tilix"><action name="Execute"><command>/app/scripts/tilix.sh</command></action></item>
 </menu>
 
 <menu id="apps-editors-menu" label="Editors">
