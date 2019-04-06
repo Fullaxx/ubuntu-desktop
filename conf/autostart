@@ -4,6 +4,14 @@
 # to run user-specific things.
 #
 
+# if VNCUMASK was set, make sure we set it here also during autostart
+if [ -r ${HOME}/.bashrc ]; then
+  NEWUMASK=`grep '^umask' ${HOME}/.bashrc | awk '{print $2}'`
+  if [ -n "${NEWUMASK}" ]; then
+    umask ${NEWUMASK}
+  fi
+fi
+
 # https://github.com/jessfraz/dockerfiles/issues/4
 xhost local:root
 
