@@ -57,6 +57,12 @@ Default: UTC
 -e TZ='America/New_York'
 ```
 
+## FUSE Configuration (to support AppImages)
+Set privileges to allow FUSE to work properly inside the container
+```
+--device /dev/fuse --cap-add SYS_ADMIN
+```
+
 ## Run the image
 Run the image on localhost port 5901 with default configuration
 ```
@@ -89,6 +95,10 @@ docker run -d -p 127.0.0.1:5901:5901 -e VNCUSER='guest' -e VNCUID='1000' -e VNCG
 Run the image in Tokyo
 ```
 docker run -d -p 127.0.0.1:5901:5901 -e TZ='Asia/Tokyo' fullaxx/ubuntu-desktop
+```
+Run the image with FUSE privileges
+```
+docker run --device /dev/fuse --cap-add SYS_ADMIN -d -p 127.0.0.1:5901:5901 fullaxx/ubuntu-desktop
 ```
 
 ## Connect using vncviewer

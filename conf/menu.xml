@@ -9,6 +9,7 @@
 	<item label="terminology"><action name="Execute"><command>/app/scripts/terminology.sh</command></action></item>
 	<item label="terminator"><action name="Execute"><command>/app/scripts/terminator.sh</command></action></item>
 	<item label="tilix"><action name="Execute"><command>/app/scripts/tilix.sh</command></action></item>
+	<item label="hyper"><action name="Execute"><command>/app/scripts/hyper.sh</command></action></item>
 </menu>
 
 <menu id="apps-editors-menu" label="Editors">
