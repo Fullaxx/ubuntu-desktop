@@ -14,8 +14,8 @@ if [ "$?" -ne "0" ]; then
   xterm -T AptGetInstall -g 100x30 -e sudo apt-get install -y ${BINARY}
 fi
 
-if [ -n "${USER}" ]; then
-  ${BINARY} ${CMDARGS}
-else
+if [ `id -u` == "0" ]; then
   ${BINARY} --no-sandbox ${CMDARGS}
+else
+  ${BINARY} ${CMDARGS}
 fi

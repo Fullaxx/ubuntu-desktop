@@ -9,8 +9,8 @@ if [ "$?" -ne "0" ]; then
   xterm -T InstallVivaldi -g 100x30 -e sudo /app/scripts/install_vivaldi.sh
 fi
 
-if [ -n "${USER}" ]; then
-  ${BINARY}
-else
+if [ `id -u` == "0" ]; then
   ${BINARY} --no-sandbox
+else
+  ${BINARY}
 fi
