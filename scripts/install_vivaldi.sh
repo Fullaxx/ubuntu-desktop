@@ -3,7 +3,7 @@
 set -e
 
 export DEBIAN_FRONTEND="noninteractive"
-URL="https://downloads.vivaldi.com/stable/vivaldi-stable_2.4.1488.35-2_amd64.deb"
+URL="https://downloads.vivaldi.com/stable/vivaldi-stable_2.4.1488.36-1_amd64.deb"
 DEB="/tmp/vivaldi.deb"
 
 apt-get update
