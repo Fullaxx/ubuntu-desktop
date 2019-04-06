@@ -59,6 +59,7 @@
 	<item label="Gimp"><action name="Execute"><command>/app/scripts/gimp.sh</command></action></item>
 	<item label="Inkscape"><action name="Execute"><command>/app/scripts/inkscape.sh</command></action></item>
 	<item label="Krita"><action name="Execute"><command>/app/scripts/krita.sh</command></action></item>
+	<item label="Blender"><action name="Execute"><command>/app/scripts/blender.sh</command></action></item>
 </menu>
 
 <menu id="apps-fileman-menu" label="File Managers">

@@ -125,7 +125,7 @@ Torrenting:
 * qbittorrent, ktorrent, deluge, transmission-gtk, bitstormlite
 
 Graphics:
-* Gimp, Inkscape, Krita
+* Gimp, Inkscape, Krita, Blender
 
 File Managers:
 * Caja, XFE
