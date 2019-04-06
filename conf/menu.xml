@@ -65,6 +65,11 @@
 	<item label="XFE"><action name="Execute"><command>/app/scripts/xfe.sh</command></action></item>
 </menu>
 
+<menu id="apps-utilities-menu" label="Utilities">
+	<item label="Galculator"><action name="Execute"><command>/app/scripts/galculator.sh</command></action></item>
+	<item label="Kcalc"><action name="Execute"><command>/app/scripts/kcalc.sh</command></action></item>
+</menu>
+
 <menu id="system-menu" label="System">
   <item label="Reconfigure Openbox">
     <action name="Reconfigure" />
@@ -81,6 +86,7 @@
 	<menu id="apps-network-menu"/>
 	<menu id="apps-graphics-menu"/>
 	<menu id="apps-fileman-menu"/>
+	<menu id="apps-utilities-menu"/>
 	<separator label="System" />
 	<menu id="system-menu"/>
 	<separator />

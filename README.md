@@ -106,7 +106,7 @@ docker run --device /dev/fuse --cap-add SYS_ADMIN -d -p 127.0.0.1:5901:5901 full
 vncviewer 127.0.0.1:5901
 ```
 
-## Using Openbox
+## Using the Openbox Desktop Environment
 Right-Click to activate the Openbox menu system. You will find a number of convenience scripts for running applications.
 
 Terminals:
@@ -115,7 +115,7 @@ Terminals:
 Browsers:
 * chrome, chromium, firefox, vivaldi
 
-Office :
+Office:
 * libreoffice, libreoffice Fresh (AI)
 
 Editors:
@@ -129,6 +129,9 @@ Graphics:
 
 File Managers:
 * Caja, XFE
+
+Utilities:
+* Galculator, Kcalc
 
 ## Build it locally using the github repository
 ```
