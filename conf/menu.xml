@@ -10,6 +10,7 @@
 	<item label="terminator"><action name="Execute"><command>/app/scripts/terminator.sh</command></action></item>
 	<item label="tilix"><action name="Execute"><command>/app/scripts/tilix.sh</command></action></item>
 	<item label="tilda"><action name="Execute"><command>/app/scripts/tilda.sh</command></action></item>
+	<item label="Archipelago (AI)"><action name="Execute"><command>/app/scripts/archipelago.AI.sh</command></action></item>
 	<item label="hyper (AI)"><action name="Execute"><command>/app/scripts/hyper.AI.sh</command></action></item>
 </menu>
 
