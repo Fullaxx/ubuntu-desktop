@@ -110,31 +110,31 @@ vncviewer 127.0.0.1:5901
 Right-Click to activate the Openbox menu system. You will find a number of convenience scripts for running applications.
 
 Terminals:
-* xterm, uxterm, terminology, terminator, tilix, tilda, Archipelago (AI), hyper (AI)
+* xterm, uxterm, terminology, terminator, tilix, tilda, archipelago (AI), hyper (AI)
 
 Browsers:
 * chrome, chromium, firefox, vivaldi
 
 Office:
-* libreoffice, libreoffice Fresh (AI)
+* libreoffice, libreoffice fresh (AI)
 
 Editors:
-* gedit, medit, bluefish, geany, vscode, XFW
+* gedit, gvim, medit, bluefish, geany, vscode, xfw
 
 Torrenting:
-* qbittorrent, ktorrent, deluge, transmission-gtk, bitstormlite, Electorrent (AI)
+* qbittorrent, ktorrent, deluge, transmission-gtk, bitstormlite, electorrent (AI)
 
 Graphics:
-* Gimp, Inkscape, Krita, Blender
+* gimp, inkscape, krita, blender
 
 File Managers:
-* Caja, XFE
+* caja, xfe
 
 Utilities:
-* Galculator, Kcalc
+* galculator, kcalc
 
 Reverse Engineering:
-* Cutter (AI)
+* cutter (AI)
 
 ## Build it locally using the github repository
 ```
