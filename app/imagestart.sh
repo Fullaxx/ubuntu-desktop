@@ -33,6 +33,7 @@ if [ -n "${USER}" ]; then
 fi
 
 # $HOME should always be set at this point
+# Set umask in all future bash shell instances
 if [ -n "${VNCUMASK}" ]; then
   echo >> ${HOME}/.bashrc
   echo "umask ${VNCUMASK}" >> ${HOME}/.bashrc
