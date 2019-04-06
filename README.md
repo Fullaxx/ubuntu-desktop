@@ -34,15 +34,13 @@ Default: root (UID: 0)
 ```
 -e VNCUSER='guest' -e VNCUID='1000'
 ```
-
 Optional: Set a custom group for non-root user \
 Default: same as VNCUSER and VNCUID
 ```
 -e VNCGROUP='guests' -e VNCGID='1001'
 ```
-
 Optional: Set umask to define permission for new files \
-Default: 022
+Default: 0022
 ```
 -e VNCUMASK='0002'
 ```
@@ -84,7 +82,7 @@ Run the image as a non-root user account
 ```
 docker run -d -p 127.0.0.1:5901:5901 -e VNCUSER='guest' -e VNCUID='1000' fullaxx/ubuntu-desktop
 ```
-Run the image as a non-root user account with custom groud
+Run the image as a non-root user account with custom group
 ```
 docker run -d -p 127.0.0.1:5901:5901 -e VNCUSER='guest' -e VNCUID='1000' -e VNCGROUP='guests' -e VNCGID='1001' fullaxx/ubuntu-desktop
 ```

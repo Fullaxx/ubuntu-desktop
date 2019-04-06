@@ -4,6 +4,7 @@
 install -m 0440 /usr/share/ubuntu-desktop/sudo /etc/sudoers.d/ubuntudesktop
 
 # Delete old temp files in case the images was restarted
+# test case: docker restart ubuntu-desktop
 rm -f /tmp/.X*-lock
 rm -f /tmp/.X11-unix/*
 
@@ -13,19 +14,16 @@ rm -f /tmp/.X11-unix/*
 /etc/init.d/dbus start
 
 if [ -n "${VNCUSER}" ] && [ -n "${VNCUID}" ]; then
-  # Check if VNCGROUP and VNCGID are set or set to VNCUSER and VNCUID
+# Check if VNCGROUP and VNCGID are set or set to VNCUSER and VNCUID
   if [ -z "${VNCGROUP}" ]; then
-    VNCGROUP=${VNCUSER}
+    VNCGROUP="${VNCUSER}"
   fi
   if [ -z "${VNCGID}" ]; then
-    VNCGID=${VNCUID}
+    VNCGID="${VNCUID}"
   fi
   groupadd -g ${VNCGID} ${VNCGROUP}
   useradd -u ${VNCUID} -g ${VNCGID} -G sudo -s /bin/bash -m -d /home/${VNCUSER} ${VNCUSER}
 
-  if [ -n ${VNCUMASK} ]; then
-    echo "umask ${VNCUMASK}" >> /home/${VNCUSER}/.bashrc
-  fi
   export USER="${VNCUSER}"
   export GROUP="${VNCGROUP}"
   if [ -n "${ACCTPASS}" ]; then
@@ -36,6 +34,11 @@ fi
 
 if [ -n "${USER}" ]; then
   export HOME=`getent passwd ${USER} | cut -d: -f6`
+fi
+
+if [ -n "${VNCUMASK}" ]; then
+  echo >> ${HOME}/.bashrc
+  echo "umask ${VNCUMASK}" >> ${HOME}/.bashrc
 fi
 
 mkdir -p ${HOME}/.vnc ${HOME}/.config/{openbox,fbpanel}
