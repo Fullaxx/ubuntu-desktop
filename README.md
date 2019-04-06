@@ -133,6 +133,9 @@ File Managers:
 Utilities:
 * Galculator, Kcalc
 
+Reverse Engineering:
+* Cutter
+
 ## Build it locally using the github repository
 ```
 docker build -t="fullaxx/ubuntu-desktop" github.com/Fullaxx/ubuntu-desktop

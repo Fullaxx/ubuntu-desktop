@@ -72,6 +72,10 @@
 	<item label="Kcalc"><action name="Execute"><command>/app/scripts/kcalc.sh</command></action></item>
 </menu>
 
+<menu id="apps-re-menu" label="Rev Eng">
+	<item label="Cutter"><action name="Execute"><command>/app/scripts/cutter.AI.sh</command></action></item>
+</menu>
+
 <menu id="system-menu" label="System">
   <item label="Reconfigure Openbox">
     <action name="Reconfigure" />
@@ -89,6 +93,7 @@
 	<menu id="apps-graphics-menu"/>
 	<menu id="apps-fileman-menu"/>
 	<menu id="apps-utilities-menu"/>
+	<menu id="apps-re-menu"/>
 	<separator label="System" />
 	<menu id="system-menu"/>
 	<separator />
