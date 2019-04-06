@@ -110,13 +110,16 @@ vncviewer 127.0.0.1:5901
 Right-Click to activate the Openbox menu system. You will find a number of convenience scripts for running applications.
 
 Terminals:
-* xterm, uxterm, tilix, terminator
+* xterm, uxterm, terminology, terminator, tilix, hyper (AI)
 
 Browsers:
 * chrome, chromium, firefox, vivaldi
 
+Office :
+* libreoffice, libreoffice Fresh (AI)
+
 Editors:
-* gedit, medit, libreoffice, bluefish, geany, vscode, XFW
+* gedit, medit, bluefish, geany, vscode, XFW
 
 Torrenting:
 * qbittorrent, ktorrent, deluge, transmission-gtk, bitstormlite

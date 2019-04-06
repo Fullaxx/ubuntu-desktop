@@ -9,13 +9,17 @@
 	<item label="terminology"><action name="Execute"><command>/app/scripts/terminology.sh</command></action></item>
 	<item label="terminator"><action name="Execute"><command>/app/scripts/terminator.sh</command></action></item>
 	<item label="tilix"><action name="Execute"><command>/app/scripts/tilix.sh</command></action></item>
-	<item label="hyper"><action name="Execute"><command>/app/scripts/hyper.sh</command></action></item>
+	<item label="hyper (AI)"><action name="Execute"><command>/app/scripts/hyper.AI.sh</command></action></item>
+</menu>
+
+<menu id="apps-office-menu" label="Office">
+	<item label="LibreOffice"><action name="Execute"><command>/app/scripts/libreoffice.sh</command></action></item>
+	<item label="LibreOffice (AI)"><action name="Execute"><command>/app/scripts/libreoffice.AI.sh</command></action></item>
 </menu>
 
 <menu id="apps-editors-menu" label="Editors">
 	<item label="Gedit"><action name="Execute"><command>/app/scripts/gedit.sh</command></action></item>
 	<item label="Medit"><action name="Execute"><command>/app/scripts/medit.sh</command></action></item>
-	<item label="LibreOffice"><action name="Execute"><command>/app/scripts/libreoffice.sh</command></action></item>
 	<item label="Bluefish"><action name="Execute"><command>/app/scripts/bluefish.sh</command></action></item>
 	<item label="Geany"><action name="Execute"><command>/app/scripts/geany.sh</command></action></item>
 	<item label="VSCode"><action name="Execute"><command>/app/scripts/vscode.sh</command></action></item>
@@ -65,6 +69,7 @@
 	<item label="xterm"><action name="Execute"><command>xterm</command></action></item>
 	<separator label="Applications" />
 	<menu id="apps-terminals-menu"/>
+	<menu id="apps-office-menu"/>
 	<menu id="apps-editors-menu"/>
 	<menu id="apps-network-menu"/>
 	<menu id="apps-fileman-menu"/>

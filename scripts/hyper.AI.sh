@@ -6,7 +6,7 @@ if [ ! -c /dev/fuse ]; then
 fi
 
 if [ ! -x ${HOME}/AI/hyper.AppImage ]; then
-  xterm -T InstallHyper -g 100x30 -e /app/scripts/install_hyper.sh
+  xterm -T InstallHyper -g 100x30 -e /app/scripts/install_hyper.AI.sh
 fi
 
 ${HOME}/AI/hyper.AppImage
