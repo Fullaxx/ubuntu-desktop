@@ -14,13 +14,9 @@ rm -f /tmp/.X11-unix/*
 /etc/init.d/dbus start
 
 if [ -n "${VNCUSER}" ] && [ -n "${VNCUID}" ]; then
-# Check if VNCGROUP and VNCGID are set or set to VNCUSER and VNCUID
-  if [ -z "${VNCGROUP}" ]; then
-    VNCGROUP="${VNCUSER}"
-  fi
-  if [ -z "${VNCGID}" ]; then
-    VNCGID="${VNCUID}"
-  fi
+# if VNCGROUP/VNCGID is unset, set it to VNCUSER/VNCUID
+  VNCGROUP=${VNCGROUP:-$VNCUSER}
+  VNCGID=${VNCGID:-$VNCUID}
   groupadd -g ${VNCGID} ${VNCGROUP}
   useradd -u ${VNCUID} -g ${VNCGID} -G sudo -s /bin/bash -m -d /home/${VNCUSER} ${VNCUSER}
 
@@ -36,6 +32,7 @@ if [ -n "${USER}" ]; then
   export HOME=`getent passwd ${USER} | cut -d: -f6`
 fi
 
+# $HOME should always be set at this point
 if [ -n "${VNCUMASK}" ]; then
   echo >> ${HOME}/.bashrc
   echo "umask ${VNCUMASK}" >> ${HOME}/.bashrc
