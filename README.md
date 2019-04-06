@@ -113,7 +113,7 @@ Terminals:
 * xterm, uxterm, terminology, terminator, tilix, tilda, archipelago (AI), hyper (AI)
 
 Browsers:
-* chrome, chromium, firefox, vivaldi
+* chrome, chromium, firefox, vivaldi, ncsa mosiac
 
 Office:
 * libreoffice, libreoffice fresh (AI)

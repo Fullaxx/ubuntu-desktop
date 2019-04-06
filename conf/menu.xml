@@ -35,6 +35,7 @@
 	<item label="Vivaldi"><action name="Execute"><command>/app/scripts/vivaldi.sh</command></action></item>
 	<item label="Firefox"><action name="Execute"><command>/app/scripts/firefox.sh</command></action></item>
 	<!-- <item label="Seamonkey"><action name="Execute"><command>/app/scripts/seamonkey.sh</command></action></item> -->
+	<item label="NCSA Mosiac (AI)"><action name="Execute"><command>/app/scripts/ncsa_mosiac.AI.sh</command></action></item>
 </menu>
 
 <menu id="apps-network-bittorrent-menu" label="BitTorrent">
