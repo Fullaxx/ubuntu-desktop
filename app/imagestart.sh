@@ -24,7 +24,11 @@ if [ -n "${VNCUSER}" ] && [ -n "${VNCUID}" ]; then
   useradd -u ${VNCUID} -g ${VNCGID} -G sudo -s /bin/bash -m -d /home/${VNCUSER} ${VNCUSER}
 
   if [ -n ${VNCUMASK} ]; then
+    # add umask command to .bashrc
     echo "umask ${VNCUMASK}" >> /home/${VNCUSER}/.bashrc
+    # add umask command at line 9 in autostart
+    sed "9iumask ${VNCUMASK}" /usr/share/ubuntu-desktop/openbox/autostart > /tmp/autostart
+    cp /tmp/autostart /usr/share/ubuntu-desktop/openbox/autostart
   fi
   export USER="${VNCUSER}"
   export GROUP="${VNCGROUP}"
