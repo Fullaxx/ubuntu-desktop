@@ -122,7 +122,7 @@ Editors:
 * gedit, medit, bluefish, geany, vscode, XFW
 
 Torrenting:
-* qbittorrent, ktorrent, deluge, transmission-gtk, bitstormlite
+* qbittorrent, ktorrent, deluge, transmission-gtk, bitstormlite, Electorrent (AI)
 
 Graphics:
 * Gimp, Inkscape, Krita, Blender
@@ -134,7 +134,7 @@ Utilities:
 * Galculator, Kcalc
 
 Reverse Engineering:
-* Cutter
+* Cutter (AI)
 
 ## Build it locally using the github repository
 ```

@@ -42,6 +42,7 @@
 	<item label="Ktorrent"><action name="Execute"><command>/app/scripts/ktorrent.sh</command></action></item>
 	<item label="TransmissionGtk"><action name="Execute"><command>/app/scripts/transmissiongtk.sh</command></action></item>
 	<item label="Bitstormlite"><action name="Execute"><command>/app/scripts/bitstormlite.sh</command></action></item>
+	<item label="Electorrent (AI)"><action name="Execute"><command>/app/scripts/electorrent.AI.sh</command></action></item>
 </menu>
 
 <menu id="apps-network-tools-menu" label="Tools">
@@ -73,7 +74,7 @@
 </menu>
 
 <menu id="apps-re-menu" label="Rev Eng">
-	<item label="Cutter"><action name="Execute"><command>/app/scripts/cutter.AI.sh</command></action></item>
+	<item label="Cutter (AI)"><action name="Execute"><command>/app/scripts/cutter.AI.sh</command></action></item>
 </menu>
 
 <menu id="system-menu" label="System">
