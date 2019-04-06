@@ -53,6 +53,12 @@
 	<menu id="apps-network-tools-menu"/>
 </menu>
 
+<menu id="apps-graphics-menu" label="Graphics">
+	<item label="Gimp"><action name="Execute"><command>/app/scripts/gimp.sh</command></action></item>
+	<item label="Inkscape"><action name="Execute"><command>/app/scripts/inkscape.sh</command></action></item>
+	<item label="Krita"><action name="Execute"><command>/app/scripts/krita.sh</command></action></item>
+</menu>
+
 <menu id="apps-fileman-menu" label="File Managers">
 	<item label="Caja"><action name="Execute"><command>/app/scripts/caja.sh</command></action></item>
 	<item label="XFE"><action name="Execute"><command>/app/scripts/xfe.sh</command></action></item>
@@ -72,6 +78,7 @@
 	<menu id="apps-office-menu"/>
 	<menu id="apps-editors-menu"/>
 	<menu id="apps-network-menu"/>
+	<menu id="apps-graphics-menu"/>
 	<menu id="apps-fileman-menu"/>
 	<separator label="System" />
 	<menu id="system-menu"/>
