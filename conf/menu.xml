@@ -12,6 +12,7 @@
 	<item label="tilda"><action name="Execute"><command>/app/scripts/tilda.sh</command></action></item>
 	<item label="Archipelago (AI)"><action name="Execute"><command>/app/scripts/archipelago.AI.sh</command></action></item>
 	<item label="hyper (AI)"><action name="Execute"><command>/app/scripts/hyper.AI.sh</command></action></item>
+	<item label="PowerShell"><action name="Execute"><command>/app/scripts/powershell.sh</command></action></item>
 </menu>
 
 <menu id="apps-office-menu" label="Office">
