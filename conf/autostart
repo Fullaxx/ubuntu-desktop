@@ -4,13 +4,11 @@
 # to run user-specific things.
 #
 
-# if VNCUMASK was set, make sure we set it here also during autostart
-if [ -r ${HOME}/.bashrc ]; then
-  NEWUMASK=`grep '^umask ' ${HOME}/.bashrc | head -n1 | awk '{print $2}'`
-  if [ -n "${NEWUMASK}" ]; then
-    umask ${NEWUMASK}
-  fi
-  unset NEWUMASK
+# if VNCUMASK was set at docker cmdline
+# make sure we set umask here also during autostart
+if [ -n "${VNCUMASK}" ]; then
+  umask "${VNCUMASK}"
+# touch /tmp/TEST (test case should show umask taking affect)
 fi
 
 # https://github.com/jessfraz/dockerfiles/issues/4

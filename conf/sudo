@@ -1,3 +1,7 @@
+# if VNCUMASK was set at docker cmdline
+# make sure we pass it along through sudo to tigervncserver
+Defaults env_keep += "VNCUMASK"
+
 # Allow members of group sudo to execute /usr/bin/apt-get
 %sudo ALL=(ALL) NOPASSWD: /usr/bin/apt-get
 %sudo ALL=(ALL) NOPASSWD: /app/scripts/install_chrome.sh
