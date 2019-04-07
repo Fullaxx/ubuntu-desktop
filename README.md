@@ -119,7 +119,7 @@ Office:
 * libreoffice, libreoffice fresh (AI)
 
 Editors:
-* gedit, gvim, medit, bluefish, geany, vscode, xfw
+* gedit, gvim, medit, bluefish, geany, vscode, panwriter (AI), xfw
 
 Torrenting:
 * qbittorrent, ktorrent, deluge, transmission-gtk, bitstormlite, electorrent (AI)
