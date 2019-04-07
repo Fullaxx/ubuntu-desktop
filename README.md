@@ -134,7 +134,7 @@ Utilities:
 * galculator, kcalc
 
 Reverse Engineering:
-* cutter (AI)
+* cutter (AI), packet sender (AI)
 
 ## Build it locally using the github repository
 ```
