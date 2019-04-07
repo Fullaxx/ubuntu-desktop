@@ -4,8 +4,8 @@ set -e
 
 URL="https://github.com/zeit/hyper/releases/download/2.1.2/hyper-2.1.2-x86_64.AppImage"
 
-apt-get update
-apt-get install -y fuse libnss3 libasound2 libdbus-glib-1-2
+sudo apt-get update
+sudo apt-get install -y fuse libnss3 libasound2 libdbus-glib-1-2
 
 # Optional ??
 # apt-get install -y --no-install-recommends libxss1 libgconf-2-4

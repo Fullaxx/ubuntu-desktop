@@ -4,8 +4,8 @@ set -e
 
 URL="https://github.com/AppImage/NCSA-Mosaic-AppImage/releases/download/1/NCSA_Mosaic-git.6f488cb-x86_64.AppImage"
 
-apt-get update
-apt-get install -y fuse
+sudo apt-get update
+sudo apt-get install -y fuse
 
 mkdir -p ${HOME}/AI
 wget ${URL} -O ${HOME}/AI/NCSA_Mosaic.AppImage

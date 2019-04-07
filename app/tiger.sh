@@ -18,10 +18,10 @@ fi
 
 if [ -n "${USER}" ]; then
   chown -R ${USER}.${GROUP} ${HOME}
-  SUDOUSEROPTION="-u ${USER}"
+  SUDOUSEROPT="-u ${USER}"
 fi
 
 # -fg will allow the openbox exit button to bring us down
 # using sudo here will allow 'docker stop' to bring us down quickly
-exec sudo ${SUDOUSEROPTION} tigervncserver -fg -localhost no \
+exec sudo ${SUDOUSEROPT} tigervncserver -fg -localhost no \
 ${VNCAUTH} -geometry ${VNCRES} -depth ${VNCDEPTH} -xstartup ${VNCSTART}

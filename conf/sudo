@@ -2,8 +2,9 @@
 # make sure we pass it along through sudo to tigervncserver
 Defaults env_keep += "VNCUMASK"
 
-# Allow members of group sudo to execute /usr/bin/apt-get
+# Allow members of group sudo to execute the following commands
 %sudo ALL=(ALL) NOPASSWD: /usr/bin/apt-get
 %sudo ALL=(ALL) NOPASSWD: /app/scripts/install_chrome.sh
 %sudo ALL=(ALL) NOPASSWD: /app/scripts/install_vivaldi.sh
 %sudo ALL=(ALL) NOPASSWD: /app/scripts/install_vscode.sh
+%sudo ALL=(ALL) NOPASSWD: /app/scripts/install_powershell.sh

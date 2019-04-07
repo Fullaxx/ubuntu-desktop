@@ -4,8 +4,8 @@ set -e
 
 URL="https://github.com/npezza93/archipelago/releases/download/v3.2.1/Archipelago-3.2.1-x86_64.AppImage"
 
-apt-get update
-apt-get install -y fuse libnss3 libgtk-3-0 libasound2
+sudo apt-get update
+sudo apt-get install -y fuse libnss3 libgtk-3-0 libasound2
 
 mkdir -p ${HOME}/AI
 wget ${URL} -O ${HOME}/AI/Archipelago.AppImage

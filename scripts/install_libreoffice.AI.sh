@@ -4,8 +4,8 @@ set -e
 
 URL="https://libreoffice.soluzioniopen.com/stable/fresh/LibreOffice-fresh.basic-x86_64.AppImage"
 
-apt-get update
-apt-get install -y fuse
+sudo apt-get update
+sudo apt-get install -y fuse
 
 # Optional ??
 # apt-get install -y --no-install-recommends openjdk-11-jre-headless

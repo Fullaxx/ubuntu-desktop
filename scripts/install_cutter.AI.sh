@@ -8,8 +8,8 @@ URL="https://github.com/radareorg/cutter/releases/download/v1.8.0/Cutter-v1.8.0-
 #URL="https://github.com/radareorg/cutter/releases/download/v1.5/Cutter-v1.5-x86_64.AppImage"
 #URL="https://github.com/radareorg/cutter/releases/download/v1.4/Cutter-v1.4-x86_64.AppImage"
 
-apt-get update
-apt-get install -y fuse
+sudo apt-get update
+sudo apt-get install -y fuse
 # v1.4 - v1.6: apt-get install -y fuse libnss3 libasound2
 
 mkdir -p ${HOME}/AI

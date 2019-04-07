@@ -4,8 +4,8 @@ set -e
 
 URL="https://github.com/mgechev/ngrev/releases/download/0.0.26/ngrev-0.0.26-x86_64.AppImage"
 
-apt-get update
-apt-get install -y fuse libnss3 libgtk-3-0 libasound2
+sudo apt-get update
+sudo apt-get install -y fuse libnss3 libgtk-3-0 libasound2
 
 mkdir -p ${HOME}/AI ${HOME}/.config/ngrev/themes
 wget ${URL} -O ${HOME}/AI/ngrev.AppImage
