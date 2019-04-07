@@ -80,6 +80,7 @@
 <menu id="apps-re-menu" label="Rev Eng">
 	<item label="Cutter (AI)"><action name="Execute"><command>/app/scripts/cutter.AI.sh</command></action></item>
 	<item label="Packet Sender (AI)"><action name="Execute"><command>/app/scripts/pktsender.AI.sh</command></action></item>
+	<item label="ngrev (AI)"><action name="Execute"><command>/app/scripts/ngrev.AI.sh</command></action></item>
 </menu>
 
 <menu id="system-menu" label="System">
