@@ -110,19 +110,19 @@ vncviewer 127.0.0.1:5901
 Right-Click to activate the Openbox menu system. You will find a number of convenience scripts for running applications.
 
 Terminals:
-* xterm, uxterm, terminology, terminator, tilix, tilda, archipelago (AI), hyper (AI), powershell
+* xterm, uxterm, [terminology](https://www.enlightenment.org/about-terminology.md), terminator, tilix, tilda, [archipelago (AI)](https://github.com/npezza93/archipelago), [hyper (AI)](https://github.com/zeit/hyper), [powershell](https://github.com/PowerShell/PowerShell)
 
 Browsers:
-* chrome, chromium, firefox, vivaldi, ncsa mosiac
+* chrome, chromium, firefox, [vivaldi](https://vivaldi.com/), [ncsa mosiac (AI)](https://github.com/alandipert/ncsa-mosaic)
 
 Office:
-* libreoffice, libreoffice fresh (AI)
+* libreoffice, [libreoffice fresh (AI)](https://www.libreoffice.org/download/appimage/)
 
 Editors:
-* gedit, gvim, medit, bluefish, geany, vscode, panwriter (AI), xfw
+* gedit, gvim, medit, bluefish, geany, [vscode](https://github.com/microsoft/vscode), [panwriter (AI)](https://github.com/mb21/panwriter), xfw
 
 Torrenting:
-* qbittorrent, ktorrent, deluge, transmission-gtk, bitstormlite, electorrent (AI)
+* qbittorrent, ktorrent, deluge, transmission-gtk, bitstormlite, [electorrent (AI)](https://github.com/tympanix/Electorrent)
 
 Graphics:
 * gimp, inkscape, krita, blender
@@ -134,7 +134,7 @@ Utilities:
 * galculator, kcalc
 
 Reverse Engineering:
-* cutter (AI), packet sender (AI), ngrev (AI)
+* [cutter (AI)](https://github.com/radareorg/cutter), [packet sender (AI)](https://github.com/dannagle/PacketSender), [ngrev (AI)](https://github.com/mgechev/ngrev)
 
 ## Build it locally using the github repository
 ```
