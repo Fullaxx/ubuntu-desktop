@@ -110,16 +110,16 @@ vncviewer 127.0.0.1:5901
 Right-Click to activate the Openbox menu system. You will find a number of convenience scripts for running applications.
 
 Terminals:
-* xterm, uxterm, [terminology](https://www.enlightenment.org/about-terminology.md), terminator, [tilix](https://gnunn1.github.io/tilix-web/), tilda, [archipelago (AI)](https://github.com/npezza93/archipelago), [hyper (AI)](https://github.com/zeit/hyper), [powershell](https://github.com/PowerShell/PowerShell)
+* xterm, uxterm, [terminology](https://www.enlightenment.org/about-terminology.md), terminator, [tilix](https://gnunn1.github.io/tilix-web/), [tilda](https://github.com/lanoxx/tilda), [archipelago (AI)](https://github.com/npezza93/archipelago), [hyper (AI)](https://github.com/zeit/hyper), [powershell](https://github.com/PowerShell/PowerShell)
 
 Browsers:
-* chrome, chromium, firefox, [vivaldi](https://vivaldi.com/), [ncsa mosiac (AI)](https://github.com/alandipert/ncsa-mosaic)
+* [chrome](https://www.google.com/chrome/), [chromium](https://www.chromium.org/), [firefox](https://www.mozilla.org/en-US/firefox/), [vivaldi](https://vivaldi.com/), [ncsa mosiac (AI)](https://github.com/alandipert/ncsa-mosaic)
 
 Office:
 * [libreoffice](https://www.libreoffice.org/), [libreoffice fresh (AI)](https://www.libreoffice.org/download/appimage/)
 
 Editors:
-* gedit, gvim, [medit](http://mooedit.sourceforge.net/), [bluefish](http://bluefish.openoffice.nl/), [geany](https://www.geany.org/), [vscode](https://github.com/microsoft/vscode), [panwriter (AI)](https://github.com/mb21/panwriter), xfw
+* [gedit](https://wiki.gnome.org/Apps/Gedit), gvim, [medit](http://mooedit.sourceforge.net/), [bluefish](http://bluefish.openoffice.nl/), [geany](https://www.geany.org/), [vscode](https://github.com/microsoft/vscode), [panwriter (AI)](https://github.com/mb21/panwriter), xfw
 
 Torrenting:
 * qbittorrent, ktorrent, deluge, transmission-gtk, bitstormlite, [electorrent (AI)](https://github.com/tympanix/Electorrent)
