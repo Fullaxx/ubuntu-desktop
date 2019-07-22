@@ -60,6 +60,13 @@
 	<menu id="apps-network-tools-menu"/>
 </menu>
 
+<menu id="apps-music-menu" label="Music">
+	<item label="Amarok"><action name="Execute"><command>/app/scripts/amarok.sh</command></action></item>
+	<item label="Audacious"><action name="Execute"><command>/app/scripts/audacious.sh</command></action></item>
+	<item label="Banshee"><action name="Execute"><command>/app/scripts/banshee.sh</command></action></item>
+	<item label="Rhythmbox"><action name="Execute"><command>/app/scripts/rhythmbox.sh</command></action></item>
+</menu>
+
 <menu id="apps-graphics-menu" label="Graphics">
 	<item label="Gimp"><action name="Execute"><command>/app/scripts/gimp.sh</command></action></item>
 	<item label="Inkscape"><action name="Execute"><command>/app/scripts/inkscape.sh</command></action></item>
@@ -97,8 +104,9 @@
 	<menu id="apps-office-menu"/>
 	<menu id="apps-editors-menu"/>
 	<menu id="apps-network-menu"/>
-	<menu id="apps-graphics-menu"/>
 	<menu id="apps-fileman-menu"/>
+	<menu id="apps-music-menu"/>
+	<menu id="apps-graphics-menu"/>
 	<menu id="apps-utilities-menu"/>
 	<menu id="apps-re-menu"/>
 	<separator label="System" />

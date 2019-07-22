@@ -124,6 +124,9 @@ Editors:
 Torrenting:
 * qbittorrent, ktorrent, deluge, transmission-gtk, bitstormlite, [electorrent (AI)](https://github.com/tympanix/Electorrent)
 
+Music:
+* [Amarok](https://amarok.kde.org/), [Audacious](https://audacious-media-player.org/), [Banshee](http://banshee.fm/), [Rhythmbox](https://wiki.gnome.org/Apps/Rhythmbox)
+
 Graphics:
 * [gimp](https://www.gimp.org/), [inkscape](https://inkscape.org/), [krita](https://krita.org/), [blender](https://www.blender.org/)
 
