@@ -125,7 +125,7 @@ Torrenting:
 * qbittorrent, ktorrent, deluge, transmission-gtk, bitstormlite, [electorrent (AI)](https://github.com/tympanix/Electorrent)
 
 Music:
-* [Amarok](https://amarok.kde.org/), [Audacious](https://audacious-media-player.org/), [Banshee](http://banshee.fm/), [Rhythmbox](https://wiki.gnome.org/Apps/Rhythmbox)
+* [amarok](https://amarok.kde.org/), [audacious](https://audacious-media-player.org/), [banshee](http://banshee.fm/), [rhythmbox](https://wiki.gnome.org/Apps/Rhythmbox)
 
 Graphics:
 * [gimp](https://www.gimp.org/), [inkscape](https://inkscape.org/), [krita](https://krita.org/), [blender](https://www.blender.org/)
@@ -140,7 +140,7 @@ Reverse Engineering:
 * [cutter (AI)](https://github.com/radareorg/cutter), [packet sender (AI)](https://github.com/dannagle/PacketSender), [ngrev (AI)](https://github.com/mgechev/ngrev)
 
 Misc:
-* [dropbox](https://www.dropbox.com/)
+* [dropbox](https://www.dropbox.com/), [slack](https://slack.com/)
 
 ## Build it locally using the github repository
 ```

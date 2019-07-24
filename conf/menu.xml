@@ -92,6 +92,7 @@
 
 <menu id="apps-misc-menu" label="Misc">
 	<item label="Dropbox"><action name="Execute"><command>/app/scripts/dropbox.sh</command></action></item>
+	<item label="Slack"><action name="Execute"><command>/app/scripts/slack.sh</command></action></item>
 </menu>
 
 <menu id="system-menu" label="System">
