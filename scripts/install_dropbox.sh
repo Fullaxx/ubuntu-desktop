@@ -9,6 +9,9 @@ DEB="/tmp/dropbox.deb"
 
 apt-get update
 
+apt-get install -y gnupg2 software-properties-common apt-transport-https wget
+apt-key adv --keyserver keyserver.ubuntu.com --recv-keys FC918B335044912E
+
 wget ${URL} -O ${DEB}
 dpkg -i ${DEB} || (set -e; apt-get update; apt-get install -f -y)
 rm ${DEB}
