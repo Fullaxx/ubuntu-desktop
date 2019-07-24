@@ -90,6 +90,10 @@
 	<item label="ngrev (AI)"><action name="Execute"><command>/app/scripts/ngrev.AI.sh</command></action></item>
 </menu>
 
+<menu id="apps-misc-menu" label="Misc">
+	<item label="Dropbox"><action name="Execute"><command>/app/scripts/dropbox.sh</command></action></item>
+</menu>
+
 <menu id="system-menu" label="System">
   <item label="Reconfigure Openbox">
     <action name="Reconfigure" />
@@ -109,6 +113,7 @@
 	<menu id="apps-graphics-menu"/>
 	<menu id="apps-utilities-menu"/>
 	<menu id="apps-re-menu"/>
+	<menu id="apps-misc-menu"/>
 	<separator label="System" />
 	<menu id="system-menu"/>
 	<separator />
