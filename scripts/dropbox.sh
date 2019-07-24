@@ -10,5 +10,4 @@ if [ "$?" -ne "0" ]; then
   dropbox update
 fi
 
-xterm -T DropboxStatus -g 100x30 -e ${BINARY} status
-xterm -T DropboxVersion -g 100x30 -e ${BINARY} version
+dropbox version | xmessage -file -
