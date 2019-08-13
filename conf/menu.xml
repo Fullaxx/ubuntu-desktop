@@ -49,6 +49,10 @@
 	<item label="Electorrent (AI)"><action name="Execute"><command>/app/scripts/electorrent.AI.sh</command></action></item>
 </menu>
 
+<menu id="apps-network-chat-menu" label="Chat">
+	<item label="Pidgin"><action name="Execute"><command>/app/scripts/pidgin.sh</command></action></item>
+</menu>
+
 <menu id="apps-network-tools-menu" label="Tools">
 	<item label="Gftp"><action name="Execute"><command>/app/scripts/gftp.sh</command></action></item>
 	<item label="Zenmap"><action name="Execute"><command>/app/scripts/zenmap.sh</command></action></item>
@@ -57,6 +61,7 @@
 <menu id="apps-network-menu" label="Network">
 	<menu id="apps-network-browsers-menu"/>
 	<menu id="apps-network-bittorrent-menu"/>
+	<menu id="apps-network-chat-menu"/>
 	<menu id="apps-network-tools-menu"/>
 </menu>
 
