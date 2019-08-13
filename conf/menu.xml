@@ -50,7 +50,16 @@
 </menu>
 
 <menu id="apps-network-chat-menu" label="Chat">
+	<item label="Empathy"><action name="Execute"><command>/app/scripts/empathy.sh</command></action></item>
+	<item label="Hexchat"><action name="Execute"><command>/app/scripts/hexchat.sh</command></action></item>
+	<item label="Loqui"><action name="Execute"><command>/app/scripts/loqui.sh</command></action></item>
+	<item label="Konversation"><action name="Execute"><command>/app/scripts/konversation.sh</command></action></item>
+	<item label="Kopete"><action name="Execute"><command>/app/scripts/kopete.sh</command></action></item>
 	<item label="Pidgin"><action name="Execute"><command>/app/scripts/pidgin.sh</command></action></item>
+	<item label="Polari"><action name="Execute"><command>/app/scripts/polari.sh</command></action></item>
+	<item label="Qchat"><action name="Execute"><command>/app/scripts/qchat.sh</command></action></item>
+	<item label="Ring"><action name="Execute"><command>/app/scripts/ring.sh</command></action></item>
+	<item label="Xchat"><action name="Execute"><command>/app/scripts/xchat.sh</command></action></item>
 </menu>
 
 <menu id="apps-network-tools-menu" label="Tools">
