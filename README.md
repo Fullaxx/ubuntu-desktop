@@ -63,6 +63,13 @@ Set privileges to allow FUSE to work properly inside the container
 --device /dev/fuse --cap-add SYS_ADMIN
 ```
 
+## Shared Memory Modification (to support Web Browsers)
+Increase the size of shared memory to prevent web browsers from crashing
+Thanks to [jlesage](https://hub.docker.com/r/jlesage/firefox/#increasing-shared-memory-size)
+```
+--shm-size 2g
+```
+
 ## Run the image
 Run the image on localhost port 5901 with default configuration
 ```
