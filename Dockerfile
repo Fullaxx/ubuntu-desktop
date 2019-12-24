@@ -19,6 +19,7 @@ RUN apt-get update && \
       dbus-x11 \
       fbpanel \
       locales \
+      nano \
       openbox \
       sudo \
       tigervnc-common \
