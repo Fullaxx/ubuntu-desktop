@@ -30,10 +30,17 @@ RUN apt-get update && \
       x11-xserver-utils \
       xfonts-base \
       xterm && \
-    sed -e 's/# en_US.UTF-8/en_US.UTF-8/' -i /etc/locale.gen && \
-    locale-gen && \
     apt-get clean && \
     rm -rf /var/lib/apt/lists/* /var/tmp/* /tmp/*
+
+# ------------------------------------------------------------------------------
+# Configure the system
+RUN mkdir -p /usr/share/ubuntu-desktop/openbox && \
+    cat /etc/xdg/openbox/rc.xml \
+      | sed -e 's@<number>4</number>@<number>8</number>@' \
+      > /usr/share/ubuntu-desktop/openbox/rc.xml && \
+    sed -e 's/# en_US.UTF-8/en_US.UTF-8/' -i /etc/locale.gen && \
+    locale-gen
 
 # ------------------------------------------------------------------------------
 # Install scripts and configuration files
