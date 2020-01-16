@@ -1,6 +1,6 @@
-# if VNCUMASK was set at docker cmdline
-# make sure we pass it along through sudo to tigervncserver
-Defaults env_keep += "VNCUMASK"
+# if VNCUMASK or WALLPAPER were set at docker cmdline
+# make sure we pass them along through sudo to tigervncserver
+Defaults env_keep += "VNCUMASK WALLPAPER WPLAYOUT"
 
 # Allow members of group sudo to execute the following commands
 %sudo ALL=(ALL) NOPASSWD: /usr/bin/apt-get

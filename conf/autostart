@@ -1,5 +1,5 @@
 #
-# These things are run when an Openbox X Session is started.
+# This script will run when an Openbox X Session is started.
 # You may place a similar script in $HOME/.config/openbox/autostart
 # to run user-specific things.
 #
@@ -15,3 +15,7 @@ fi
 xhost local:root
 
 fbpanel &
+
+if [ -n "${WALLPAPER}" ]; then
+  /usr/bin/set_wallpaper.sh ${WALLPAPER} ${WPLAYOUT}
+fi

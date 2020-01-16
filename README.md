@@ -57,6 +57,24 @@ Default: UTC
 -e TZ='America/New_York'
 ```
 
+## Wallpaper Configuration
+Set a background image for the openbox desktop \
+Default: None \
+Image Links:
+[1](https://digitalblasphemy.com/graphics/HDfree/moonbeamsea1HDfree.jpg) /
+[2](https://digitalblasphemy.com/graphics/HDfree/ringoffirenight2k153HDfree.jpg) /
+[3](https://digitalblasphemy.com/graphics/HDfree/moonshadow1HDfree.jpg) /
+[4](https://digitalblasphemy.com/graphics/HDfree/portals1HDfree.jpg) /
+[5](https://digitalblasphemy.com/graphics/HDfree/acumen1HDfree.jpg) /
+[6](https://digitalblasphemy.com/graphics/HDfree/threemoonbayday1HDfree.jpg) \
+Layout Options: fill / extend / full / tile / cover / center \
+Default Layout: center
+```
+-e WALLPAPER='1'
+-e WALLPAPER='3'
+-e WALLPAPER='4' -e WPLAYOUT='cover'
+```
+
 ## FUSE Configuration (to support AppImages)
 Set privileges to allow FUSE to work properly inside the container
 ```
