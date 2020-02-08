@@ -5,6 +5,7 @@ VNCAUTH="-SecurityTypes=None --I-KNOW-THIS-IS-INSECURE"
 VNCRES=${VNCRES:-1280x800}
 VNCDEPTH=${VNCDEPTH:-24}
 VNCSTART="${VNCDIR}/xstartup"
+VNCPORT=${VNCPORT:-1}
 
 # If a password was specified on the command line
 if [ -n "${VNCPASS}" ]; then
@@ -23,5 +24,5 @@ fi
 
 # -fg will allow the openbox exit button to bring us down
 # using sudo here will allow 'docker stop' to bring us down quickly
-exec sudo ${SUDOUSEROPT} tigervncserver -fg -localhost no \
+exec sudo ${SUDOUSEROPT} tigervncserver :${VNCPORT} -fg -localhost no \
 ${VNCAUTH} -geometry ${VNCRES} -depth ${VNCDEPTH} -xstartup ${VNCSTART}

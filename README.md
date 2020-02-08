@@ -19,6 +19,11 @@ Default: 1280x800
 ```
 -e VNCRES='1920x1080'
 ```
+Optional: Bind to Port 5909 \
+Default: port 5901
+```
+-e VNCPORT='9'
+```
 Optional: Set Password Authentication \
 Default: No Authentication
 ```
@@ -124,6 +129,14 @@ docker run -d -p 127.0.0.1:5901:5901 -e TZ='Asia/Tokyo' fullaxx/ubuntu-desktop
 Run the image with FUSE privileges
 ```
 docker run --device /dev/fuse --cap-add SYS_ADMIN -d -p 127.0.0.1:5901:5901 fullaxx/ubuntu-desktop
+```
+Run the image using host networking binding tigervncserver to port 5909
+```
+docker run -d --network=host -e VNCPORT='9' fullaxx/ubuntu-desktop
+```
+Run the image on localhost port 5901 with a decent hostname
+```
+docker run -d -h mycagedbuntu -p 127.0.0.1:5901:5901 fullaxx/ubuntu-desktop
 ```
 
 ## Connect using vncviewer
