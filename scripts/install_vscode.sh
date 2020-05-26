@@ -3,7 +3,7 @@
 set -e
 
 export DEBIAN_FRONTEND="noninteractive"
-URL="https://update.code.visualstudio.com/1.42.1/linux-deb-x64/stable"
+URL="https://update.code.visualstudio.com/1.44.2/linux-deb-x64/stable"
 DEB="/tmp/vscode.deb"
 
 wget ${URL} -O ${DEB}
