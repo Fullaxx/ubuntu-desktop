@@ -86,6 +86,12 @@ Set privileges to allow FUSE to work properly inside the container
 --device /dev/fuse --cap-add SYS_ADMIN
 ```
 
+## Privileged Mode (to support FlatPak)
+Set privileged mode to allow FlatPaks to work properly inside the container
+```
+--privileged
+```
+
 ## Shared Memory Modification (to support Web Browsers)
 Increase the size of shared memory to prevent web browsers from crashing \
 Thanks to [jlesage](https://hub.docker.com/r/jlesage/firefox/#increasing-shared-memory-size)
@@ -181,7 +187,7 @@ Reverse Engineering:
 * [cutter (AI)](https://github.com/radareorg/cutter), [packet sender (AI)](https://github.com/dannagle/PacketSender), [ngrev (AI)](https://github.com/mgechev/ngrev)
 
 Misc:
-* [dropbox](https://www.dropbox.com/), [slack](https://slack.com/), [gtkstresstesting](https://gitlab.com/leinardi/gst)
+* [dropbox](https://www.dropbox.com/), [slack](https://slack.com/), [gtkstresstesting (FP)](https://gitlab.com/leinardi/gst)
 
 ## Build it locally using the github repository
 ```
