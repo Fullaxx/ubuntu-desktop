@@ -14,6 +14,7 @@ ENV LANG C
 # Install tigervnc,openbox and clean up
 RUN apt-get update && \
     apt-get install -y --no-install-recommends \
+      adwaita-icon-theme-full \
       ca-certificates \
       curl \
       dbus-x11 \
@@ -21,7 +22,6 @@ RUN apt-get update && \
       hsetroot \
       locales \
       nano \
-      openbox \
       sudo \
       tigervnc-common \
       tigervnc-standalone-server \
@@ -29,6 +29,8 @@ RUN apt-get update && \
       wget \
       x11-utils \
       x11-xserver-utils \
+      xfce4 \
+      xfce4-goodies \
       xfonts-base \
       xterm && \
     apt-get clean && \
