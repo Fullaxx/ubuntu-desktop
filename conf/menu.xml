@@ -86,6 +86,7 @@
 	<item label="QuodLibet"><action name="Execute"><command>/app/scripts/quodlibet.sh</command></action></item>
 	<item label="Rhythmbox"><action name="Execute"><command>/app/scripts/rhythmbox.sh</command></action></item>
 	<item label="SMPlayer"><action name="Execute"><command>/app/scripts/smplayer.sh</command></action></item>
+	<item label="Strawberry"><action name="Execute"><command>/app/scripts/strawberry.sh</command></action></item>
 </menu>
 
 <menu id="apps-graphics-menu" label="Graphics">
