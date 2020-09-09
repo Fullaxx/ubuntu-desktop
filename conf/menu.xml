@@ -82,7 +82,7 @@
 	<item label="Audacious"><action name="Execute"><command>/app/scripts/audacious.sh</command></action></item>
 	<item label="Banshee"><action name="Execute"><command>/app/scripts/banshee.sh</command></action></item>
 	<item label="GMusicBrowser"><action name="Execute"><command>/app/scripts/gmusicbrowser.sh</command></action></item>
-	<item label="GPodder"><action name="Execute"><command>/app/scripts/gpodder.sh</command></action></item>
+	<item label="gPodder"><action name="Execute"><command>/app/scripts/gpodder.sh</command></action></item>
 	<item label="Pragha"><action name="Execute"><command>/app/scripts/pragha.sh</command></action></item>
 	<item label="QuodLibet"><action name="Execute"><command>/app/scripts/quodlibet.sh</command></action></item>
 	<item label="Rhythmbox"><action name="Execute"><command>/app/scripts/rhythmbox.sh</command></action></item>
