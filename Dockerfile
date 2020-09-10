@@ -38,11 +38,7 @@ RUN apt-get update && \
 
 # ------------------------------------------------------------------------------
 # Configure the system
-RUN mkdir -p /usr/share/ubuntu-desktop/openbox && \
-    cat /etc/xdg/openbox/rc.xml \
-      | sed -e 's@<number>4</number>@<number>8</number>@' \
-      > /usr/share/ubuntu-desktop/openbox/rc.xml && \
-    sed -e 's/# en_US.UTF-8/en_US.UTF-8/' -i /etc/locale.gen && \
+RUN sed -e 's/# en_US.UTF-8/en_US.UTF-8/' -i /etc/locale.gen && \
     locale-gen
 
 # ------------------------------------------------------------------------------
@@ -50,8 +46,6 @@ RUN mkdir -p /usr/share/ubuntu-desktop/openbox && \
 COPY app/app.sh app/imagestart.sh app/tiger.sh /app/
 COPY bin/set_wallpaper.sh /usr/bin/
 COPY conf/xstartup /usr/share/ubuntu-desktop/vnc/
-COPY conf/autostart conf/menu.xml /usr/share/ubuntu-desktop/openbox/
-COPY conf/fbpaneldefault /usr/share/ubuntu-desktop/fbpanel/default
 COPY conf/sudo /usr/share/ubuntu-desktop/sudo
 COPY scripts/*.sh /app/scripts/
 
