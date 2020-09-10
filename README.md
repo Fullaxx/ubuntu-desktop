@@ -1,7 +1,7 @@
-# Ubuntu 18.04 (Bionic) Desktop running Openbox in VNC
+# Ubuntu 20.04/18.04 (Focal/Bionic) Desktop running Openbox/Xfce4 in VNC
 
 ## Base Docker Image
-[Ubuntu](https://hub.docker.com/_/ubuntu) 18.04 (x64)
+[Ubuntu](https://hub.docker.com/_/ubuntu) 20.04/18.04 (x64)
 
 ## Get the image from Docker Hub
 ```
@@ -194,4 +194,6 @@ Misc:
 ## Build it locally using the github repository
 ```
 docker build -t="fullaxx/ubuntu-desktop" github.com/Fullaxx/ubuntu-desktop
+docker build -t="fullaxx/ubuntu-desktop" github.com/Fullaxx/ubuntu-desktop#bionic
+docker build -t="fullaxx/ubuntu-desktop" github.com/Fullaxx/ubuntu-desktop#xfce4
 ```
