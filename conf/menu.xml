@@ -99,6 +99,7 @@
 </menu>
 
 <menu id="apps-fileman-menu" label="File Managers">
+	<item label="4pane"><action name="Execute"><command>/app/scripts/4pane.sh</command></action></item>
 	<item label="Caja"><action name="Execute"><command>/app/scripts/caja.sh</command></action></item>
 	<item label="DoubleCommander"><action name="Execute"><command>/app/scripts/doublecmd.sh</command></action></item>
 	<item label="Krusader"><action name="Execute"><command>/app/scripts/krusader.sh</command></action></item>
