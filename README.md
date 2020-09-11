@@ -6,6 +6,8 @@
 ## Get the image from Docker Hub
 ```
 docker pull fullaxx/ubuntu-desktop
+docker pull fullaxx/ubuntu-desktop:bionic
+docker pull fullaxx/ubuntu-desktop:xfce4
 ```
 
 ## VNC Options
