@@ -107,6 +107,7 @@
 	<item label="SpaceFM"><action name="Execute"><command>/app/scripts/spacefm.sh</command></action></item>
 	<item label="Thunar"><action name="Execute"><command>/app/scripts/thunar.sh</command></action></item>
 	<item label="XFE"><action name="Execute"><command>/app/scripts/xfe.sh</command></action></item>
+	<item label="Worker"><action name="Execute"><command>/app/scripts/worker.sh</command></action></item>
 </menu>
 
 <menu id="apps-utilities-menu" label="Utilities">
