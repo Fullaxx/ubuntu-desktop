@@ -101,6 +101,7 @@
 <menu id="apps-fileman-menu" label="File Managers">
 	<item label="Caja"><action name="Execute"><command>/app/scripts/caja.sh</command></action></item>
 	<item label="Krusader"><action name="Execute"><command>/app/scripts/krusader.sh</command></action></item>
+	<item label="Thunar"><action name="Execute"><command>/app/scripts/thunar.sh</command></action></item>
 	<item label="XFE"><action name="Execute"><command>/app/scripts/xfe.sh</command></action></item>
 </menu>
 
