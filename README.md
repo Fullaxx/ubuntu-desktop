@@ -182,7 +182,7 @@ Graphics:
 * [gimp](https://www.gimp.org/), [inkscape](https://inkscape.org/), [krita](https://krita.org/), [blender](https://www.blender.org/)
 
 File Managers:
-* [caja](https://github.com/mate-desktop/caja), [xfe](http://roland65.free.fr/xfe/)
+* [caja](https://github.com/mate-desktop/caja), [krusader](https://krusader.org/), [xfe](http://roland65.free.fr/xfe/)
 
 Utilities:
 * galculator, kcalc
