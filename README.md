@@ -68,14 +68,14 @@ Default: UTC
 Set a background image for the openbox desktop \
 Default: None \
 Image Links:
-[1](https://digitalblasphemy.com/graphics/HDfree/skylineday1HDfree.jpg) /
-[2](https://digitalblasphemy.com/graphics/HDfree/skyline1HDfree.jpg) /
-[3](https://digitalblasphemy.com/graphics/HDfree/publicenemy1HDfree.jpg) /
-[4](https://digitalblasphemy.com/graphics/HDfree/acumen1HDfree.jpg) /
-[5](https://digitalblasphemy.com/graphics/HDfree/portals1HDfree.jpg) /
-[6](https://digitalblasphemy.com/graphics/HDfree/darkfluorescence1HDfree.jpg) /
-[7](https://digitalblasphemy.com/graphics/HDfree/solace1HDfree.jpg) /
-[8](https://digitalblasphemy.com/graphics/HDfree/fluorescence6HDfree.jpg) \
+[1](https://digitalblasphemy.com/graphics/HDfree/acumen1HDfree.jpg) /
+[2](https://digitalblasphemy.com/graphics/HDfree/arcana2HDfree.jpg) /
+[3](https://digitalblasphemy.com/graphics/HDfree/circularlogicHDfree.jpg) /
+[4](https://digitalblasphemy.com/graphics/HDfree/darkfluorescence1HDfree.jpg) /
+[5](https://digitalblasphemy.com/graphics/HDfree/fluorescence6HDfree.jpg) /
+[6](https://digitalblasphemy.com/graphics/HDfree/portals1HDfree.jpg) /
+[7](https://digitalblasphemy.com/graphics/HDfree/sierraautumn1HDfree.jpg) /
+[8](https://digitalblasphemy.com/graphics/HDfree/turning2k161HDfree.jpg) \
 Layout Options: fill / extend / full / tile / cover / center \
 Default Layout: center
 ```
