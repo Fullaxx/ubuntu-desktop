@@ -38,6 +38,7 @@
 	<item label="Chromium"><action name="Execute"><command>/app/scripts/chromium.sh</command></action></item>
 	<item label="Vivaldi"><action name="Execute"><command>/app/scripts/vivaldi.sh</command></action></item>
 	<item label="Firefox"><action name="Execute"><command>/app/scripts/firefox.sh</command></action></item>
+	<item label="Edge (dev)"><action name="Execute"><command>/app/scripts/edge_dev.sh</command></action></item>
 	<item label="Tor"><action name="Execute"><command>/app/scripts/launch_torbrowser_manual.sh</command></action></item>
 	<!-- <item label="Seamonkey"><action name="Execute"><command>/app/scripts/seamonkey.sh</command></action></item> -->
 	<item label="NCSA Mosiac (AI)"><action name="Execute"><command>/app/scripts/ncsa_mosiac.AI.sh</command></action></item>
