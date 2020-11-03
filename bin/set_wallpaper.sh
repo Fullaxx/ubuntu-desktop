@@ -8,8 +8,8 @@ fi
 case "$1" in
   1) WPURL="https://digitalblasphemy.com/graphics/HDfree/acumen1HDfree.jpg" ;;
   2) WPURL="https://digitalblasphemy.com/graphics/HDfree/arcana2HDfree.jpg" ;;
-  3) WPURL="https://digitalblasphemy.com/graphics/HDfree/circularlogicHDfree.jpg" ;;
-  4) WPURL="https://digitalblasphemy.com/graphics/HDfree/darkfluorescence1HDfree.jpg" ;;
+  3) WPURL="https://digitalblasphemy.com/graphics/HDfree/badmoonrising1HDfree.jpg" ;;
+  4) WPURL="https://digitalblasphemy.com/graphics/HDfree/ghostlight1HDfree.jpg" ;;
   5) WPURL="https://digitalblasphemy.com/graphics/HDfree/fluorescence6HDfree.jpg" ;;
   6) WPURL="https://digitalblasphemy.com/graphics/HDfree/portals1HDfree.jpg" ;;
   7) WPURL="https://digitalblasphemy.com/graphics/HDfree/sierraautumn1HDfree.jpg" ;;
