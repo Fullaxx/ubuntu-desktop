@@ -12,8 +12,4 @@ if [ "$?" -ne "0" ]; then
   xterm -T InstallEdgeDev -g 100x30 -e sudo /app/scripts/install_edge_dev_repo.sh
 fi
 
-if [ `id -u` == "0" ]; then
-  ${BINARY} --no-sandbox ${CMDARGS}
-else
-  ${BINARY} ${CMDARGS}
-fi
+${BINARY} --no-sandbox ${CMDARGS}
