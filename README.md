@@ -46,6 +46,12 @@ Default: same as VNCUSER and VNCUID
 ```
 -e VNCGROUP='guests' -e VNCGID='1001'
 ```
+Optional: Set a password for the VNCUSER account \
+Default: none and the account is locked \
+Applies only if VNCUSER is set
+```
+-e ACCTPASS='mysecretpassword'
+```
 Optional: Set umask to define permission for new files \
 Default: 0022
 ```
