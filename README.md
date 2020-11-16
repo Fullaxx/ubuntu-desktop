@@ -41,7 +41,12 @@ Default: root (UID: 0)
 ```
 -e VNCUSER='guest' -e VNCUID='1000'
 ```
-Optional: Set a custom group for non-root user \
+Optional: If you want your non-root user to be part of the users group \
+Default: same as VNCUSER and VNCUID
+```
+-e VNCGROUP='users'
+```
+Optional: Define a new group for non-root user \
 Default: same as VNCUSER and VNCUID
 ```
 -e VNCGROUP='guests' -e VNCGID='1001'
