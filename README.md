@@ -36,24 +36,26 @@ Default: No Authentication
 ```
 -e VNCPASS='vncpass' -e VNCPASSRO='readonly'
 ```
-Optional: Run as a non-root user \
+Optional: Run as a new non-root user \
 Default: root (UID: 0)
 ```
 -e VNCUSER='guest' -e VNCUID='1000'
 ```
 Optional: If you want your non-root user to be part of the users group \
-Default: same as VNCUSER and VNCUID
+Default: same as VNCUSER and VNCUID \
+Pre-Req: VNCUSER and VNCUID must be set
 ```
 -e VNCGROUP='users'
 ```
 Optional: Define a new group for non-root user \
-Default: same as VNCUSER and VNCUID
+Default: same as VNCUSER and VNCUID \
+Pre-Req: VNCUSER and VNCUID must be set
 ```
 -e VNCGROUP='guests' -e VNCGID='1001'
 ```
 Optional: Set a password for the VNCUSER account \
 Default: none and the account is locked \
-Applies only if VNCUSER is set
+Pre-Req: VNCUSER and VNCUID must be set
 ```
 -e ACCTPASS='mysecretpassword'
 ```

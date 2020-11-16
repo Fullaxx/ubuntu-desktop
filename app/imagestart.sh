@@ -24,7 +24,6 @@ if [ -n "${VNCUSER}" ] && [ -n "${VNCUID}" ]; then
 # If the GID exists, but the GROUP is incorrect
   if grep -q ":x:${VNCGID}:$" /etc/group; then
     if ! grep -q "^${VNCGROUP}:x:${VNCGID}:$" /etc/group; then
-#     VNCGID="9999"
       VNCGROUP=`grep ":x:${VNCGID}:$" /etc/group | cut -d: -f1`
     fi
   fi
