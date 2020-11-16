@@ -17,6 +17,17 @@ if [ -n "${VNCUSER}" ] && [ -n "${VNCUID}" ]; then
 # if VNCGROUP/VNCGID is unset, set it to VNCUSER/VNCUID
   VNCGROUP=${VNCGROUP:-$VNCUSER}
   VNCGID=${VNCGID:-$VNCUID}
+# If the GROUP already exists, use the existing GID (Thanks to elisionducoeur)
+  if grep -q "^${VNCGROUP}:x:" /etc/group; then
+    VNCGID=`grep "^${VNCGROUP}:x:" /etc/group | cut -d: -f3`
+  fi
+# If the GID exists, but the GROUP is incorrect
+  if grep -q ":x:${VNCGID}:$" /etc/group; then
+    if ! grep -q "^${VNCGROUP}:x:${VNCGID}:$" /etc/group; then
+#     VNCGID="9999"
+      VNCGROUP=`grep ":x:${VNCGID}:$" /etc/group | cut -d: -f1`
+    fi
+  fi
   groupadd -g ${VNCGID} ${VNCGROUP}
   useradd -u ${VNCUID} -g ${VNCGID} -G sudo -s /bin/bash -m -d /home/${VNCUSER} ${VNCUSER}
 
