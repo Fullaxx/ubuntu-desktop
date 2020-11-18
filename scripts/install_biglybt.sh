@@ -13,7 +13,9 @@ fi
 
 apt-get update
 apt-get install -y --no-install-recommends openjdk-11-jre-headless webkit2gtk-driver
-sed -e 's/^assistive_technologies/#assistive_technologies/' -i /etc/java-11-openjdk/accessibility.properties
+if grep -q '^assistive_technologies' /etc/java-11-openjdk/accessibility.properties; then
+  sed -e 's/^assistive_technologies/#assistive_technologies/' -i /etc/java-11-openjdk/accessibility.properties
+fi
 
 chown ${SUDO_UID}.${SUDO_GID} /opt
 wget -q https://files.biglybt.com/installer/BiglyBT_Installer.sh -O ${BBTINSTSCR}
