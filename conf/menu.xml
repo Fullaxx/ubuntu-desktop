@@ -48,6 +48,7 @@
 </menu>
 
 <menu id="apps-network-bittorrent-menu" label="BitTorrent">
+	<item label="BiglyBT"><action name="Execute"><command>/app/scripts/biglybt.sh</command></action></item>
 	<item label="Deluge"><action name="Execute"><command>/app/scripts/deluge.sh</command></action></item>
 	<item label="QBitTorrent"><action name="Execute"><command>/app/scripts/qbittorrent.sh</command></action></item>
 	<item label="Ktorrent"><action name="Execute"><command>/app/scripts/ktorrent.sh</command></action></item>
