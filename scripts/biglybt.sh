@@ -12,4 +12,8 @@ if [ ! -d /opt/biglybt ]; then
   xterm -T InstallBiglyBT -g 100x30 -e sudo /app/scripts/install_biglybt.sh ${INSTTYPE}
 fi
 
-/opt/biglybt/biglybt &
+if [ -x /opt/biglybt/biglybt ]; then
+  /opt/biglybt/biglybt &
+else
+  xmessage "/opt/biglybt/biglybt not found!" &
+fi
