@@ -6,14 +6,14 @@ if [ -z "$1" ]; then
 fi
 
 case "$1" in
-  1) WPURL="https://digitalblasphemy.com/graphics/HDfree/acumen1HDfree.jpg" ;;
-  2) WPURL="https://digitalblasphemy.com/graphics/HDfree/arcana2HDfree.jpg" ;;
-  3) WPURL="https://digitalblasphemy.com/graphics/HDfree/badmoonrising1HDfree.jpg" ;;
-  4) WPURL="https://digitalblasphemy.com/graphics/HDfree/ghostlight1HDfree.jpg" ;;
-  5) WPURL="https://digitalblasphemy.com/graphics/HDfree/fluorescence6HDfree.jpg" ;;
-  6) WPURL="https://digitalblasphemy.com/graphics/HDfree/portals1HDfree.jpg" ;;
-  7) WPURL="https://digitalblasphemy.com/graphics/HDfree/sierraautumn1HDfree.jpg" ;;
-  8) WPURL="https://digitalblasphemy.com/graphics/HDfree/turning2k161HDfree.jpg" ;;
+  1) WPURL="http://digitalblasphemy.com/graphics/HDfree/acumen1HDfree.jpg" ;;
+  2) WPURL="http://digitalblasphemy.com/graphics/HDfree/foggyxmasevenight1HDfree.jpg" ;;
+  3) WPURL="http://digitalblasphemy.com/graphics/HDfree/pyrexmasHDfree.jpg" ;;
+  4) WPURL="http://digitalblasphemy.com/graphics/HDfree/holidayfluorescence2k141HDfree.jpg" ;;
+  5) WPURL="http://digitalblasphemy.com/graphics/HDfree/automaton1HDfree.jpg" ;;
+  6) WPURL="http://digitalblasphemy.com/graphics/HDfree/portals1HDfree.jpg" ;;
+  7) WPURL="http://digitalblasphemy.com/graphics/HDfree/arcana2HDfree.jpg" ;;
+  8) WPURL="http://digitalblasphemy.com/graphics/HDfree/fluorescence6HDfree.jpg" ;;
   *) WPURL="0" ;;
 esac
 
