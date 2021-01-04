@@ -167,6 +167,9 @@ docker run -d -h mycagedbuntu -p 127.0.0.1:5901:5901 fullaxx/ubuntu-desktop
 vncviewer 127.0.0.1:5901
 ```
 
+## Connect using noVNC and a web browser
+Check out [noVNC](https://hub.docker.com/repository/docker/fullaxx/novnc) to access your ubuntu-desktop with a web browser
+
 ## Using the Openbox Desktop Environment
 Right-Click to activate the Openbox menu system. You will find a number of convenience scripts for running applications.
 
