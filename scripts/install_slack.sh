@@ -4,7 +4,7 @@
 set -e
 
 export DEBIAN_FRONTEND="noninteractive"
-URL="https://downloads.slack-edge.com/linux_releases/slack-desktop-4.0.0-amd64.deb"
+URL="https://downloads.slack-edge.com/linux_releases/slack-desktop-4.12.2-amd64.deb"
 DEB="/tmp/slack.deb"
 
 apt-get update
