@@ -9,7 +9,6 @@ bailmsg()
 }
 
 export DEBIAN_FRONTEND="noninteractive"
-
 OSV=`grep VERSION_ID /etc/os-release | cut -d\" -f2`
 URL="https://github.com/PowerShell/PowerShell/releases/download/v7.1.0/powershell_7.1.0-1.ubuntu.${OSV}_amd64.deb"
 DEB="/tmp/powershell.deb"
