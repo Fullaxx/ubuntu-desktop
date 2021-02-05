@@ -134,14 +134,12 @@
 </menu>
 
 <menu id="system-menu" label="System">
-  <item label="Reconfigure Openbox">
-    <action name="Reconfigure" />
-  </item>
+  <item label="Reconfigure Openbox"><action name="Reconfigure" /></item>
 </menu>
 
 <menu id="root-menu" label="Openbox 3">
 	<separator label="Terminals" />
-	<item label="xterm"><action name="Execute"><command>xterm</command></action></item>
+	<item label="xterm (dark)"><action name="Execute"><command>xterm -bg black -fg white</command></action></item>
 	<separator label="Applications" />
 	<menu id="apps-terminals-menu"/>
 	<menu id="apps-office-menu"/>

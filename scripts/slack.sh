@@ -9,4 +9,4 @@ if [ "$?" -ne "0" ]; then
   xterm -T InstallSlack -g 100x30 -e sudo /app/scripts/install_slack.sh
 fi
 
-${BINARY}
+${BINARY} --no-sandbox

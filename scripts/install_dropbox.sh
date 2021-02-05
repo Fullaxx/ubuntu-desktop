@@ -4,7 +4,7 @@
 set -e
 
 export DEBIAN_FRONTEND="noninteractive"
-URL="https://www.dropbox.com/download?dl=packages/ubuntu/dropbox_2019.02.14_amd64.deb"
+URL="https://www.dropbox.com/download?dl=packages/ubuntu/dropbox_2020.03.04_amd64.deb"
 DEB="/tmp/dropbox.deb"
 
 apt-get update
