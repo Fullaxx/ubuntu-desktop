@@ -10,6 +10,13 @@ docker pull fullaxx/ubuntu-desktop:bionic
 docker pull fullaxx/ubuntu-desktop:xfce4
 ```
 
+## Build it locally using the github repository
+```
+docker build -t="fullaxx/ubuntu-desktop"        github.com/Fullaxx/ubuntu-desktop
+docker build -t="fullaxx/ubuntu-desktop:bionic" github.com/Fullaxx/ubuntu-desktop#bionic
+docker build -t="fullaxx/ubuntu-desktop:xfce4"  github.com/Fullaxx/ubuntu-desktop#xfce4
+```
+
 ## VNC Options
 Optional: Set Depth 16 \
 Default: 24
@@ -162,13 +169,14 @@ Run the image on localhost port 5901 with a decent hostname
 docker run -d -h mycagedbuntu -p 127.0.0.1:5901:5901 fullaxx/ubuntu-desktop
 ```
 
-## Connect using vncviewer
+## Connect using vncviewer or a web browser
+Use any standard VNC client to connect directly.
+For web access, noVNC can be utilized to supply a websocket to a browser.
 ```
 vncviewer 127.0.0.1:5901
-```
-
-## Connect using noVNC and a web browser
+or
 Check out [noVNC](https://hub.docker.com/r/fullaxx/novnc) to access your ubuntu-desktop with a web browser
+```
 
 ## Using the Openbox Desktop Environment
 Right-Click to activate the Openbox menu system. You will find a number of convenience scripts for running applications.
@@ -208,10 +216,3 @@ Reverse Engineering:
 
 Misc:
 * [dropbox](https://www.dropbox.com/), [slack](https://slack.com/), [gtkstresstesting (FP)](https://gitlab.com/leinardi/gst)
-
-## Build it locally using the github repository
-```
-docker build -t="fullaxx/ubuntu-desktop" github.com/Fullaxx/ubuntu-desktop
-docker build -t="fullaxx/ubuntu-desktop" github.com/Fullaxx/ubuntu-desktop#bionic
-docker build -t="fullaxx/ubuntu-desktop" github.com/Fullaxx/ubuntu-desktop#xfce4
-```
