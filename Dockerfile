@@ -11,7 +11,7 @@ ENV DEBIAN_FRONTEND noninteractive
 ENV LANG C
 
 # ------------------------------------------------------------------------------
-# Install tigervnc,openbox and clean up
+# Install tigervnc,xfce4 and clean up
 RUN apt-get update && \
     apt-get install -y --no-install-recommends \
       adwaita-icon-theme-full \
