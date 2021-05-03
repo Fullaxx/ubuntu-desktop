@@ -1,4 +1,4 @@
 #!/bin/bash
 
 exec /usr/bin/vncconfig -nowin &
-exec /usr/bin/openbox-session
+exec /usr/bin/i3

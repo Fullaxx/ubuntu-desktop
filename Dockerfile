@@ -11,17 +11,17 @@ ENV DEBIAN_FRONTEND noninteractive
 ENV LANG C
 
 # ------------------------------------------------------------------------------
-# Install tigervnc,openbox and clean up
+# Install tigervnc,i3 and clean up
 RUN apt-get update && \
-    apt-get install -y --no-install-recommends \
+    apt-get install -y \
       ca-certificates \
       curl \
       dbus-x11 \
       fbpanel \
       hsetroot \
+      i3 \
       locales \
       nano \
-      openbox \
       sudo \
       tigervnc-common \
       tigervnc-standalone-server \
