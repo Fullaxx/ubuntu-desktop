@@ -90,14 +90,14 @@ Default: UTC
 Set a background image for the openbox desktop \
 Default: None \
 Image Links:
-[1](http://digitalblasphemy.com/graphics/HDfree/sakura2k131HDfree.jpg) /
+[1](http://digitalblasphemy.com/graphics/HDfree/rainydayparadise1HDfree.jpg) /
 [2](http://digitalblasphemy.com/graphics/HDfree/portals1HDfree.jpg) /
 [3](http://digitalblasphemy.com/graphics/HDfree/worldsedgespring1HDfree.jpg) /
-[4](http://digitalblasphemy.com/graphics/HDfree/biodomesunsetHDfree.jpg) /
+[4](http://digitalblasphemy.com/graphics/HDfree/remembrance1HDfree.jpg) /
 [5](http://digitalblasphemy.com/graphics/HDfree/arcana2HDfree.jpg) /
 [6](http://digitalblasphemy.com/graphics/HDfree/highlandspring1HDfree.jpg) /
 [7](http://digitalblasphemy.com/graphics/HDfree/circularlogicHDfree.jpg) /
-[8](http://digitalblasphemy.com/graphics/HDfree/whitemagicHDfree.jpg) \
+[8](http://digitalblasphemy.com/graphics/HDfree/thetismoonHDfree.jpg) \
 Layout Options: fill / extend / full / tile / cover / center \
 Default Layout: center
 ```
