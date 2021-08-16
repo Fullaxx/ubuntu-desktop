@@ -13,7 +13,7 @@ if [ ! -d /opt/biglybt ]; then
 fi
 
 if [ -x /opt/biglybt/biglybt ]; then
-  /opt/biglybt/biglybt &
+  /opt/biglybt/biglybt >>/opt/biglybt/biglybt.log 2>&1 &
 else
   xmessage "/opt/biglybt/biglybt not found!" &
 fi
