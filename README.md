@@ -92,12 +92,12 @@ Default: None \
 Image Links:
 [1](http://digitalblasphemy.com/graphics/HDfree/rainydayparadise1HDfree.jpg) /
 [2](http://digitalblasphemy.com/graphics/HDfree/portals1HDfree.jpg) /
-[3](http://digitalblasphemy.com/graphics/HDfree/unchained1HDfree.jpg) /
-[4](http://digitalblasphemy.com/graphics/HDfree/remembrance1HDfree.jpg) /
+[3](http://digitalblasphemy.com/graphics/HDfree/cronusrising2k141HDfree.jpg) /
+[4](http://digitalblasphemy.com/graphics/HDfree/harbinger2k91HDfree.jpg) /
 [5](http://digitalblasphemy.com/graphics/HDfree/arcana2HDfree.jpg) /
-[6](http://digitalblasphemy.com/graphics/HDfree/highlandspring1HDfree.jpg) /
+[6](http://digitalblasphemy.com/graphics/HDfree/rivenHDfree.jpg) /
 [7](http://digitalblasphemy.com/graphics/HDfree/circularlogicHDfree.jpg) /
-[8](http://digitalblasphemy.com/graphics/HDfree/thetismoonHDfree.jpg) \
+[8](http://digitalblasphemy.com/graphics/HDfree/glenwoodHDfree.jpg) \
 Layout Options: fill / extend / full / tile / cover / center \
 Default Layout: center
 ```
@@ -194,7 +194,7 @@ Editors:
 * [gedit](https://wiki.gnome.org/Apps/Gedit), gvim, [medit](http://mooedit.sourceforge.net/), [bluefish](http://bluefish.openoffice.nl/), [geany](https://www.geany.org/), [vscode](https://github.com/microsoft/vscode), [netbeans](https://netbeans.org/), [panwriter (AI)](https://github.com/mb21/panwriter), xfw
 
 Torrenting:
-* [BiglyBT](https://www.biglybt.com/), qbittorrent, ktorrent, deluge, transmission-gtk, bitstormlite, [electorrent (AI)](https://github.com/tympanix/Electorrent)
+* [BiglyBT](https://www.biglybt.com/), [qbittorrent](https://www.qbittorrent.org/), ktorrent, deluge, transmission-gtk, bitstormlite, [electorrent (AI)](https://github.com/tympanix/Electorrent)
 
 Chat:
 * [empathy](https://wiki.gnome.org/action/show/Apps/Empathy), [hexchat](https://hexchat.github.io/), [loqui](https://launchpad.net/loqui), [konversation](https://konversation.kde.org/), [kopete](https://kde.org/applications/internet/org.kde.kopete), [pidgin](https://pidgin.im/), [polari](https://wiki.gnome.org/Apps/Polari), qchat, ring, [xchat](http://xchat.org/)
