@@ -8,12 +8,12 @@ fi
 case "$1" in
   1) WPURL="http://digitalblasphemy.com/graphics/HDfree/rainydayparadise1HDfree.jpg" ;;
   2) WPURL="http://digitalblasphemy.com/graphics/HDfree/portals1HDfree.jpg" ;;
-  3) WPURL="http://digitalblasphemy.com/graphics/HDfree/unchained1HDfree.jpg" ;;
-  4) WPURL="http://digitalblasphemy.com/graphics/HDfree/remembrance1HDfree.jpg" ;;
+  3) WPURL="http://digitalblasphemy.com/graphics/HDfree/cronusrising2k141HDfree.jpg" ;;
+  4) WPURL="http://digitalblasphemy.com/graphics/HDfree/harbinger2k91HDfree.jpg" ;;
   5) WPURL="http://digitalblasphemy.com/graphics/HDfree/arcana2HDfree.jpg" ;;
-  6) WPURL="http://digitalblasphemy.com/graphics/HDfree/highlandspring1HDfree.jpg" ;;
+  6) WPURL="http://digitalblasphemy.com/graphics/HDfree/rivenHDfree.jpg" ;;
   7) WPURL="http://digitalblasphemy.com/graphics/HDfree/circularlogicHDfree.jpg" ;;
-  8) WPURL="http://digitalblasphemy.com/graphics/HDfree/thetismoonHDfree.jpg" ;;
+  8) WPURL="http://digitalblasphemy.com/graphics/HDfree/glenwoodHDfree.jpg" ;;
   *) WPURL="0" ;;
 esac
 
