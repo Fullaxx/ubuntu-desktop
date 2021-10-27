@@ -90,7 +90,7 @@ Default: UTC
 Set a background image for the openbox desktop \
 Default: None \
 Image Links:
-[1](http://digitalblasphemy.com/graphics/HDfree/rainydayparadise1HDfree.jpg) /
+[1](http://digitalblasphemy.com/graphics/HDfree/metallurgy1HDfree.jpg) /
 [2](http://digitalblasphemy.com/graphics/HDfree/portals1HDfree.jpg) /
 [3](http://digitalblasphemy.com/graphics/HDfree/cronusrising2k141HDfree.jpg) /
 [4](http://digitalblasphemy.com/graphics/HDfree/harbinger2k91HDfree.jpg) /
