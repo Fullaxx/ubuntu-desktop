@@ -6,7 +6,7 @@ if [ -z "$1" ]; then
 fi
 
 case "$1" in
-  1) WPURL="http://digitalblasphemy.com/graphics/HDfree/rainydayparadise1HDfree.jpg" ;;
+  1) WPURL="http://digitalblasphemy.com/graphics/HDfree/metallurgy1HDfree.jpg" ;;
   2) WPURL="http://digitalblasphemy.com/graphics/HDfree/portals1HDfree.jpg" ;;
   3) WPURL="http://digitalblasphemy.com/graphics/HDfree/cronusrising2k141HDfree.jpg" ;;
   4) WPURL="http://digitalblasphemy.com/graphics/HDfree/harbinger2k91HDfree.jpg" ;;
