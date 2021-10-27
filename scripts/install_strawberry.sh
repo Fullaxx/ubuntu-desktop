@@ -11,12 +11,13 @@ bailmsg()
 export DEBIAN_FRONTEND="noninteractive"
 OSV=`grep VERSION_ID /etc/os-release | cut -d\" -f2`
 DEB="/tmp/strawberry.deb"
-SBV="0.7.2"
+SBV="1.0"
 
 case "${OSV}" in
   '18.04') URL="https://files.strawberrymusicplayer.org/strawberry_${SBV}-bionic_amd64.deb" ;;
   '20.04') URL="https://files.strawberrymusicplayer.org/strawberry_${SBV}-focal_amd64.deb" ;;
-  '20.10') URL="https://files.strawberrymusicplayer.org/strawberry_${SBV}-groovy_amd64.deb" ;;
+  '21.04') URL="https://files.strawberrymusicplayer.org/strawberry_${SBV}-hirsute_amd64.deb" ;;
+  '21.10') URL="https://files.strawberrymusicplayer.org/strawberry_${SBV}-impish_amd64.deb" ;;
         *) bailmsg "Ubuntu ${OSV} not supported!"
 esac
 
