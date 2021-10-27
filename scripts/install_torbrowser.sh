@@ -1,6 +1,7 @@
 #!/bin/bash
 # https://linuxconfig.org/how-to-install-tor-browser-in-ubuntu-18-04-bionic-beaver-linux
 # https://linuxize.com/post/how-to-install-tor-browser-on-ubuntu-18-04/
+# https://support.torproject.org/tbb/how-to-verify-signature/
 
 set -e
 
