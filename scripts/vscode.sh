@@ -9,4 +9,4 @@ if [ "$?" -ne "0" ]; then
   xterm -T InstallVSCode -g 100x30 -e sudo /app/scripts/install_vscode_repo.sh
 fi
 
-${BINARY} --user-data-dir "${HOME}/vscode"
+${BINARY} --no-sandbox --user-data-dir "${HOME}/vscode"
