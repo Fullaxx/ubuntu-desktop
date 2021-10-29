@@ -191,7 +191,7 @@ Office:
 * [libreoffice](https://www.libreoffice.org/), [libreoffice fresh (AI)](https://www.libreoffice.org/download/appimage/)
 
 Editors:
-* [gedit](https://wiki.gnome.org/Apps/Gedit), gvim, [medit](http://mooedit.sourceforge.net/), [bluefish](http://bluefish.openoffice.nl/), [geany](https://www.geany.org/), [vscode](https://github.com/microsoft/vscode), [netbeans](https://netbeans.org/), [panwriter (AI)](https://github.com/mb21/panwriter), xfw
+* [gedit](https://wiki.gnome.org/Apps/Gedit), gvim, [medit](http://mooedit.sourceforge.net/), [bluefish](http://bluefish.openoffice.nl/), [geany](https://www.geany.org/), [SublimeText](https://www.sublimetext.com/), [vscode](https://github.com/microsoft/vscode), [netbeans](https://netbeans.org/), [CherryTree](https://github.com/giuspen/cherrytree), [panwriter (AI)](https://github.com/mb21/panwriter), xfw
 
 Torrenting:
 * [BiglyBT](https://www.biglybt.com/), [qbittorrent](https://www.qbittorrent.org/), ktorrent, deluge, transmission-gtk, bitstormlite, [electorrent (AI)](https://github.com/tympanix/Electorrent)
