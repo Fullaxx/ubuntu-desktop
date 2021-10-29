@@ -30,6 +30,7 @@
 	<item label="Sublime-Text"><action name="Execute"><command>/app/scripts/sublimetext.sh</command></action></item>
 	<item label="VSCode"><action name="Execute"><command>/app/scripts/vscode.sh</command></action></item>
 	<item label="NetBeans"><action name="Execute"><command>/app/scripts/netbeans.sh</command></action></item>
+	<item label="CherryTree"><action name="Execute"><command>/app/scripts/cherrytree.sh</command></action></item>
 	<item label="PanWriter"><action name="Execute"><command>/app/scripts/panwriter.AI.sh</command></action></item>
 	<item label="XFW"><action name="Execute"><command>/app/scripts/xfw.sh</command></action></item>
 </menu>
