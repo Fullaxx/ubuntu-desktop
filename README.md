@@ -106,6 +106,14 @@ Default Layout: center
 -e WALLPAPER='5' -e WPLAYOUT='cover'
 ```
 
+## Sound Configuration (to support audio)
+Passthrough for audio devices inside the container
+```
+--device /dev/snd
+or
+--privileged
+```
+
 ## FUSE Configuration (to support AppImages)
 Set privileges to allow FUSE to work properly inside the container
 ```
