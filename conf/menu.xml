@@ -84,6 +84,10 @@
 	<menu id="apps-network-tools-menu"/>
 </menu>
 
+<menu id="apps-games-menu" label="Games">
+	<item label="Steam"><action name="Execute"><command>/app/scripts/steam.sh</command></action></item>
+</menu>
+
 <menu id="apps-music-menu" label="Music">
 	<item label="Amarok"><action name="Execute"><command>/app/scripts/amarok.sh</command></action></item>
 	<item label="Audacious"><action name="Execute"><command>/app/scripts/audacious.sh</command></action></item>
@@ -148,6 +152,7 @@
 	<menu id="apps-editors-menu"/>
 	<menu id="apps-network-menu"/>
 	<menu id="apps-fileman-menu"/>
+	<menu id="apps-games-menu"/>
 	<menu id="apps-music-menu"/>
 	<menu id="apps-graphics-menu"/>
 	<menu id="apps-utilities-menu"/>
