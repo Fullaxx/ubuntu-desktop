@@ -19,12 +19,12 @@ Mandatory: Run as a new non-root user with a password set
 -e RDPUSER='ubuntu' -e RDPUID='1000' -e RDPPASS='ubuntupass'
 ```
 Optional: If you want your non-root user to be part of the users group \
-Default: same as RDPUSER and RDPUID \
+Default: same as RDPUSER and RDPUID
 ```
 -e RDPGROUP='users'
 ```
 Optional: Define a new group for non-root user \
-Default: same as RDPUSER and RDPUID \
+Default: same as RDPUSER and RDPUID
 ```
 -e RDPGROUP='guests' -e RDPGID='1001'
 ```
