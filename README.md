@@ -1,7 +1,7 @@
-# Ubuntu 20.04/18.04 (Focal/Bionic) Desktop running Openbox/Xfce4/i3 in RDP
+# Ubuntu 20.04 Focal Desktop running Openbox in RDP
 
 ## Base Docker Image
-[Ubuntu](https://hub.docker.com/_/ubuntu) 20.04/18.04 (x64)
+[Ubuntu](https://hub.docker.com/_/ubuntu) 20.04 (x64)
 
 ## Get the image from Docker Hub
 ```
@@ -59,14 +59,6 @@ Default Layout: center
 -e WALLPAPER='1'
 -e WALLPAPER='3'
 -e WALLPAPER='5' -e WPLAYOUT='cover'
-```
-
-## Sound Configuration (to support audio)
-Passthrough for audio devices inside the container
-```
---device /dev/snd
-or
---privileged
 ```
 
 ## FUSE Configuration (to support AppImages)
