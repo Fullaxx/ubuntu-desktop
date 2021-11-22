@@ -97,7 +97,7 @@ Image Links:
 [5](http://digitalblasphemy.com/graphics/HDfree/arcana2HDfree.jpg) /
 [6](http://digitalblasphemy.com/graphics/HDfree/rivenHDfree.jpg) /
 [7](http://digitalblasphemy.com/graphics/HDfree/circularlogicHDfree.jpg) /
-[8](http://digitalblasphemy.com/graphics/HDfree/glenwoodHDfree.jpg) \
+[8](http://digitalblasphemy.com/graphics/HDfree/gardener2k121HDfree.jpg) \
 Layout Options: fill / extend / full / tile / cover / center \
 Default Layout: center
 ```
@@ -211,7 +211,7 @@ Games:
 * [Steam](https://store.steampowered.com/)
 
 Music:
-* [amarok](https://amarok.kde.org/), [audacious](https://audacious-media-player.org/), [banshee](http://banshee.fm/), [clementine](https://www.clementine-player.org/), [gmusicbrowser](https://gmusicbrowser.org/), [gpodder](https://gpodder.github.io/), [pragha](https://pragha-music-player.github.io/), [quodlibet](https://quodlibet.readthedocs.io/en/latest/), [rhythmbox](https://wiki.gnome.org/Apps/Rhythmbox), [smplayer](https://www.smplayer.info/), [strawberry](https://www.strawberrymusicplayer.org/)
+* [amarok](https://amarok.kde.org/), [audacious](https://audacious-media-player.org/), [banshee](http://banshee.fm/), [clementine](https://www.clementine-player.org/), [deadbeef](https://deadbeef.sourceforge.io/), [gmusicbrowser](https://gmusicbrowser.org/), [gpodder](https://gpodder.github.io/), [pragha](https://pragha-music-player.github.io/), [quodlibet](https://quodlibet.readthedocs.io/en/latest/), [rhythmbox](https://wiki.gnome.org/Apps/Rhythmbox), [smplayer](https://www.smplayer.info/), [strawberry](https://www.strawberrymusicplayer.org/)
 
 Graphics:
 * [gimp](https://www.gimp.org/), [inkscape](https://inkscape.org/), [krita](https://krita.org/), [blender](https://www.blender.org/)

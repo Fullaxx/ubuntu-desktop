@@ -93,6 +93,7 @@
 	<item label="Audacious"><action name="Execute"><command>/app/scripts/audacious.sh</command></action></item>
 	<item label="Banshee"><action name="Execute"><command>/app/scripts/banshee.sh</command></action></item>
 	<item label="Clementine"><action name="Execute"><command>/app/scripts/clementine.sh</command></action></item>
+	<item label="DeadBeef"><action name="Execute"><command>/app/scripts/deadbeef.sh</command></action></item>
 	<item label="GMusicBrowser"><action name="Execute"><command>/app/scripts/gmusicbrowser.sh</command></action></item>
 	<item label="gPodder"><action name="Execute"><command>/app/scripts/gpodder.sh</command></action></item>
 	<item label="Pragha"><action name="Execute"><command>/app/scripts/pragha.sh</command></action></item>
