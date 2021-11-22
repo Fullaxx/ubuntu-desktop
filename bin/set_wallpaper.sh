@@ -13,7 +13,7 @@ case "$1" in
   5) WPURL="http://digitalblasphemy.com/graphics/HDfree/arcana2HDfree.jpg" ;;
   6) WPURL="http://digitalblasphemy.com/graphics/HDfree/rivenHDfree.jpg" ;;
   7) WPURL="http://digitalblasphemy.com/graphics/HDfree/circularlogicHDfree.jpg" ;;
-  8) WPURL="http://digitalblasphemy.com/graphics/HDfree/glenwoodHDfree.jpg" ;;
+  8) WPURL="http://digitalblasphemy.com/graphics/HDfree/gardener2k121HDfree.jpg" ;;
   *) WPURL="0" ;;
 esac
 
