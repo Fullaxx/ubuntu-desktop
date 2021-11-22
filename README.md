@@ -97,7 +97,7 @@ Image Links:
 [5](http://digitalblasphemy.com/graphics/HDfree/arcana2HDfree.jpg) /
 [6](http://digitalblasphemy.com/graphics/HDfree/rivenHDfree.jpg) /
 [7](http://digitalblasphemy.com/graphics/HDfree/circularlogicHDfree.jpg) /
-[8](http://digitalblasphemy.com/graphics/HDfree/glenwoodHDfree.jpg) \
+[8](http://digitalblasphemy.com/graphics/HDfree/gardener2k121HDfree.jpg) \
 Layout Options: fill / extend / full / tile / cover / center \
 Default Layout: center
 ```
