@@ -1,6 +1,4 @@
 # ------------------------------------------------------------------------------
-# https://www.cyberciti.biz/faq/install-and-configure-tigervnc-server-on-ubuntu-18-04/
-# ------------------------------------------------------------------------------
 # Pull base image
 FROM ubuntu:focal
 MAINTAINER Brett Kuskie <fullaxx@gmail.com>
@@ -23,13 +21,13 @@ RUN apt-get update && \
       nano \
       openbox \
       sudo \
-      tigervnc-common \
-      tigervnc-standalone-server \
       tzdata \
       wget \
       x11-utils \
       x11-xserver-utils \
       xfonts-base \
+      xorgxrdp \
+      xrdp \
       xterm && \
     apt-get clean && \
     rm -rf /var/lib/apt/lists/* /var/tmp/* /tmp/*
@@ -45,7 +43,7 @@ RUN mkdir -p /usr/share/ubuntu-desktop/openbox && \
 
 # ------------------------------------------------------------------------------
 # Install scripts and configuration files
-COPY app/app.sh app/imagestart.sh app/tiger.sh /app/
+COPY app/app.sh app/imagestart.sh app/xrdp.sh /app/
 COPY bin/set_wallpaper.sh /usr/bin/
 COPY conf/xstartup /usr/share/ubuntu-desktop/vnc/
 COPY conf/autostart conf/menu.xml /usr/share/ubuntu-desktop/openbox/
@@ -55,7 +53,7 @@ COPY scripts/*.sh /app/scripts/
 
 # ------------------------------------------------------------------------------
 # Expose ports
-EXPOSE 5901
+EXPOSE 3389
 
 # ------------------------------------------------------------------------------
 # Define default command

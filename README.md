@@ -1,77 +1,32 @@
-# Ubuntu 20.04/18.04 (Focal/Bionic) Desktop running Openbox/Xfce4/i3 in VNC
+# Ubuntu 20.04/18.04 (Focal/Bionic) Desktop running Openbox/Xfce4/i3 in RDP
 
 ## Base Docker Image
 [Ubuntu](https://hub.docker.com/_/ubuntu) 20.04/18.04 (x64)
 
 ## Get the image from Docker Hub
 ```
-docker pull fullaxx/ubuntu-desktop
-docker pull fullaxx/ubuntu-desktop:bionic
-docker pull fullaxx/ubuntu-desktop:xfce4
-docker pull fullaxx/ubuntu-desktop:i3
+docker pull fullaxx/ubuntu-desktop:rdp
 ```
 
 ## Build it locally using the github repository
 ```
-docker build -t="fullaxx/ubuntu-desktop"        github.com/Fullaxx/ubuntu-desktop
-docker build -t="fullaxx/ubuntu-desktop:bionic" github.com/Fullaxx/ubuntu-desktop#bionic
-docker build -t="fullaxx/ubuntu-desktop:xfce4"  github.com/Fullaxx/ubuntu-desktop#xfce4
-docker build -t="fullaxx/ubuntu-desktop:i3"     github.com/Fullaxx/ubuntu-desktop#i3
+docker build -t="fullaxx/ubuntu-desktop:rdp" github.com/Fullaxx/ubuntu-desktop#rdp
 ```
 
-## VNC Options
-Optional: Set Depth 16 \
-Default: 24
+## RDP Options
+Mandatory: Run as a new non-root user with a password set
 ```
--e VNCDEPTH='16'
-```
-Optional: Set 1920x1080 Resolution \
-Default: 1280x800
-```
--e VNCRES='1920x1080'
-```
-Optional: Bind to Port 5909 \
-Default: port 5901
-```
--e VNCPORT='9'
-```
-Optional: Set Password Authentication \
-Default: No Authentication
-```
--e VNCPASS='vncpass'
-```
-Optional: Set Read-Write and Read-Only password \
-Default: No Authentication
-```
--e VNCPASS='vncpass' -e VNCPASSRO='readonly'
-```
-Optional: Run as a new non-root user \
-Default: root (UID: 0)
-```
--e VNCUSER='guest' -e VNCUID='1000'
+-e RDPUSER='ubuntu' -e RDPUID='1000' -e RDPPASS='ubuntupass'
 ```
 Optional: If you want your non-root user to be part of the users group \
-Default: same as VNCUSER and VNCUID \
-Pre-Req: VNCUSER and VNCUID must be set
+Default: same as RDPUSER and RDPUID \
 ```
--e VNCGROUP='users'
+-e RDPGROUP='users'
 ```
 Optional: Define a new group for non-root user \
-Default: same as VNCUSER and VNCUID \
-Pre-Req: VNCUSER and VNCUID must be set
+Default: same as RDPUSER and RDPUID \
 ```
--e VNCGROUP='guests' -e VNCGID='1001'
-```
-Optional: Set a password for the VNCUSER account \
-Default: none and the account is locked \
-Pre-Req: VNCUSER and VNCUID must be set
-```
--e ACCTPASS='mysecretpassword'
-```
-Optional: Set umask to define permission for new files \
-Default: 0022
-```
--e VNCUMASK='0002'
+-e RDPGROUP='guests' -e RDPGID='1001'
 ```
 
 ## TimeZone Configuration
@@ -134,56 +89,19 @@ Thanks to [jlesage](https://hub.docker.com/r/jlesage/firefox/#increasing-shared-
 ```
 
 ## Run the image
-Run the image on localhost port 5901 with default configuration
+Run the image on localhost port 3389 with standard user configuration
 ```
-docker run -d -p 127.0.0.1:5901:5901 fullaxx/ubuntu-desktop
-```
-Run the image with Depth 16
-```
-docker run -d -p 127.0.0.1:5901:5901 -e VNCDEPTH='16' fullaxx/ubuntu-desktop
-```
-Run the image with 1920x1080 Resolution
-```
-docker run -d -p 127.0.0.1:5901:5901 -e VNCRES='1920x1080' fullaxx/ubuntu-desktop
-```
-Run the image with Password Authentication
-```
-docker run -d -p 127.0.0.1:5901:5901 -e VNCPASS='vncpass' fullaxx/ubuntu-desktop
-```
-Run the image with Read-Write and Read-Only password (Using R/O pass requires R/W pass)
-```
-docker run -d -p 127.0.0.1:5901:5901 -e VNCPASS='vncpass' -e VNCPASSRO='readonly' fullaxx/ubuntu-desktop
-```
-Run the image as a non-root user account
-```
-docker run -d -p 127.0.0.1:5901:5901 -e VNCUSER='guest' -e VNCUID='1000' fullaxx/ubuntu-desktop
+docker run -d -p 127.0.0.1:3389:3389 -e RDPUSER='ubuntu' -e RDPUID='1000' -e RDPPASS='ubuntupass' fullaxx/ubuntu-desktop:rdp
 ```
 Run the image as a non-root user account with custom group
 ```
-docker run -d -p 127.0.0.1:5901:5901 -e VNCUSER='guest' -e VNCUID='1000' -e VNCGROUP='guests' -e VNCGID='1001' fullaxx/ubuntu-desktop
-```
-Run the image in Tokyo
-```
-docker run -d -p 127.0.0.1:5901:5901 -e TZ='Asia/Tokyo' fullaxx/ubuntu-desktop
-```
-Run the image with FUSE privileges
-```
-docker run --device /dev/fuse --cap-add SYS_ADMIN -d -p 127.0.0.1:5901:5901 fullaxx/ubuntu-desktop
-```
-Run the image using host networking binding tigervncserver to port 5909
-```
-docker run -d --network=host -e VNCPORT='9' fullaxx/ubuntu-desktop
-```
-Run the image on localhost port 5901 with a decent hostname
-```
-docker run -d -h mycagedbuntu -p 127.0.0.1:5901:5901 fullaxx/ubuntu-desktop
+docker run -d -p 127.0.0.1:3389:3389 -e RDPUSER='guest' -e RDPUID='1000' -e RDPGROUP='guests' -e RDPGID='1001' -e RDPPASS='ubuntupass' fullaxx/ubuntu-desktop:rdp
 ```
 
-## Connect using vncviewer or a web browser
-Use any standard VNC client to connect directly. \
-For web access, check out [noVNC](https://hub.docker.com/r/fullaxx/novnc) to access your ubuntu-desktop with a web browser.
+## Connect using rdesktop
+Use any standard RDP client to connect directly.
 ```
-vncviewer 127.0.0.1:5901
+rdesktop 127.0.0.1:3389
 ```
 
 ## Using the Openbox Desktop Environment

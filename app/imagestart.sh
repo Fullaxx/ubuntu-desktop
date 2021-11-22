@@ -13,6 +13,18 @@ rm -f /tmp/.X11-unix/*
 /etc/init.d/x11-common start
 /etc/init.d/dbus start
 
+# Convert RDP env variables to VNC variables to reuse scripting
+if [ -n "${RDPUSER}" ] && [ -n "${RDPUID}" ] && [ -n "${RDPPASS}" ]; then
+  VNCUSER="${RDPUSER}"
+  VNCUID="${RDPUID}"
+  ACCTPASS="${RDPPASS}"
+  if [ -n "${RDPGROUP}" ]; then VNCGROUP="${RDPGROUP}"; fi
+  if [ -n "${RDPGID}" ]; then VNCGID="${RDPGID}"; fi
+else
+  echo "RDPUSER, RDPUID, and RDPPASS must be set!"
+  exit 1
+fi
+
 if [ -n "${VNCUSER}" ] && [ -n "${VNCUID}" ]; then
 # if VNCGROUP/VNCGID is unset, set it to VNCUSER/VNCUID
   VNCGROUP=${VNCGROUP:-$VNCUSER}
