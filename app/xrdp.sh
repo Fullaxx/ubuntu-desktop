@@ -5,6 +5,7 @@ if [ -n "${USER}" ]; then
 fi
 
 # Start xrdp sesman service
+rm -f /var/run/xrdp/xrdp-sesman.pid
 /usr/sbin/xrdp-sesman
 
 exec /usr/sbin/xrdp --nodaemon
