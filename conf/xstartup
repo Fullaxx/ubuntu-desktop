@@ -1,4 +1,20 @@
 #!/bin/bash
 
-exec /usr/bin/vncconfig -nowin &
-exec /usr/bin/openbox-session
+export XKL_XMODMAP_DISABLE=1
+unset SESSION_MANAGER
+unset DBUS_SESSION_BUS_ADDRESS
+[ -r $HOME/.Xresources ] && xrdb $HOME/.Xresources
+xsetroot -solid grey
+vncconfig -nowin &
+
+/usr/lib/x86_64-linux-gnu/unity/unity-panel-service &
+unity-settings-daemon &
+
+for indicator in /usr/lib/x86_64-linux-gnu/indicator-*; do
+  basename=`basename ${indicator}`
+  dirname=`dirname ${indicator}`
+  service=${dirname}/${basename}/${basename}-service
+  ${service} &
+done
+
+exec unity --log /var/log/unity.log
