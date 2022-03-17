@@ -6,7 +6,7 @@
 set -e
 
 export DEBIAN_FRONTEND="noninteractive"
-TORVERS="10.5.10"
+TORVERS="11.0.7"
 
 apt-get update
 apt-get install -y file libgtk-3-0 libdbus-glib-1-2 wget xz-utils gnupg2
