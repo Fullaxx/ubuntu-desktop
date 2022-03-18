@@ -10,11 +10,12 @@ export DEBIAN_FRONTEND="noninteractive"
 apt-get update
 apt-get install -y file libgtk-3-0 libdbus-glib-1-2 wget xz-utils gnupg2
 
-TORVERS=`curl https://www.torproject.org/download/ 2>/dev/null | grep 'Download for Linux' | tr '"' '\n' | grep linux64 | cut -d/ -f4`
+TORPKG=`curl https://www.torproject.org/download/ 2>/dev/null | grep 'Download for Linux' | tr '"' '\n' | grep linux64`
+TORSIG=`curl https://www.torproject.org/download/ 2>/dev/null | grep Signature | tr '"' '\n' | grep tar.xz.asc`
 
 # Download package
-wget https://www.torproject.org/dist/torbrowser/${TORVERS}/tor-browser-linux64-${TORVERS}_en-US.tar.xz -O /tmp/tor.tar.xz
-wget https://www.torproject.org/dist/torbrowser/${TORVERS}/tor-browser-linux64-${TORVERS}_en-US.tar.xz.asc -O /tmp/tor.tar.xz.asc
+wget https://www.torproject.org/${TORPKG} -O /tmp/tor.tar.xz
+wget https://www.torproject.org/${TORSIG} -O /tmp/tor.tar.xz.asc
 gpg --auto-key-locate nodefault,wkd --locate-keys torbrowser@torproject.org
 gpg --verify /tmp/tor.tar.xz.asc /tmp/tor.tar.xz
 
