@@ -1,0 +1,17 @@
+dist: focal
+sudo: false
+language: c
+compiler:
+  - gcc
+addons:
+  apt:
+    packages:
+      - curl
+      - wget
+      - xz-utils
+      - gnupg2
+      - dpkg-sig
+script:
+  - cd tests
+  - ./tor.sh
+  - ./vivaldi.sh
