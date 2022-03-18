@@ -1,3 +1,5 @@
+[![Build Status](https://app.travis-ci.com/Fullaxx/ubuntu-desktop.svg?branch=master)](https://app.travis-ci.com/Fullaxx/ubuntu-desktop)
+
 # Ubuntu 20.04 Focal Desktop running Openbox in RDP
 
 ## Base Docker Image
@@ -136,4 +138,4 @@ Reverse Engineering:
 * [cutter (AI)](https://github.com/radareorg/cutter), [packet sender (AI)](https://github.com/dannagle/PacketSender), [ngrev (AI)](https://github.com/mgechev/ngrev)
 
 Misc:
-* [dropbox](https://www.dropbox.com/), [slack](https://slack.com/), [gtkstresstesting (FP)](https://gitlab.com/leinardi/gst)
+* [veracrypt](https://veracrypt.fr/), [dropbox](https://www.dropbox.com/), [slack](https://slack.com/), [gtkstresstesting (FP)](https://gitlab.com/leinardi/gst)
