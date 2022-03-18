@@ -1,3 +1,5 @@
+[![Build Status](https://app.travis-ci.com/Fullaxx/ubuntu-desktop.svg?branch=master)](https://app.travis-ci.com/Fullaxx/ubuntu-desktop)
+
 # Ubuntu 20.04/18.04 (Focal/Bionic) Desktop running Openbox/Xfce4/i3 in VNC
 
 ## Base Docker Image
@@ -226,4 +228,4 @@ Reverse Engineering:
 * [cutter (AI)](https://github.com/radareorg/cutter), [packet sender (AI)](https://github.com/dannagle/PacketSender), [ngrev (AI)](https://github.com/mgechev/ngrev)
 
 Misc:
-* [dropbox](https://www.dropbox.com/), [slack](https://slack.com/), [gtkstresstesting (FP)](https://gitlab.com/leinardi/gst)
+* [veracrypt](https://veracrypt.fr/), [dropbox](https://www.dropbox.com/), [slack](https://slack.com/), [gtkstresstesting (FP)](https://gitlab.com/leinardi/gst)
