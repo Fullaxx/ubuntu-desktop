@@ -1,0 +1,15 @@
+dist: focal
+sudo: false
+language: c
+compiler:
+  - gcc
+addons:
+  apt:
+    packages:
+      - curl
+      - wget
+      - xz-utils
+      - gnupg2
+script:
+  - cd tests
+  - ./tor.sh
