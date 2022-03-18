@@ -6,10 +6,11 @@
 set -e
 
 export DEBIAN_FRONTEND="noninteractive"
-TORVERS="11.0.7"
 
 apt-get update
 apt-get install -y file libgtk-3-0 libdbus-glib-1-2 wget xz-utils gnupg2
+
+TORVERS=`curl https://www.torproject.org/download/ 2>/dev/null | grep 'Download for Linux' | tr '"' '\n' | grep linux64 | cut -d/ -f4`
 
 # Download package
 wget https://www.torproject.org/dist/torbrowser/${TORVERS}/tor-browser-linux64-${TORVERS}_en-US.tar.xz -O /tmp/tor.tar.xz
