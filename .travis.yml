@@ -10,6 +10,8 @@ addons:
       - wget
       - xz-utils
       - gnupg2
+      - dpkg-sig
 script:
   - cd tests
   - ./tor.sh
+  - ./vivaldi.sh
