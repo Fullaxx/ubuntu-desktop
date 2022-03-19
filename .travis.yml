@@ -14,4 +14,3 @@ addons:
 script:
   - cd tests
   - ./tor.sh
-  - ./vivaldi.sh
