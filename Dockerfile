@@ -37,9 +37,13 @@ RUN apt-get update && \
     rm -rf /var/lib/apt/lists/* /var/tmp/* /tmp/*
 
 # ------------------------------------------------------------------------------
-# Configure the system
+# Configure locale
 RUN sed -e 's/# en_US.UTF-8/en_US.UTF-8/' -i /etc/locale.gen && \
     locale-gen
+
+# ------------------------------------------------------------------------------
+# Configure XTerm
+RUN sed -e 's/saveLines: 1024/saveLines: 8192/' -i /etc/X11/app-defaults/XTerm
 
 # ------------------------------------------------------------------------------
 # Install scripts and configuration files
