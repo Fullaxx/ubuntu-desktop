@@ -17,4 +17,4 @@ apt-get update
 apt-get install -y vivaldi-stable
 
 # I wish there was a better way ...
-source /app/scripts/wait_for_vivaldi_to_dl_media_codecs.sh
+source /app/scripts/wait_for_vivaldi_media_codecs.sh
