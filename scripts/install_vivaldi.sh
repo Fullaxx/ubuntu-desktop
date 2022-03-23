@@ -1,5 +1,10 @@
 #!/bin/bash
 
+######################################################
+xmessage "This script is not used at the moment!" &  #
+exit 1                                               #
+######################################################
+
 set -e
 
 export DEBIAN_FRONTEND="noninteractive"

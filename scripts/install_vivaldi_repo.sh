@@ -5,7 +5,7 @@ set -e
 export DEBIAN_FRONTEND="noninteractive"
 
 apt-get update
-apt-get install -y gnupg2 software-properties-common apt-transport-https wget chromium-codecs-ffmpeg-extra
+apt-get install -y gnupg2 software-properties-common apt-transport-https wget
 
 # apt-key adv --keyserver keyserver.ubuntu.com --recv-keys B44B85E3E1A6386BFC79D4119658E8044A3AA3D6
 wget -q https://repo.vivaldi.com/stable/linux_signing_key.pub -O- | apt-key --keyring /etc/apt/trusted.gpg.d/vivaldi.gpg add -
@@ -15,3 +15,6 @@ echo "deb http://repo.vivaldi.com/stable/deb/ stable main" > /etc/apt/sources.li
 
 apt-get update
 apt-get install -y vivaldi-stable
+
+# I wish there was a better way ...
+source /app/scripts/wait_for_vivaldi_media_codecs.sh
