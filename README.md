@@ -1,5 +1,3 @@
-[![Build Status](https://app.travis-ci.com/Fullaxx/ubuntu-desktop.svg?branch=master)](https://app.travis-ci.com/Fullaxx/ubuntu-desktop)
-
 # Ubuntu 20.04 Focal Desktop running Openbox in RDP
 
 ## Base Docker Image
