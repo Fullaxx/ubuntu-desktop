@@ -6,7 +6,7 @@ BINARYLOC=`which ${BINARY}`
 if [ "$?" -ne "0" ]; then
   set -e
 
-  xterm -T InstallStrawberry -g 100x30 -e sudo /app/scripts/install_strawberry.sh
+  xterm -T InstallStrawberry -g 100x30 -e sudo /app/scripts/install_strawberry_repo.sh
 fi
 
 ${BINARY}
