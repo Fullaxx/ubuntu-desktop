@@ -1,6 +1,4 @@
 # ------------------------------------------------------------------------------
-# https://www.cyberciti.biz/faq/install-and-configure-tigervnc-server-on-ubuntu-18-04/
-# ------------------------------------------------------------------------------
 # Pull base image
 FROM ubuntu:bionic
 MAINTAINER Brett Kuskie <fullaxx@gmail.com>
