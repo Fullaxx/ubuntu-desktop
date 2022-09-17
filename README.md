@@ -1,5 +1,3 @@
-[![Build Status](https://app.travis-ci.com/Fullaxx/ubuntu-desktop.svg?branch=master)](https://app.travis-ci.com/Fullaxx/ubuntu-desktop)
-
 # Ubuntu 20.04/18.04 (Focal/Bionic) Desktop running Openbox/Xfce4/i3 in VNC
 
 ## Base Docker Image
