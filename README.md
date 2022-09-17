@@ -1,7 +1,7 @@
-# Ubuntu 20.04/18.04 (Focal/Bionic) Desktop running Openbox/Xfce4/i3 in VNC
+# Ubuntu Desktop running Openbox/Xfce4/i3 in VNC/RDP
 
 ## Base Docker Image
-[Ubuntu](https://hub.docker.com/_/ubuntu) 20.04/18.04 (x64)
+[Ubuntu](https://hub.docker.com/_/ubuntu) (x64)
 
 ## Get the image from Docker Hub
 ```
@@ -9,6 +9,7 @@ docker pull fullaxx/ubuntu-desktop
 docker pull fullaxx/ubuntu-desktop:bionic
 docker pull fullaxx/ubuntu-desktop:xfce4
 docker pull fullaxx/ubuntu-desktop:i3
+docker pull fullaxx/ubuntu-desktop:rdp
 ```
 
 ## Build it locally using the github repository
@@ -17,6 +18,7 @@ docker build -t="fullaxx/ubuntu-desktop"        github.com/Fullaxx/ubuntu-deskto
 docker build -t="fullaxx/ubuntu-desktop:bionic" github.com/Fullaxx/ubuntu-desktop#bionic
 docker build -t="fullaxx/ubuntu-desktop:xfce4"  github.com/Fullaxx/ubuntu-desktop#xfce4
 docker build -t="fullaxx/ubuntu-desktop:i3"     github.com/Fullaxx/ubuntu-desktop#i3
+docker build -t="fullaxx/ubuntu-desktop:rdp"    github.com/Fullaxx/ubuntu-desktop#rdp
 ```
 
 ## VNC Options
