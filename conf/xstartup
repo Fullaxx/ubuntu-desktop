@@ -1,4 +1,4 @@
 #!/bin/bash
 
-exec /usr/bin/vncconfig -nowin &
+/usr/bin/vncconfig -nowin &
 exec /usr/bin/openbox-session
