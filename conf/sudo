@@ -4,6 +4,6 @@ Defaults env_keep += "VNCUMASK WALLPAPER WPLAYOUT DEBIAN_FRONTEND BBTJAVAVERS"
 
 # Allow members of group sudo to execute the following commands
 %sudo ALL=(ALL) NOPASSWD: /usr/bin/apt-get
-%sudo ALL=(ALL) NOPASSWD: /app/scripts/prepare_debian_chromium.sh
+%sudo ALL=(ALL) NOPASSWD: /app/scripts/prepare_*.sh
 %sudo ALL=(ALL) NOPASSWD: /app/scripts/install_*.sh
 %sudo ALL=(ALL) NOPASSWD: /app/scripts/compile_*.sh
