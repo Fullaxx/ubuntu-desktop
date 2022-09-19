@@ -17,11 +17,11 @@ if [ "$?" -ne "0" ]; then
   case "${OSV}" in
     '18.04') SOURCE="ubuntu" ;;
     '20.04') SOURCE="ubuntu" ;;
-          *) bailmsg "Ubuntu ${OSV} not supported!"
+          *) bailmsg "${BINARY} is not supported in Ubuntu ${OSV}" ;;
   esac
 
-  apt-get update
-  apt-get install -y ${BINARY}
+  xterm -T AptGetUpdate -g 100x30 -e sudo apt-get update
+  xterm -T AptGetInstall -g 100x30 -e sudo apt-get install -y ${BINARY}
 fi
 
 ${BINARY}
