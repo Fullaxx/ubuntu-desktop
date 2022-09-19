@@ -1,5 +1,11 @@
 #!/bin/bash
 
+bailmsg()
+{
+  xmessage "$1" &
+  exit 1
+}
+
 export DEBIAN_FRONTEND="noninteractive"
 BINARY="spacefm"
 
@@ -11,6 +17,7 @@ if [ "$?" -ne "0" ]; then
   case "${OSV}" in
     '18.04') PKGS="lsof sshfs spacefm-gtk3" ;;
     '20.04') PKGS="lsof sshfs spacefm-gtk3 yaru-theme-icon" ;;
+    '22.04') PKGS="lsof sshfs spacefm-gtk3 yaru-theme-icon" ;;
           *) bailmsg "Ubuntu ${OSV} not supported!"
   esac
 
