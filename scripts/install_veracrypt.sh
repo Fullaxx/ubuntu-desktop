@@ -16,6 +16,8 @@ case "${OSV}" in
   '18.04') URL="https://launchpad.net/veracrypt/trunk/1.25.9/+download/veracrypt-1.25.9-Ubuntu-18.04-amd64.deb" ;;
   '20.04') URL="https://launchpad.net/veracrypt/trunk/1.25.9/+download/veracrypt-1.25.9-Ubuntu-20.04-amd64.deb" ;;
   '21.04') URL="https://launchpad.net/veracrypt/trunk/1.25.9/+download/veracrypt-1.25.9-Ubuntu-21.04-amd64.deb" ;;
+  '21.10') URL="https://launchpad.net/veracrypt/trunk/1.25.9/+download/veracrypt-1.25.9-Ubuntu-21.10-amd64.deb" ;;
+  '22.04') URL="https://launchpad.net/veracrypt/trunk/1.25.9/+download/veracrypt-1.25.9-Ubuntu-22.04-amd64.deb" ;;
         *) bailmsg "Ubuntu ${OSV} not supported!"
 esac
 
