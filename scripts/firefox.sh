@@ -8,9 +8,11 @@ if [ "$?" -ne "0" ]; then
 
   OSV=`grep VERSION_ID /etc/os-release | cut -d\" -f2`
   case "${OSV}" in
-    '22.04') xterm -T InstallFirefox -g 100x30 -e sudo /app/scripts/install_firefox_repo.sh ;;
-          *) xterm -T InstallFirefox -g 100x30 -e sudo /app/scripts/install_firefox.sh ;;
+    '22.04') INSTALLSCRIPT="/app/scripts/install_firefox_repo.sh" ;;
+          *) INSTALLSCRIPT="/app/scripts/install_firefox.sh" ;;
   esac
+
+  xterm -T InstallFirefox -g 100x30 -e sudo ${INSTALLSCRIPT}
 fi
 
 ${BINARY}
