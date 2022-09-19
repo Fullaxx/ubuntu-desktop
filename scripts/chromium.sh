@@ -14,7 +14,7 @@ CMDARGS="--disable-gpu --disable-accelerated-2d-canvas --disable-gpu-rasterizati
 
 case "${OSV}" in
   '18.04') BINARY="chromium-browser" ;;
-  '20.04') BINARY="chromium" ;;
+  '20.04') bailmsg "chromium is not supported in Ubuntu ${OSV}!" ;;
   '22.04') BINARY="chromium" ;;
         *) bailmsg "chromium is not supported in Ubuntu ${OSV}!"
 esac
