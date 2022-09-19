@@ -15,14 +15,15 @@ CMDARGS="--disable-gpu --disable-accelerated-2d-canvas --disable-gpu-rasterizati
 case "${OSV}" in
   '18.04') BINARY="chromium-browser" ;;
   '20.04') BINARY="chromium" ;;
-        *) bailmsg "Ubuntu ${OSV} not supported!"
+  '22.04') BINARY="chromium" ;;
+        *) bailmsg "chromium is not supported in Ubuntu ${OSV}!"
 esac
 
 BINARYLOC=`which ${BINARY}`
 if [ "$?" -ne "0" ]; then
   set -e
 
-  if [ "${OSV}" == "20.04" ]; then
+  if [ "${BINARY}" == "chromium" ]; then
     xterm -T PrepareDebianChromium -g 100x30 -e sudo /app/scripts/prepare_debian_chromium.sh
   fi
 
