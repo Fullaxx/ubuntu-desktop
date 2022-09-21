@@ -1,9 +1,7 @@
-[![Build Status](https://app.travis-ci.com/Fullaxx/ubuntu-desktop.svg?branch=bionic)](https://app.travis-ci.com/Fullaxx/ubuntu-desktop)
-
-# Ubuntu 20.04/18.04 (Focal/Bionic) Desktop running Openbox/Xfce4/i3 in VNC
+# Ubuntu Desktop running Openbox/Xfce4/i3 in VNC/RDP
 
 ## Base Docker Image
-[Ubuntu](https://hub.docker.com/_/ubuntu) 20.04/18.04 (x64)
+[Ubuntu](https://hub.docker.com/_/ubuntu) (x64)
 
 ## Get the image from Docker Hub
 ```
@@ -11,6 +9,7 @@ docker pull fullaxx/ubuntu-desktop
 docker pull fullaxx/ubuntu-desktop:bionic
 docker pull fullaxx/ubuntu-desktop:xfce4
 docker pull fullaxx/ubuntu-desktop:i3
+docker pull fullaxx/ubuntu-desktop:rdp
 ```
 
 ## Build it locally using the github repository
@@ -19,6 +18,7 @@ docker build -t="fullaxx/ubuntu-desktop"        github.com/Fullaxx/ubuntu-deskto
 docker build -t="fullaxx/ubuntu-desktop:bionic" github.com/Fullaxx/ubuntu-desktop#bionic
 docker build -t="fullaxx/ubuntu-desktop:xfce4"  github.com/Fullaxx/ubuntu-desktop#xfce4
 docker build -t="fullaxx/ubuntu-desktop:i3"     github.com/Fullaxx/ubuntu-desktop#i3
+docker build -t="fullaxx/ubuntu-desktop:rdp"    github.com/Fullaxx/ubuntu-desktop#rdp
 ```
 
 ## VNC Options
@@ -189,7 +189,8 @@ vncviewer 127.0.0.1:5901
 ```
 
 ## Using the Openbox Desktop Environment
-Right-Click to activate the Openbox menu system. You will find a number of convenience scripts for running applications.
+Right-Click to activate the Openbox menu system. \
+You will find a number of convenience scripts for running applications.
 
 Terminals:
 * [xterm](https://invisible-island.net/xterm/), uxterm, [sakura](http://www.pleyades.net/david/projects/sakura), [terminology](https://www.enlightenment.org/about-terminology.md), [terminator](https://gnome-terminator.org/), [tilix](https://gnunn1.github.io/tilix-web/), [tilda](https://github.com/lanoxx/tilda), [archipelago (AI)](https://github.com/npezza93/archipelago), [hyper (AI)](https://github.com/zeit/hyper), [powershell](https://github.com/PowerShell/PowerShell)
