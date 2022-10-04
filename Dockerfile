@@ -56,6 +56,7 @@ COPY conf/xstartup /usr/share/ubuntu-desktop/vnc/
 COPY conf/autostart conf/menu.xml /usr/share/ubuntu-desktop/openbox/
 COPY conf/fbpaneldefault /usr/share/ubuntu-desktop/fbpanel/default
 COPY conf/sudo /usr/share/ubuntu-desktop/sudo
+COPY conf/bash.colors conf/color_prompt.sh conf/lang.sh /opt/bash/
 COPY scripts/*.sh /app/scripts/
 
 # ------------------------------------------------------------------------------
