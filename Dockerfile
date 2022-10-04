@@ -49,6 +49,7 @@ COPY app/app.sh app/imagestart.sh app/tiger.sh /app/
 COPY bin/set_wallpaper.sh /usr/bin/
 COPY conf/xstartup /usr/share/ubuntu-desktop/vnc/
 COPY conf/sudo /usr/share/ubuntu-desktop/sudo
+COPY conf/bash.colors conf/color_prompt.sh conf/lang.sh /opt/bash/
 COPY scripts/*.sh /app/scripts/
 
 # ------------------------------------------------------------------------------
