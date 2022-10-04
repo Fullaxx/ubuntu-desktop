@@ -91,9 +91,9 @@ docker run -d -p 127.0.0.1:3389:3389 -e RDPUSER='guest' -e RDPUID='1000' -e RDPG
 ```
 
 ## Connect using rdesktop
-Use any standard RDP client to connect directly.
+Use any standard RDP client to connect. Set the desired geometry with rdesktop.
 ```
-rdesktop 127.0.0.1:3389
+rdesktop 127.0.0.1:3389 -g 1600x900
 ```
 
 ## Using the Openbox Desktop Environment
