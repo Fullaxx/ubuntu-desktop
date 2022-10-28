@@ -7,6 +7,7 @@
 	<item label="uxterm"><action name="Execute"><command>uxterm</command></action></item>
 	<item label="sakura"><action name="Execute"><command>/app/scripts/sakura.sh</command></action></item>
 	<!-- <item label="st"><action name="Execute"><command>st</command></action></item> -->
+	<item label="Eterm"><action name="Execute"><command>/app/scripts/eterm.sh</command></action></item>
 	<item label="terminology"><action name="Execute"><command>/app/scripts/terminology.sh</command></action></item>
 	<item label="terminator"><action name="Execute"><command>/app/scripts/terminator.sh</command></action></item>
 	<item label="tilix"><action name="Execute"><command>/app/scripts/tilix.sh</command></action></item>
@@ -142,7 +143,7 @@
 </menu>
 
 <menu id="system-menu" label="System">
-  <item label="Reconfigure Openbox"><action name="Reconfigure" /></item>
+	<item label="Reconfigure Openbox"><action name="Reconfigure" /></item>
 </menu>
 
 <menu id="root-menu" label="Openbox 3">
