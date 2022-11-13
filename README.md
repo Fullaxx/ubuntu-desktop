@@ -6,6 +6,7 @@
 ## Get the image from Docker Hub
 ```
 docker pull fullaxx/ubuntu-desktop
+docker pull fullaxx/ubuntu-desktop:focal
 docker pull fullaxx/ubuntu-desktop:bionic
 docker pull fullaxx/ubuntu-desktop:xfce4
 docker pull fullaxx/ubuntu-desktop:i3
@@ -15,6 +16,7 @@ docker pull fullaxx/ubuntu-desktop:rdp
 ## Build it locally using the github repository
 ```
 docker build -t="fullaxx/ubuntu-desktop"        github.com/Fullaxx/ubuntu-desktop
+docker build -t="fullaxx/ubuntu-desktop:focal"  github.com/Fullaxx/ubuntu-desktop#focal
 docker build -t="fullaxx/ubuntu-desktop:bionic" github.com/Fullaxx/ubuntu-desktop#bionic
 docker build -t="fullaxx/ubuntu-desktop:xfce4"  github.com/Fullaxx/ubuntu-desktop#xfce4
 docker build -t="fullaxx/ubuntu-desktop:i3"     github.com/Fullaxx/ubuntu-desktop#i3
