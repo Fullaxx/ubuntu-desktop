@@ -1,7 +1,7 @@
-# Ubuntu 20.04 Focal Desktop running Openbox in RDP
+# Ubuntu 22.04 Jammy Desktop running Openbox in RDP
 
 ## Base Docker Image
-[Ubuntu](https://hub.docker.com/_/ubuntu) 20.04 (x64)
+[Ubuntu](https://hub.docker.com/_/ubuntu) 22.04 (x64)
 
 ## Get the image from Docker Hub
 ```
