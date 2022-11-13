@@ -1,6 +1,6 @@
 # ------------------------------------------------------------------------------
 # Pull base image
-FROM ubuntu:jammy
+FROM ubuntu:focal
 MAINTAINER Brett Kuskie <fullaxx@gmail.com>
 
 # ------------------------------------------------------------------------------
