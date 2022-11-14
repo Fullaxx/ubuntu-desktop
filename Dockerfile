@@ -22,6 +22,7 @@ RUN apt-get update && \
       sudo \
       tigervnc-common \
       tigervnc-standalone-server \
+      tigervnc-tools \
       tzdata \
       ubuntu-unity-desktop \
       wget \
