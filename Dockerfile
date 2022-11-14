@@ -23,6 +23,7 @@ RUN apt-get update && \
       sudo \
       tigervnc-common \
       tigervnc-standalone-server \
+      tigervnc-tools \
       tzdata \
       wget \
       x11-utils \
