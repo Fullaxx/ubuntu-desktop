@@ -10,8 +10,8 @@ export DEBIAN_FRONTEND="noninteractive"
 apt-get update
 apt-get install -y file libgtk-3-0 libdbus-glib-1-2 wget xz-utils gnupg2
 
-TORPKG=`curl https://www.torproject.org/download/ 2>/dev/null | grep 'Download for Linux' | tr '"' '\n' | grep linux64`
-TORSIG=`curl https://www.torproject.org/download/ 2>/dev/null | grep Signature | tr '"' '\n' | grep tar.xz.asc`
+TORPKG=`curl -s https://www.torproject.org/download/ 2>/dev/null | grep 'Download for Linux' | tr '"' '\n' | grep linux64`
+TORSIG=`curl -s https://www.torproject.org/download/ 2>/dev/null | grep Signature | tr '"' '\n' | grep tar.xz.asc`
 
 # Download package
 wget https://www.torproject.org/${TORPKG} -O /tmp/tor.tar.xz
