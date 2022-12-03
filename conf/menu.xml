@@ -47,6 +47,7 @@
 	<item label="Edge (dev)"><action name="Execute"><command>/app/scripts/edge_dev.sh</command></action></item>
 	<item label="Tor"><action name="Execute"><command>/app/scripts/launch_torbrowser.sh</command></action></item>
 	<!-- <item label="Seamonkey"><action name="Execute"><command>/app/scripts/seamonkey.sh</command></action></item> -->
+	<item label="Pale Moon"><action name="Execute"><command>/app/scripts/palemoon.sh</command></action></item>
 	<item label="NCSA Mosiac (AI)"><action name="Execute"><command>/app/scripts/ncsa_mosiac.AI.sh</command></action></item>
 </menu>
 

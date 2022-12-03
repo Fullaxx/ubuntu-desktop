@@ -14,6 +14,6 @@ SHA="DC85567C9A52E16EBED727F41389DE0B8E3275437E4B7A3905BC894F359A24F9"
 DEB="/tmp/powershell.deb"
 
 wget ${URL} -O ${DEB}
-echo "${SHA} /tmp/powershell.deb" | sha256sum -c
+echo "${SHA} ${DEB}" | sha256sum -c
 dpkg -i ${DEB} || (set -e; apt-get update; apt-get install -f -y)
 rm ${DEB}

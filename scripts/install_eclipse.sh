@@ -37,7 +37,7 @@ fi
 cd /tmp/
 wget ${ECLIPSEURL} -O - | tar xz
 mv eclipse ${EDIR}
-chown -R ${SUDO_UID}.${SUDO_GID} ${EDIR}
+chown -R ${SUDO_UID}:${SUDO_GID} ${EDIR}
 cp ${EDIR}/icon.xpm /usr/share/pixmaps/eclipse.xpm
 
 if [ "${ECLPKG}" == "CPP" ]; then
