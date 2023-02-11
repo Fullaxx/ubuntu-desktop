@@ -127,6 +127,9 @@ Music:
 Graphics:
 * [gimp](https://www.gimp.org/), [inkscape](https://inkscape.org/), [krita](https://krita.org/), [blender](https://www.blender.org/)
 
+AV:
+* [guvcview](https://guvcview.sourceforge.net/), [kdenlive](https://kdenlive.org/), [winff](https://github.com/WinFF/winff), [flowblade](https://jliljebl.github.io/flowblade/), [lives](http://www.lives-video.com/), [shotcut](https://www.shotcut.org/), [olive](https://www.olivevideoeditor.org/), [gopchop](https://gopchop.org/), [openshot](https://www.openshot.org/), [vidcutter](https://github.com/ozmartian/vidcutter), [videocut](https://github.com/kanehekili/VideoCut), [avidemux](https://avidemux.sourceforge.net/)
+
 File Managers:
 * [4pane](http://www.4pane.co.uk/), [caja](https://github.com/mate-desktop/caja), [doublecommander](https://doublecmd.sourceforge.io/), [krusader](https://krusader.org/), [nemo](https://github.com/linuxmint/nemo), [pcmanfm](https://wiki.lxde.org/en/PCManFM), [spacefm](https://ignorantguru.github.io/spacefm/), [thunar](https://docs.xfce.org/xfce/thunar/start), [xfe](http://roland65.free.fr/xfe/), [worker](http://www.boomerangsworld.de/cms/worker/)
 
