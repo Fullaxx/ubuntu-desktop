@@ -125,6 +125,21 @@
 	<item label="Worker"><action name="Execute"><command>/app/scripts/worker.sh</command></action></item>
 </menu>
 
+<menu id="apps-av-menu" label="AV">
+	<item label="guvcview"><action name="Execute"><command>/app/scripts/guvcview.sh</command></action></item>
+	<item label="kdenlive"><action name="Execute"><command>/app/scripts/kdenlive.sh</command></action></item>
+	<item label="winff"><action name="Execute"><command>/app/scripts/winff.sh</command></action></item>
+	<item label="flowblade"><action name="Execute"><command>/app/scripts/flowblade.sh</command></action></item>
+	<item label="lives"><action name="Execute"><command>/app/scripts/lives.sh</command></action></item>
+	<item label="shotcut"><action name="Execute"><command>/app/scripts/shotcut.sh</command></action></item>
+	<item label="olive"><action name="Execute"><command>/app/scripts/olive.sh</command></action></item>
+	<item label="gopchop"><action name="Execute"><command>/app/scripts/gopchop.sh</command></action></item>
+	<item label="openshot"><action name="Execute"><command>/app/scripts/openshot.sh</command></action></item>
+	<item label="vidcutter"><action name="Execute"><command>/app/scripts/vidcutter.sh</command></action></item>
+	<item label="videocut"><action name="Execute"><command>/app/scripts/videocut.sh</command></action></item>
+	<item label="avidemux (AI)"><action name="Execute"><command>/app/scripts/avidemux.AI.sh</command></action></item>
+</menu>
+
 <menu id="apps-utilities-menu" label="Utilities">
 	<item label="Galculator"><action name="Execute"><command>/app/scripts/galculator.sh</command></action></item>
 	<item label="Kcalc"><action name="Execute"><command>/app/scripts/kcalc.sh</command></action></item>
@@ -159,6 +174,7 @@
 	<menu id="apps-games-menu"/>
 	<menu id="apps-music-menu"/>
 	<menu id="apps-graphics-menu"/>
+	<menu id="apps-av-menu"/>
 	<menu id="apps-utilities-menu"/>
 	<menu id="apps-re-menu"/>
 	<menu id="apps-misc-menu"/>
