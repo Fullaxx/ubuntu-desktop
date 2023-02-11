@@ -1,5 +1,11 @@
 #!/bin/bash
 
+bailmsg()
+{
+  xmessage "$1" &
+  exit 1
+}
+
 BINARY="VideoCut"
 
 BINARYLOC=`which ${BINARY}`
