@@ -17,6 +17,7 @@ RUN apt-get update && \
       dbus-x11 \
       fbpanel \
       hsetroot \
+      less \
       locales \
       nano \
       openbox \
