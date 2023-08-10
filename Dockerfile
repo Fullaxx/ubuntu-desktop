@@ -16,6 +16,7 @@ RUN apt-get update && \
       curl \
       dbus-x11 \
       hsetroot \
+      less \
       locales \
       nano \
       python3-xdg \
