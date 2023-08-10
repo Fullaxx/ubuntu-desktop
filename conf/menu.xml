@@ -5,9 +5,10 @@
 <menu id="apps-terminals-menu" label="Terminals">
 	<item label="xterm"><action name="Execute"><command>xterm</command></action></item>
 	<item label="uxterm"><action name="Execute"><command>uxterm</command></action></item>
-	<item label="sakura"><action name="Execute"><command>/app/scripts/sakura.sh</command></action></item>
 	<!-- <item label="st"><action name="Execute"><command>st</command></action></item> -->
 	<item label="Eterm"><action name="Execute"><command>/app/scripts/eterm.sh</command></action></item>
+	<item label="kitty"><action name="Execute"><command>/app/scripts/kitty.sh</command></action></item>
+	<item label="sakura"><action name="Execute"><command>/app/scripts/sakura.sh</command></action></item>
 	<item label="terminology"><action name="Execute"><command>/app/scripts/terminology.sh</command></action></item>
 	<item label="terminator"><action name="Execute"><command>/app/scripts/terminator.sh</command></action></item>
 	<item label="tilix"><action name="Execute"><command>/app/scripts/tilix.sh</command></action></item>
