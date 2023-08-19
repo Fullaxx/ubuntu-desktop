@@ -36,7 +36,9 @@ RUN apt-get update && \
 
 # ------------------------------------------------------------------------------
 # Configure locale
-RUN sed -e 's/# en_US.UTF-8/en_US.UTF-8/' -i /etc/locale.gen && \
+RUN echo "LC_ALL=en_US.UTF-8" >> /etc/environment && \
+    echo "LANG=en_US.UTF-8" > /etc/locale.conf && \
+    echo "en_US.UTF-8 UTF-8" >> /etc/locale.gen && \
     locale-gen
 
 # ------------------------------------------------------------------------------
