@@ -18,6 +18,7 @@ RUN apt-get update && \
       fbpanel \
       hsetroot \
       i3 \
+      less \
       locales \
       nano \
       sudo \
