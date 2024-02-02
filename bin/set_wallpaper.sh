@@ -6,14 +6,15 @@ if [ -z "$1" ]; then
 fi
 
 case "$1" in
-  1) WPURL="http://digitalblasphemy.com/graphics/HDfree/metallurgy1HDfree.jpg" ;;
-  2) WPURL="http://digitalblasphemy.com/graphics/HDfree/portals1HDfree.jpg" ;;
-  3) WPURL="http://digitalblasphemy.com/graphics/HDfree/cronusrising2k141HDfree.jpg" ;;
-  4) WPURL="http://digitalblasphemy.com/graphics/HDfree/harbinger2k91HDfree.jpg" ;;
-  5) WPURL="http://digitalblasphemy.com/graphics/HDfree/arcana2HDfree.jpg" ;;
-  6) WPURL="http://digitalblasphemy.com/graphics/HDfree/rivenHDfree.jpg" ;;
-  7) WPURL="http://digitalblasphemy.com/graphics/HDfree/circularlogicHDfree.jpg" ;;
-  8) WPURL="http://digitalblasphemy.com/graphics/HDfree/gardener2k121HDfree.jpg" ;;
+  1) WPURL="http://rapidlinux.org/udwp/metallurgy1HDfree.jpg" ;;
+  2) WPURL="http://rapidlinux.org/udwp/portals1HDfree.jpg" ;;
+  3) WPURL="http://rapidlinux.org/udwp/cronusrising2k141HDfree.jpg" ;;
+  4) WPURL="http://rapidlinux.org/udwp/harbinger2k91HDfree.jpg" ;;
+  5) WPURL="http://rapidlinux.org/udwp/arcana2HDfree.jpg" ;;
+  6) WPURL="http://rapidlinux.org/udwp/rivenHDfree.jpg" ;;
+  7) WPURL="http://rapidlinux.org/udwp/circularlogicHDfree.jpg" ;;
+  8) WPURL="http://rapidlinux.org/udwp/gardener2k121HDfree.jpg" ;;
+  9) WPURL="http://rapidlinux.org/udwp/overseer2k141_single_1920x1080.jpg" ;;
   *) WPURL="0" ;;
 esac
 

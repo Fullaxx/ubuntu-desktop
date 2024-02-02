@@ -94,14 +94,15 @@ Default: UTC
 Set a background image for the openbox desktop \
 Default: None \
 Image Links:
-[1](http://digitalblasphemy.com/graphics/HDfree/metallurgy1HDfree.jpg) /
-[2](http://digitalblasphemy.com/graphics/HDfree/portals1HDfree.jpg) /
-[3](http://digitalblasphemy.com/graphics/HDfree/cronusrising2k141HDfree.jpg) /
-[4](http://digitalblasphemy.com/graphics/HDfree/harbinger2k91HDfree.jpg) /
-[5](http://digitalblasphemy.com/graphics/HDfree/arcana2HDfree.jpg) /
-[6](http://digitalblasphemy.com/graphics/HDfree/rivenHDfree.jpg) /
-[7](http://digitalblasphemy.com/graphics/HDfree/circularlogicHDfree.jpg) /
-[8](http://digitalblasphemy.com/graphics/HDfree/gardener2k121HDfree.jpg) \
+[1](http://rapidlinux.org/udwp/metallurgy1HDfree.jpg) /
+[2](http://rapidlinux.org/udwp/portals1HDfree.jpg) /
+[3](http://rapidlinux.org/udwp/cronusrising2k141HDfree.jpg) /
+[4](http://rapidlinux.org/udwp/harbinger2k91HDfree.jpg) /
+[5](http://rapidlinux.org/udwp/arcana2HDfree.jpg) /
+[6](http://rapidlinux.org/udwp/rivenHDfree.jpg) /
+[7](http://rapidlinux.org/udwp/circularlogicHDfree.jpg) /
+[8](http://rapidlinux.org/udwp/gardener2k121HDfree.jpg) /
+[9](http://rapidlinux.org/udwp/overseer2k141_single_1920x1080.jpg) \
 Layout Options: fill / extend / full / tile / cover / center \
 Default Layout: center
 ```
