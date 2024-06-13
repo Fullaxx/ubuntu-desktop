@@ -8,9 +8,9 @@ set -e
 export DEBIAN_FRONTEND="noninteractive"
 
 apt-get update
-apt-get install -y file libgtk-3-0 libdbus-glib-1-2 wget xz-utils gnupg2
+apt-get install -y file gnupg2 libasound2 libgtk-3-0 libdbus-glib-1-2 wget xz-utils
 
-TORPKG=`curl -s https://www.torproject.org/download/ 2>/dev/null | grep 'Download for Linux' | tr '"' '\n' | grep linux64`
+TORPKG=`curl -s https://www.torproject.org/download/ 2>/dev/null | grep 'Download for Linux' | tr '"' '\n' | grep linux-x86_64`
 TORSIG=`curl -s https://www.torproject.org/download/ 2>/dev/null | grep Signature | tr '"' '\n' | grep tar.xz.asc`
 
 # Download package
@@ -21,9 +21,15 @@ gpg --verify /tmp/tor.tar.xz.asc /tmp/tor.tar.xz
 
 # Install package
 tar xf /tmp/tor.tar.xz -C /opt
-rm /tmp/tor.tar.xz /tmp/tor.tar.xz.asc
+if [ ! -d /opt/tor-browser ]; then
+  echo "tor-browser not found under /tmp/tor.tar.xz!"
+  exit 1
+fi
 
 # Tweak package
-mv /opt/tor-browser_* /opt/tor
+mv /opt/tor-browser /opt/tor
 sed -e 's/"`id -u`" -eq 0/`false`/g' -i /opt/tor/Browser/start-tor-browser
 sed -e 's/$SYSARCHITECTURE -ne $TORARCHITECTURE/"$SYSARCHITECTURE" != "$TORARCHITECTURE"/g' -i /opt/tor/Browser/start-tor-browser
+
+# Clean-up
+rm /tmp/tor.tar.xz /tmp/tor.tar.xz.asc
