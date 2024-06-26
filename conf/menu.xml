@@ -161,6 +161,7 @@
 </menu>
 
 <menu id="system-menu" label="System">
+	<item label="Openbox Configuration Manager"><action name="Execute"><command>obconf</command></action></item>
 	<item label="Reconfigure Openbox"><action name="Reconfigure" /></item>
 </menu>
 

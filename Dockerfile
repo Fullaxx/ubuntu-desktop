@@ -20,6 +20,7 @@ RUN apt-get update && \
       less \
       locales \
       nano \
+      obconf \
       openbox \
       sudo \
       tigervnc-common \
