@@ -2,7 +2,7 @@
 
 set -e
 
-TORPKG=`curl https://www.torproject.org/download/ 2>/dev/null | grep 'Download for Linux' | tr '"' '\n' | grep linux64`
+TORPKG=`curl https://www.torproject.org/download/ 2>/dev/null | grep 'Download for Linux' | tr '"' '\n' | grep x86_64`
 TORSIG=`curl https://www.torproject.org/download/ 2>/dev/null | grep Signature | tr '"' '\n' | grep tar.xz.asc`
 
 wget https://www.torproject.org/${TORPKG} -O /tmp/tor.tar.xz
