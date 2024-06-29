@@ -1,0 +1,12 @@
+[Desktop Entry]
+Version=1.0
+Encoding=UTF-8
+Name=Script
+Type=Application
+Exec=/root/.config/autostart/xfce4_autostart.sh
+Icon=
+Terminal=false
+StartupNotify=false
+Hidden=false
+GenericName=
+GenericName[en_US]=

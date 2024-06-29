@@ -57,6 +57,10 @@ COPY conf/bash.colors conf/color_prompt.sh conf/lang.sh /opt/bash/
 COPY scripts/*.sh /app/scripts/
 
 # ------------------------------------------------------------------------------
+# Install xfce4 scripts and configuration files
+COPY xfce4/* /root/.config/autostart/
+
+# ------------------------------------------------------------------------------
 # Expose ports
 EXPOSE 5901
 
