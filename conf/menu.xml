@@ -65,6 +65,7 @@
 </menu>
 
 <menu id="apps-network-chat-menu" label="Chat">
+	<item label="Discord"><action name="Execute"><command>/app/scripts/discord.sh</command></action></item>
 	<item label="Empathy"><action name="Execute"><command>/app/scripts/empathy.sh</command></action></item>
 	<item label="Hexchat"><action name="Execute"><command>/app/scripts/hexchat.sh</command></action></item>
 	<item label="Loqui"><action name="Execute"><command>/app/scripts/loqui.sh</command></action></item>
