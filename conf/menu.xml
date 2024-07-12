@@ -43,6 +43,7 @@
 	<item label="Chromium"><action name="Execute"><command>/app/scripts/chromium.sh</command></action></item>
 	<item label="Vivaldi"><action name="Execute"><command>/app/scripts/vivaldi.sh</command></action></item>
 	<item label="Firefox"><action name="Execute"><command>/app/scripts/firefox.sh</command></action></item>
+	<item label="Opera"><action name="Execute"><command>/app/scripts/opera.sh</command></action></item>
 	<item label="Brave (stable)"><action name="Execute"><command>/app/scripts/brave_release.sh</command></action></item>
 	<item label="Brave (beta)"><action name="Execute"><command>/app/scripts/brave_beta.sh</command></action></item>
 	<item label="Brave (nightly)"><action name="Execute"><command>/app/scripts/brave_nightly.sh</command></action></item>
@@ -64,6 +65,7 @@
 </menu>
 
 <menu id="apps-network-chat-menu" label="Chat">
+	<item label="Discord"><action name="Execute"><command>/app/scripts/discord.sh</command></action></item>
 	<item label="Empathy"><action name="Execute"><command>/app/scripts/empathy.sh</command></action></item>
 	<item label="Hexchat"><action name="Execute"><command>/app/scripts/hexchat.sh</command></action></item>
 	<item label="Loqui"><action name="Execute"><command>/app/scripts/loqui.sh</command></action></item>

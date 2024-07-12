@@ -49,9 +49,15 @@ if [ -n "${VNCUMASK}" ]; then
   echo "umask ${VNCUMASK}" >> ${HOME}/.bashrc
 fi
 
-mkdir -p ${HOME}/.vnc ${HOME}/.config/{openbox,fbpanel}
+# VNC configuration
+mkdir -p ${HOME}/.vnc
 install -m 0755 /usr/share/ubuntu-desktop/vnc/xstartup ${HOME}/.vnc/xstartup
-install -m 0755 /usr/share/ubuntu-desktop/openbox/autostart ${HOME}/.config/openbox/autostart
-install -m 0644 /usr/share/ubuntu-desktop/openbox/menu.xml ${HOME}/.config/openbox/menu.xml
-install -m 0644 /usr/share/ubuntu-desktop/openbox/rc.xml ${HOME}/.config/openbox/rc.xml
-install -m 0644 /usr/share/ubuntu-desktop/fbpanel/default ${HOME}/.config/fbpanel/default
+
+# Openbox configuration
+if [ "${WINDOWMANAGER}" == "openbox" ]; then
+  mkdir -p ${HOME}/.config/{openbox,fbpanel}
+  install -m 0755 /usr/share/ubuntu-desktop/openbox/autostart ${HOME}/.config/openbox/autostart
+  install -m 0644 /usr/share/ubuntu-desktop/openbox/menu.xml ${HOME}/.config/openbox/menu.xml
+  install -m 0644 /usr/share/ubuntu-desktop/openbox/rc.xml ${HOME}/.config/openbox/rc.xml
+  install -m 0644 /usr/share/ubuntu-desktop/fbpanel/default ${HOME}/.config/fbpanel/default
+fi
