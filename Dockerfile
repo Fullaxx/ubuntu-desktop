@@ -6,7 +6,7 @@ MAINTAINER Brett Kuskie <fullaxx@gmail.com>
 # ------------------------------------------------------------------------------
 # Set environment variables
 ENV DEBIAN_FRONTEND noninteractive
-ENV WINDOWMANAGER openbox
+ENV WINDOWMANAGER xfce4
 ENV LANG C
 
 # ------------------------------------------------------------------------------
