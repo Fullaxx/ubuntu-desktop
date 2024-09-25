@@ -43,6 +43,7 @@
 	<item label="Chromium"><action name="Execute"><command>/app/scripts/chromium.sh</command></action></item>
 	<item label="Vivaldi"><action name="Execute"><command>/app/scripts/vivaldi.sh</command></action></item>
 	<item label="Firefox"><action name="Execute"><command>/app/scripts/firefox.sh</command></action></item>
+	<item label="ZenBrowser"><action name="Execute"><command>/app/scripts/zenbrowser.sh</command></action></item>
 	<item label="Opera"><action name="Execute"><command>/app/scripts/opera.sh</command></action></item>
 	<item label="Brave (stable)"><action name="Execute"><command>/app/scripts/brave_release.sh</command></action></item>
 	<item label="Brave (beta)"><action name="Execute"><command>/app/scripts/brave_beta.sh</command></action></item>
