@@ -1,6 +1,6 @@
 #!/bin/bash
 
-BINARY="zen"
+BINARY="zenbrowser"
 
 BINARYLOC=`which ${BINARY}`
 if [ "$?" -ne "0" ]; then
