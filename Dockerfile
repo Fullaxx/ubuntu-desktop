@@ -1,13 +1,13 @@
 # ------------------------------------------------------------------------------
 # Pull base image
 FROM ubuntu:jammy
-MAINTAINER Brett Kuskie <fullaxx@gmail.com>
+LABEL author="Brett Kuskie <fullaxx@gmail.com>"
 
 # ------------------------------------------------------------------------------
 # Set environment variables
-ENV DEBIAN_FRONTEND noninteractive
-ENV WINDOWMANAGER openbox
-ENV LANG C
+ENV DEBIAN_FRONTEND=noninteractive
+ENV WINDOWMANAGER=openbox
+ENV LANG=C
 
 # ------------------------------------------------------------------------------
 # Install tigervnc,openbox and clean up
