@@ -17,7 +17,6 @@ RUN apt-get update && \
       curl \
       dbus-x11 \
       fbpanel \
-      fcitx5 \
       hsetroot \
       less \
       locales \
