@@ -7,6 +7,7 @@ LABEL author="Brett Kuskie <fullaxx@gmail.com>"
 # Set environment variables
 ENV DEBIAN_FRONTEND=noninteractive
 ENV WINDOWMANAGER=openbox
+ENV LOCALE=en_US
 ENV LANG=C
 
 # ------------------------------------------------------------------------------
@@ -38,9 +39,9 @@ RUN apt-get update && \
 
 # ------------------------------------------------------------------------------
 # Configure locale
-RUN echo "LC_ALL=en_US.UTF-8" >> /etc/environment && \
-    echo "LANG=en_US.UTF-8" > /etc/locale.conf && \
-    echo "en_US.UTF-8 UTF-8" >> /etc/locale.gen && \
+RUN echo "LC_ALL=${LOCALE}.UTF-8" >> /etc/environment && \
+    echo "LANG=${LOCALE}.UTF-8" > /etc/locale.conf && \
+    echo "${LOCALE}.UTF-8 UTF-8" >> /etc/locale.gen && \
     locale-gen
 
 # ------------------------------------------------------------------------------
