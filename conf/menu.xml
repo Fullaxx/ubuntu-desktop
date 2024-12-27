@@ -164,6 +164,7 @@
 </menu>
 
 <menu id="system-menu" label="System">
+	<item label="Fcitx5 Keyboard Input Method Config"><action name="Execute"><command>dbus-launch fcitx5-config-qt</command></action></item>
 	<item label="Openbox Configuration Manager"><action name="Execute"><command>obconf</command></action></item>
 	<item label="Reconfigure Openbox"><action name="Reconfigure" /></item>
 </menu>

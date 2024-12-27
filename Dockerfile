@@ -7,7 +7,7 @@ LABEL author="Brett Kuskie <fullaxx@gmail.com>"
 # Set environment variables
 ENV DEBIAN_FRONTEND=noninteractive
 ENV WINDOWMANAGER=openbox
-ENV LOCALE=en_US
+ENV LOCALE=zh_CN
 ENV LANG=C
 
 # ------------------------------------------------------------------------------
@@ -19,6 +19,7 @@ RUN apt-get update && \
       dbus-x11 \
       fbpanel \
       hsetroot \
+      fcitx5 fcitx5-chinese-addons fonts-wqy-zenhei fcitx5-config-qt \
       less \
       locales \
       nano \
