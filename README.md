@@ -1,4 +1,5 @@
 # Ubuntu Desktop running Openbox/Xfce4/i3 in VNC/RDP
+[![Build and Push Docker Image](https://github.com/Fullaxx/ubuntu-desktop/actions/workflows/docker-build.yml/badge.svg?branch=master)](https://github.com/Fullaxx/ubuntu-desktop/actions/workflows/docker-build.yml)
 
 ## Base Docker Image
 [Ubuntu](https://hub.docker.com/_/ubuntu) (x64)
