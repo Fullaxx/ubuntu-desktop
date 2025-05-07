@@ -1,6 +1,10 @@
 name: Build and Push Docker Image
 
 on:
+  # Allows you to run this workflow manually from the Actions tab
+  workflow_dispatch:
+
+  # This workflow will run after "ci.yml" is completed
   workflow_run:
     workflows: ["ci.yml"]
     types:
