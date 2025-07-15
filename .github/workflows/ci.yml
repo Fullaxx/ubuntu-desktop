@@ -27,7 +27,7 @@ jobs:
 
       # Runs a single command using the runners shell
       - name: Install dev packages
-        run: sudo apt-get install -y curl wget xz-utils gnupg2 dpkg-sig
+        run: sudo apt-get install -y curl wget xz-utils gnupg2
 
       # Runs a set of commands using the runners shell
       - name: Check software downloads
