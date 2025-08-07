@@ -94,15 +94,15 @@ Default: UTC
 Set a background image for the openbox desktop \
 Default: None \
 Image Links:
-[1](https://www.rapidlinux.org/udwp/metallurgy1HDfree.jpg) /
-[2](https://www.rapidlinux.org/udwp/portals1HDfree.jpg) /
-[3](https://www.rapidlinux.org/udwp/cronusrising2k141HDfree.jpg) /
-[4](https://www.rapidlinux.org/udwp/harbinger2k91HDfree.jpg) /
-[5](https://www.rapidlinux.org/udwp/arcana2HDfree.jpg) /
-[6](https://www.rapidlinux.org/udwp/rivenHDfree.jpg) /
-[7](https://www.rapidlinux.org/udwp/circularlogicHDfree.jpg) /
-[8](https://www.rapidlinux.org/udwp/gardener2k121HDfree.jpg) /
-[9](https://www.rapidlinux.org/udwp/overseer2k141_single_1920x1080.jpg) \
+[1](https://images.rapidlinux.org/udwp/metallurgy1HDfree.jpg) /
+[2](https://images.rapidlinux.org/udwp/portals1HDfree.jpg) /
+[3](https://images.rapidlinux.org/udwp/cronusrising2k141HDfree.jpg) /
+[4](https://images.rapidlinux.org/udwp/harbinger2k91HDfree.jpg) /
+[5](https://images.rapidlinux.org/udwp/arcana2HDfree.jpg) /
+[6](https://images.rapidlinux.org/udwp/rivenHDfree.jpg) /
+[7](https://images.rapidlinux.org/udwp/circularlogicHDfree.jpg) /
+[8](https://images.rapidlinux.org/udwp/gardener2k121HDfree.jpg) /
+[9](https://images.rapidlinux.org/udwp/overseer2k141_single_1920x1080.jpg) \
 Layout Options: fill / extend / full / tile / cover / center \
 Default Layout: center
 ```
