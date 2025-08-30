@@ -27,6 +27,7 @@ case "$1" in
    6) NODEVERS="$1";;
    5) NODEVERS="$1";;
    4) NODEVERS="$1";;
+   *) >&2 echo "$1: not valid"; exit 2;;
 esac
 
 curl -fsSL https://deb.nodesource.com/setup_${NODEVERS}.x | bash -
