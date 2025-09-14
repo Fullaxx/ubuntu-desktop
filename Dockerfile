@@ -24,6 +24,7 @@ RUN apt-get update && \
       dbus-x11 \
       hsetroot \
       less \
+      libgtk2.0-0t64 \
       locales \
       nano \
       obconf \
