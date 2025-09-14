@@ -1,14 +1,19 @@
 # ------------------------------------------------------------------------------
+# Build fbpanel for current OS
+FROM ghcr.io/fullaxx/fbpanel_builder:noble AS fbpanel
+WORKDIR /tmp
+RUN curl https://raw.githubusercontent.com/Fullaxx/fbpanel_builder/refs/heads/master/scripts/compile_fullaxx_fbpanel_eleksir.sh | bash
+
+# ------------------------------------------------------------------------------
 # Pull base image
-FROM ubuntu:jammy
+FROM ubuntu:noble
 LABEL author="Brett Kuskie <fullaxx@gmail.com>"
 
 # ------------------------------------------------------------------------------
 # Set environment variables
-ENV DEBIAN_FRONTEND=noninteractive
-ENV WINDOWMANAGER=openbox
-ENV LOCALE=en_US
-ENV LANG=C
+ENV DEBIAN_FRONTEND="noninteractive"
+ENV WINDOWMANAGER="openbox"
+ENV LOCALE="en_US"
 
 # ------------------------------------------------------------------------------
 # Install tigervnc,openbox and clean up
@@ -17,7 +22,6 @@ RUN apt-get update && \
       ca-certificates \
       curl \
       dbus-x11 \
-      fbpanel \
       hsetroot \
       less \
       locales \
@@ -36,6 +40,11 @@ RUN apt-get update && \
       xterm && \
     apt-get clean && \
     rm -rf /var/lib/apt/lists/* /var/tmp/* /tmp/*
+
+# ------------------------------------------------------------------------------
+# Install fbpanel and clean up
+COPY --from=fbpanel /tmp/fbpanel.tar /tmp/fbpanel.tar
+RUN tar xf /tmp/fbpanel.tar -C / && rm /tmp/fbpanel.tar
 
 # ------------------------------------------------------------------------------
 # Configure locale
@@ -63,7 +72,7 @@ COPY conf/xstartup /usr/share/ubuntu-desktop/vnc/
 COPY conf/autostart conf/menu.xml /usr/share/ubuntu-desktop/openbox/
 COPY conf/fbpaneldefault /usr/share/ubuntu-desktop/fbpanel/default
 COPY conf/sudo /usr/share/ubuntu-desktop/sudo
-COPY conf/bash.colors conf/color_prompt.sh conf/lang.sh /opt/bash/
+COPY conf/bash.colors conf/color_prompt.sh /opt/bash/
 COPY scripts/*.sh /app/scripts/
 
 # ------------------------------------------------------------------------------
