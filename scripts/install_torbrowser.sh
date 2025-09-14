@@ -8,7 +8,7 @@ set -e
 export DEBIAN_FRONTEND="noninteractive"
 
 apt-get update
-apt-get install -y file gnupg2 libasound2 libgtk-3-0 libdbus-glib-1-2 wget xz-utils
+apt-get install -y file gnupg2 libgtk-3-0 libdbus-glib-1-2 wget xz-utils libasound2t64
 
 TORPKG=`curl -s https://www.torproject.org/download/ 2>/dev/null | grep 'Download for Linux' | tr '"' '\n' | grep linux-x86_64 || true`
 TORSIG=`curl -s https://www.torproject.org/download/ 2>/dev/null | grep Signature | tr '"' '\n' | grep tar.xz.asc || true`
