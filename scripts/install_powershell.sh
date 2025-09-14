@@ -9,8 +9,8 @@ bailmsg()
 }
 
 export DEBIAN_FRONTEND="noninteractive"
-URL="https://github.com/PowerShell/PowerShell/releases/download/v7.2.7/powershell-lts_7.2.7-1.deb_amd64.deb"
-SHA="DC85567C9A52E16EBED727F41389DE0B8E3275437E4B7A3905BC894F359A24F9"
+URL="https://github.com/PowerShell/PowerShell/releases/download/v7.4.12/powershell-lts_7.4.12-1.deb_amd64.deb"
+SHA="986DC04F5A2320B027ED90F2090040B559EC68CA62BD74A4977297CF85AC2CB0"
 DEB="/tmp/powershell.deb"
 
 wget ${URL} -O ${DEB}
