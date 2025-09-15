@@ -8,6 +8,7 @@ if [ "$?" -ne "0" ]; then
 
   OSV=`grep VERSION_ID /etc/os-release | cut -d\" -f2`
   case "${OSV}" in
+    '24.04') xterm -T PrepareFirefoxPPA -g 100x30 -e sudo /app/scripts/prepare_firefox_ppa.sh ;;
     '22.04') xterm -T PrepareFirefoxPPA -g 100x30 -e sudo /app/scripts/prepare_firefox_ppa.sh ;;
           *) SOURCE="ubuntu" ;;
   esac
