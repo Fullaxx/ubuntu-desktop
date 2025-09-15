@@ -11,7 +11,8 @@ rm -f /tmp/.X11-unix/*
 # Necessary for many applications
 # (i.e. Chrome, terminator, ktorrent, ...)
 /etc/init.d/x11-common start
-/etc/init.d/dbus start
+mkdir -p /run/dbus
+dbus-daemon --system --fork
 
 if [ -n "${VNCUSER}" ] && [ -n "${VNCUID}" ]; then
 # if VNCGROUP/VNCGID is unset, set it to VNCUSER/VNCUID
