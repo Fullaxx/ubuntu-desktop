@@ -48,6 +48,8 @@
 	<item label="Brave (stable)"><action name="Execute"><command>/app/scripts/brave_release.sh</command></action></item>
 	<item label="Brave (beta)"><action name="Execute"><command>/app/scripts/brave_beta.sh</command></action></item>
 	<item label="Brave (nightly)"><action name="Execute"><command>/app/scripts/brave_nightly.sh</command></action></item>
+	<item label="Edge (stable)"><action name="Execute"><command>/app/scripts/edge_stable.sh</command></action></item>
+	<item label="Edge (beta)"><action name="Execute"><command>/app/scripts/edge_beta.sh</command></action></item>
 	<item label="Edge (dev)"><action name="Execute"><command>/app/scripts/edge_dev.sh</command></action></item>
 	<item label="Tor"><action name="Execute"><command>/app/scripts/torbrowser.sh</command></action></item>
 	<!-- <item label="Seamonkey"><action name="Execute"><command>/app/scripts/seamonkey.sh</command></action></item> -->

@@ -1,6 +1,6 @@
 #!/bin/bash
 
-BINARY="microsoft-edge-dev"
+BINARY="microsoft-edge-stable"
 CMDARGS="--disable-gpu --disable-accelerated-2d-canvas --disable-gpu-rasterization"
 # https://www.ghacks.net/2013/10/06/list-useful-google-chrome-command-line-switches/
 # https://peter.sh/experiments/chromium-command-line-switches/
