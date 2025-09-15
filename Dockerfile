@@ -19,11 +19,14 @@ ENV LOCALE="en_US"
 # Install tigervnc,openbox and clean up
 RUN apt-get update && \
     apt-get install -y --no-install-recommends \
+      bzip2 \
       ca-certificates \
       curl \
+      dbus \
       dbus-x11 \
       hsetroot \
       less \
+      libasound2t64 \
       libgtk2.0-0t64 \
       locales \
       nano \
@@ -38,7 +41,8 @@ RUN apt-get update && \
       x11-utils \
       x11-xserver-utils \
       xfonts-base \
-      xterm && \
+      xterm \
+      xz-utils && \
     apt-get clean && \
     rm -rf /var/lib/apt/lists/* /var/tmp/* /tmp/*
 
