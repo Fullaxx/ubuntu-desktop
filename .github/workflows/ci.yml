@@ -9,9 +9,9 @@ on:
 
   # Triggers the workflow on push or pull request events but only for the master branch
   push:
-    branches: [ master, focal, bionic ]
+    branches: [ master, focal, bionic, jammy ]
   pull_request:
-    branches: [ master, focal, bionic ]
+    branches: [ master, focal, bionic, jammy ]
 
 # A workflow run is made up of one or more jobs that can run sequentially or in parallel
 jobs:
@@ -46,7 +46,7 @@ jobs:
 
       # Log in to GitHub Container Registry
       - name: Log in to GitHub Container Registry
-        if: github.event_name == 'push' && (github.ref == 'refs/heads/master' || github.ref == 'refs/heads/focal' || github.ref == 'refs/heads/bionic')
+        if: github.event_name == 'push' && (github.ref == 'refs/heads/master' || github.ref == 'refs/heads/focal' || github.ref == 'refs/heads/bionic' || github.ref == 'refs/heads/jammy')
         uses: docker/login-action@v3
         with:
           registry: ghcr.io
@@ -55,7 +55,7 @@ jobs:
 
       # Extract metadata for Docker
       - name: Extract Docker metadata
-        if: github.event_name == 'push' && (github.ref == 'refs/heads/master' || github.ref == 'refs/heads/focal' || github.ref == 'refs/heads/bionic')
+        if: github.event_name == 'push' && (github.ref == 'refs/heads/master' || github.ref == 'refs/heads/focal' || github.ref == 'refs/heads/bionic' || github.ref == 'refs/heads/jammy')
         id: meta
         uses: docker/metadata-action@v5
         with:
@@ -66,7 +66,7 @@ jobs:
 
       # Build and push Docker image
       - name: Build and push Docker image
-        if: github.event_name == 'push' && (github.ref == 'refs/heads/master' || github.ref == 'refs/heads/focal' || github.ref == 'refs/heads/bionic')
+        if: github.event_name == 'push' && (github.ref == 'refs/heads/master' || github.ref == 'refs/heads/focal' || github.ref == 'refs/heads/bionic' || github.ref == 'refs/heads/jammy')
         uses: docker/build-push-action@v5
         with:
           context: .
