@@ -8,5 +8,5 @@ URL="https://download3.operacdn.com/pub/opera/desktop/${OPERA_VERS}/linux/opera-
 DEB="/tmp/opera.deb"
 
 wget ${URL} -O ${DEB}
-dpkg -i ${DEB} || (set -e; apt-get update; apt-get install -f -y; apt-get install -y upower)
+dpkg -i ${DEB} || (set -e; apt-get update; apt-get install -f -y)
 rm ${DEB}

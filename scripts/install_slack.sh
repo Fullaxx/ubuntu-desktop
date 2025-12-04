@@ -8,7 +8,7 @@ URL="https://downloads.slack-edge.com/releases/linux/4.20.0/prod/x64/slack-deskt
 DEB="/tmp/slack.deb"
 
 apt-get update
-apt-get install -y wget libasound2
+apt-get install -y wget libasound2t64
 
 wget ${URL} -O ${DEB}
 dpkg -i ${DEB} || (set -e; apt-get update; apt-get install -f -y)

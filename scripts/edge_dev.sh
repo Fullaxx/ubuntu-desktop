@@ -9,7 +9,7 @@ BINARYLOC=`which ${BINARY}`
 if [ "$?" -ne "0" ]; then
   set -e
 
-  xterm -T PrepareEdgeDevRepo -g 100x30 -e sudo /app/scripts/prepare_edge_dev_repo.sh
+  xterm -T PrepareEdgeDevRepo -g 100x30 -e sudo /app/scripts/prepare_edge_repo.sh
   xterm -T AptGetUpdate -g 100x30 -e sudo apt-get update
   xterm -T AptGetInstall -g 100x30 -e sudo apt-get install -y ${BINARY}
 fi

@@ -7,7 +7,7 @@ ZBVERS="1.0.1-a.4"
 URL="https://github.com/zen-browser/desktop/releases/download/${ZBVERS}/zen.linux-specific.tar.bz2"
 
 apt-get update
-apt-get install -y bzip2 libasound2
+apt-get install -y bzip2 libasound2t64
 apt-get clean
 
 cd /opt
