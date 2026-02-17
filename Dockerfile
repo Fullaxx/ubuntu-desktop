@@ -24,6 +24,7 @@ RUN apt-get update && \
       curl \
       dbus \
       dbus-x11 \
+      gnome-icon-theme \
       hsetroot \
       less \
       libasound2t64 \
