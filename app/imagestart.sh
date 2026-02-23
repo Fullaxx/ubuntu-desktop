@@ -73,6 +73,7 @@ if [ "${WINDOWMANAGER}" == "openbox" ]; then
     mkdir -p ${HOME}/.config/fbpanel
   fi
   if [ ! -f ${HOME}/.config/fbpanel/default ]; then
-    install -m 0644 /usr/share/ubuntu-desktop/fbpanel/default ${HOME}/.config/fbpanel/default
+#    install -m 0644 /usr/share/ubuntu-desktop/fbpanel/default ${HOME}/.config/fbpanel/default
+    install -m 0644 /usr/share/fbpanel/config/default ${HOME}/.config/fbpanel/default
   fi
 fi
