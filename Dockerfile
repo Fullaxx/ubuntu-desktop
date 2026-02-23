@@ -1,10 +1,4 @@
 # ------------------------------------------------------------------------------
-# Build fbpanel for current OS
-FROM ghcr.io/fullaxx/fbpanel_builder:noble AS fbpanel
-WORKDIR /tmp
-RUN curl https://raw.githubusercontent.com/Fullaxx/fbpanel_builder/refs/heads/master/scripts/compile_fullaxx_fbpanel_eleksir.sh | bash
-
-# ------------------------------------------------------------------------------
 # Pull base image
 FROM ubuntu:noble
 LABEL author="Brett Kuskie <fullaxx@gmail.com>"
@@ -13,6 +7,7 @@ LABEL author="Brett Kuskie <fullaxx@gmail.com>"
 # Set environment variables
 ENV DEBIAN_FRONTEND="noninteractive"
 ENV WINDOWMANAGER="openbox"
+ENV FBPANELVERS="8.2.0"
 ENV LOCALE="en_US"
 
 # ------------------------------------------------------------------------------
@@ -49,8 +44,9 @@ RUN apt-get update && \
 
 # ------------------------------------------------------------------------------
 # Install fbpanel and clean up
-COPY --from=fbpanel /tmp/fbpanel.tar /tmp/fbpanel.tar
-RUN tar xf /tmp/fbpanel.tar -C / && rm /tmp/fbpanel.tar
+RUN wget https://github.com/Fullaxx/fbpanel/releases/download/v${FBPANELVERS}/fbpanel_${FBPANELVERS}_amd64_noble.deb -O /tmp/fbpanel.deb && \
+    dpkg -i /tmp/fbpanel.deb && \
+    rm /tmp/fbpanel.deb
 
 # ------------------------------------------------------------------------------
 # Configure locale
@@ -76,7 +72,6 @@ COPY app/app.sh app/imagestart.sh app/tiger.sh /app/
 COPY bin/set_wallpaper.sh /usr/bin/
 COPY conf/xstartup /usr/share/ubuntu-desktop/vnc/
 COPY conf/autostart conf/menu.xml /usr/share/ubuntu-desktop/openbox/
-COPY conf/fbpaneldefault /usr/share/ubuntu-desktop/fbpanel/default
 COPY conf/sudo /usr/share/ubuntu-desktop/sudo
 COPY conf/bash.colors conf/color_prompt.sh /opt/bash/
 COPY scripts/*.sh /app/scripts/
