@@ -76,4 +76,7 @@ if [ "${WINDOWMANAGER}" == "openbox" ]; then
 #    install -m 0644 /usr/share/ubuntu-desktop/fbpanel/default ${HOME}/.config/fbpanel/default
     install -m 0644 /usr/share/fbpanel/config/default ${HOME}/.config/fbpanel/default
   fi
+  if [ ! -f ${HOME}/.gtkrc-2.0 ]; then
+    echo 'gtk-icon-theme-name = "gnome"' >${HOME}/.gtkrc-2.0
+  fi
 fi
