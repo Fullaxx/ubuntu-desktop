@@ -7,7 +7,7 @@ LABEL author="Brett Kuskie <fullaxx@gmail.com>"
 # Set environment variables
 ENV DEBIAN_FRONTEND="noninteractive"
 ENV WINDOWMANAGER="openbox"
-ENV FBPANELVERS="8.4.2"
+ENV FBPANELVERS="8.4.7"
 ENV LOCALE="en_US"
 
 # ------------------------------------------------------------------------------
