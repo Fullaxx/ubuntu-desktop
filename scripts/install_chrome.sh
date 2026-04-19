@@ -12,4 +12,4 @@ rm ${DEB}
 
 # for some reason the google chrome deb installs an apt sources list file that causes problems
 # hopefully we can get rid of this hack in the future
-/app/scripts/remove_chrome_key.sh
+# /app/scripts/remove_chrome_key.sh
