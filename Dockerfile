@@ -7,7 +7,8 @@ LABEL author="Brett Kuskie <fullaxx@gmail.com>"
 # Set environment variables
 ENV DEBIAN_FRONTEND="noninteractive"
 ENV WINDOWMANAGER="openbox"
-ENV FBPANELVERS="8.4.7"
+ENV FBPANELDIST="noble"
+ENV FBPANELVERS="8.5.0"
 ENV LOCALE="en_US"
 
 # ------------------------------------------------------------------------------
@@ -44,7 +45,7 @@ RUN apt-get update && \
 
 # ------------------------------------------------------------------------------
 # Install fbpanel and clean up
-RUN wget https://github.com/Fullaxx/fbpanel/releases/download/v${FBPANELVERS}/fbpanel_${FBPANELVERS}_amd64_noble.deb -O /tmp/fbpanel.deb && \
+RUN wget https://github.com/Fullaxx/fbpanel/releases/download/v${FBPANELVERS}/fbpanel_${FBPANELVERS}_amd64_${FBPANELDIST}.deb -O /tmp/fbpanel.deb && \
     dpkg -i /tmp/fbpanel.deb && \
     rm /tmp/fbpanel.deb
 
