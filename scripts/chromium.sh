@@ -16,7 +16,7 @@ BINARY="chromium"
 BINARYLOC=`which ${BINARY}`
 if [ "$?" -ne "0" ]; then
   set -e
-  xterm -T InstallChromium -g 100x30 -e sudo /app/scripts/install_chromium_mintzara.sh
+  xterm -T InstallChromium -g 100x30 -e sudo /app/scripts/install_chromium_mintzara_deb.sh
 fi
 
 ${BINARY} --no-sandbox ${CMDARGS}

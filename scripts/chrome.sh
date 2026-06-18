@@ -9,7 +9,7 @@ BINARYLOC=`which ${BINARY}`
 if [ "$?" -ne "0" ]; then
   set -e
 
-  xterm -T InstallChrome -g 100x30 -e sudo /app/scripts/install_chrome.sh
+  xterm -T InstallChrome -g 100x30 -e sudo /app/scripts/install_chrome_deb.sh
 fi
 
 ${BINARY} --no-sandbox ${CMDARGS}
