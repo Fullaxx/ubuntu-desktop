@@ -14,8 +14,8 @@ if [ "$?" -ne "0" ]; then
 
   OSV=`grep VERSION_ID /etc/os-release | cut -d\" -f2`
   case "${OSV}" in
-    '20.04') SOURCE="/app/scripts/install_videocut_repo.sh" ;;
-    '22.04') SOURCE="/app/scripts/install_videocut_repo.sh" ;;
+    '20.04') SOURCE="/app/scripts/install_videocut_ppa.sh" ;;
+    '22.04') SOURCE="/app/scripts/install_videocut_ppa.sh" ;;
           *) bailmsg "${BINARY} is not supported in Ubuntu ${OSV}" ;;
   esac
 
