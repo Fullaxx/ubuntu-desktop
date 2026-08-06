@@ -8,7 +8,7 @@ export DEBIAN_FRONTEND="noninteractive"
 TORVERS="10.5.10"
 
 apt-get update
-apt-get install -y file libgtk-3-0 libdbus-glib-1-2 wget xz-utils
+apt-get install -y file libgtk-3-0t64 libdbus-glib-1-2 wget xz-utils
 
 # Download package
 SHA="8279652de22c9842755196cd861687ba73a3d46a1d5c94dc2c1253e104a46c57"
