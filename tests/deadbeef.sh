@@ -8,3 +8,4 @@ URL="https://downloads.sourceforge.net/project/deadbeef/Builds/${DBVERS}/linux/d
 TARBALL="/tmp/deadbeef.tar.bz2"
 
 wget ${URL} -O ${TARBALL}
+rm ${TARBALL}
