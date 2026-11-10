@@ -1,0 +1,106 @@
+# Once a month, on the 1st: what changes upstream without a commit here. Tor's release feed
+# and signing key, SourceForge's deadbeef download and ubuntu:noble's packages all move on
+# their own schedule. The image is also rebuilt from scratch and republished, so :latest
+# picks up noble's security updates even when nothing is pushed for months.
+#
+# GitHub pauses scheduled workflows in a public repo after 60 days without activity, and
+# scheduled runs do not count. This repo has quiet spells longer than that; after one:
+#   gh workflow enable monthly.yml          (any push also resets the clock)
+#
+# By hand:  gh workflow run monthly.yml                   test only, pushes nothing
+#           gh workflow run monthly.yml -f publish=true   test and publish
+name: monthly
+
+on:
+  schedule:
+    - cron: "37 6 1 * *"      # the 1st of every month, 06:37 UTC
+  workflow_dispatch:
+    inputs:
+      publish:
+        description: Push the rebuilt image to ghcr.io as :latest and :monthly-YYYYMMDD
+        type: boolean
+        default: false
+
+permissions:
+  contents: read
+
+jobs:
+  downloads:
+    name: Download and verify what the install scripts fetch
+    runs-on: ubuntu-24.04
+    timeout-minutes: 15
+    steps:
+      - uses: actions/checkout@v7
+
+      - name: Install dev packages
+        run: sudo apt-get update -qq && sudo apt-get install -y curl wget xz-utils gpgv jq
+
+      - name: Check software downloads
+        run: |
+          cd tests
+          ./tor.sh
+          ./deadbeef.sh
+
+  image:
+    name: Rebuild, test and publish the image
+    runs-on: ubuntu-24.04
+    timeout-minutes: 30
+    permissions:
+      contents: read
+      packages: write
+    env:
+      TEST_TAG: ubuntu-desktop:monthly-test
+      # Scheduled runs publish; a manual run only with -f publish=true
+      PUBLISH: ${{ github.event_name == 'schedule' || inputs.publish }}
+    steps:
+      - uses: actions/checkout@v7
+
+      - uses: docker/setup-buildx-action@v4
+
+      - name: Extract Docker metadata
+        id: meta
+        uses: docker/metadata-action@v6
+        with:
+          images: ghcr.io/${{ github.repository }}
+          tags: |
+            type=raw,value=latest
+            type=raw,value=monthly-{{date 'YYYYMMDD'}}
+
+      # A fresh base and no cache: the point is today's noble packages
+      - name: Build the image
+        uses: docker/build-push-action@v7
+        with:
+          context: .
+          pull: true
+          no-cache: true
+          load: true
+          tags: ${{ env.TEST_TAG }}
+          labels: ${{ steps.meta.outputs.labels }}
+
+      - name: Check the desktop comes up
+        run: tests/desktop.sh "${TEST_TAG}"
+
+      - name: Log in to GitHub Container Registry
+        if: env.PUBLISH == 'true'
+        uses: docker/login-action@v4
+        with:
+          registry: ghcr.io
+          username: ${{ github.actor }}
+          password: ${{ secrets.GITHUB_TOKEN }}
+
+      # The same build again: every layer comes from the build above,
+      # so this pushes exactly the image that was just tested
+      - name: Push the image
+        if: env.PUBLISH == 'true'
+        uses: docker/build-push-action@v7
+        with:
+          context: .
+          push: true
+          tags: ${{ steps.meta.outputs.tags }}
+          labels: ${{ steps.meta.outputs.labels }}
+
+      # After publishing on purpose: the published image has no Tor in it, so a failure
+      # here is drift in the Tor installer, not a bad image, and should not hold back
+      # noble's security updates. It still fails the run, which is what sends the email.
+      - name: Check Tor Browser installs in the image
+        run: docker run --rm -v "${PWD}/tests:/tests:ro" "${TEST_TAG}" /tests/tor_install.sh
