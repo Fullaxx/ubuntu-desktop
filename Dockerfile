@@ -8,7 +8,7 @@ LABEL author="Brett Kuskie <fullaxx@gmail.com>"
 ENV DEBIAN_FRONTEND="noninteractive"
 ENV WINDOWMANAGER="openbox"
 ENV FBPANELDIST="noble"
-ENV FBPANELVERS="8.5.0"
+ENV FBPANELVERS="8.5.2"
 ENV LOCALE="en_US"
 
 # ------------------------------------------------------------------------------
