@@ -1,7 +1,8 @@
 # Once a month, on the 1st: what changes upstream without a commit here. Tor's release feed
-# and signing key, SourceForge's deadbeef download and ubuntu:noble's packages all move on
-# their own schedule. The image is also rebuilt from scratch and republished, so :latest
-# picks up noble's security updates even when nothing is pushed for months.
+# and signing key, SourceForge's deadbeef download, NoMachine's download page and
+# ubuntu:noble's packages all move on their own schedule. The image is also rebuilt from
+# scratch and republished, so :latest picks up noble's security updates even when nothing
+# is pushed for months.
 #
 # GitHub pauses scheduled workflows in a public repo after 60 days without activity, and
 # scheduled runs do not count. This repo has quiet spells longer than that; after one:
@@ -40,6 +41,7 @@ jobs:
           cd tests
           ./tor.sh
           ./deadbeef.sh
+          ./nomachine.sh
 
   image:
     name: Rebuild, test and publish the image
