@@ -9,8 +9,8 @@ SHA=`curl -s http://linux.palemoon.org/download/mainline/ | grep -A 5 'Download 
 URL="http://linux.palemoon.org/${PMFILE}"
 TARBALL="/tmp/palemoon.tar.xz"
 
-sudo apt-get update
-sudo apt-get install -y libdbus-glib-1-2 libgtk-3-0t64 libnss3 yaru-theme-icon xz-utils libasound2t64
+apt-get update
+apt-get install -y libdbus-glib-1-2 libgtk-3-0t64 libnss3 yaru-theme-icon xz-utils libasound2t64
 
 wget ${URL} -O ${TARBALL}
 echo "${SHA} ${TARBALL}" | sha256sum -c
