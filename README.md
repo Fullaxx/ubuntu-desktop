@@ -1,16 +1,14 @@
-# Ubuntu Desktop running Openbox/Xfce4/i3 in VNC/RDP
+# Ubuntu Desktop running Openbox in VNC/RDP
 
 ## Base Docker Image
 [Ubuntu](https://hub.docker.com/_/ubuntu) (x64)
 
-## Get the image from Docker Hub
+## Get the image
 ```
 docker pull ghcr.io/fullaxx/ubuntu-desktop
 docker pull ghcr.io/fullaxx/ubuntu-desktop:jammy
 docker pull ghcr.io/fullaxx/ubuntu-desktop:focal
 docker pull ghcr.io/fullaxx/ubuntu-desktop:bionic
-docker pull ghcr.io/fullaxx/ubuntu-desktop:xfce4
-docker pull ghcr.io/fullaxx/ubuntu-desktop:i3
 docker pull ghcr.io/fullaxx/ubuntu-desktop:rdp
 ```
 
@@ -20,8 +18,6 @@ docker build -t="ghcr.io/fullaxx/ubuntu-desktop"        github.com/Fullaxx/ubunt
 docker build -t="ghcr.io/fullaxx/ubuntu-desktop:jammy"  github.com/Fullaxx/ubuntu-desktop#jammy
 docker build -t="ghcr.io/fullaxx/ubuntu-desktop:focal"  github.com/Fullaxx/ubuntu-desktop#focal
 docker build -t="ghcr.io/fullaxx/ubuntu-desktop:bionic" github.com/Fullaxx/ubuntu-desktop#bionic
-docker build -t="ghcr.io/fullaxx/ubuntu-desktop:xfce4"  github.com/Fullaxx/ubuntu-desktop#xfce4
-docker build -t="ghcr.io/fullaxx/ubuntu-desktop:i3"     github.com/Fullaxx/ubuntu-desktop#i3
 docker build -t="ghcr.io/fullaxx/ubuntu-desktop:rdp"    github.com/Fullaxx/ubuntu-desktop#rdp
 ```
 
@@ -143,47 +139,47 @@ Thanks to [jlesage](https://hub.docker.com/r/jlesage/firefox/#increasing-shared-
 ## Run the image
 Run the image on localhost port 5901 with default configuration
 ```
-docker run -d -p 127.0.0.1:5901:5901 fullaxx/ubuntu-desktop
+docker run -d -p 127.0.0.1:5901:5901 ghcr.io/fullaxx/ubuntu-desktop
 ```
 Run the image with Depth 16
 ```
-docker run -d -p 127.0.0.1:5901:5901 -e VNCDEPTH='16' fullaxx/ubuntu-desktop
+docker run -d -p 127.0.0.1:5901:5901 -e VNCDEPTH='16' ghcr.io/fullaxx/ubuntu-desktop
 ```
 Run the image with 1920x1080 Resolution
 ```
-docker run -d -p 127.0.0.1:5901:5901 -e VNCRES='1920x1080' fullaxx/ubuntu-desktop
+docker run -d -p 127.0.0.1:5901:5901 -e VNCRES='1920x1080' ghcr.io/fullaxx/ubuntu-desktop
 ```
 Run the image with Password Authentication
 ```
-docker run -d -p 127.0.0.1:5901:5901 -e VNCPASS='vncpass' fullaxx/ubuntu-desktop
+docker run -d -p 127.0.0.1:5901:5901 -e VNCPASS='vncpass' ghcr.io/fullaxx/ubuntu-desktop
 ```
 Run the image with Read-Write and Read-Only password (Using R/O pass requires R/W pass)
 ```
-docker run -d -p 127.0.0.1:5901:5901 -e VNCPASS='vncpass' -e VNCPASSRO='readonly' fullaxx/ubuntu-desktop
+docker run -d -p 127.0.0.1:5901:5901 -e VNCPASS='vncpass' -e VNCPASSRO='readonly' ghcr.io/fullaxx/ubuntu-desktop
 ```
 Run the image as a non-root user account
 ```
-docker run -d -p 127.0.0.1:5901:5901 -e VNCUSER='guest' -e VNCUID='1000' fullaxx/ubuntu-desktop
+docker run -d -p 127.0.0.1:5901:5901 -e VNCUSER='guest' -e VNCUID='1000' ghcr.io/fullaxx/ubuntu-desktop
 ```
 Run the image as a non-root user account with custom group
 ```
-docker run -d -p 127.0.0.1:5901:5901 -e VNCUSER='guest' -e VNCUID='1000' -e VNCGROUP='guests' -e VNCGID='1001' fullaxx/ubuntu-desktop
+docker run -d -p 127.0.0.1:5901:5901 -e VNCUSER='guest' -e VNCUID='1000' -e VNCGROUP='guests' -e VNCGID='1001' ghcr.io/fullaxx/ubuntu-desktop
 ```
 Run the image in Tokyo
 ```
-docker run -d -p 127.0.0.1:5901:5901 -e TZ='Asia/Tokyo' fullaxx/ubuntu-desktop
+docker run -d -p 127.0.0.1:5901:5901 -e TZ='Asia/Tokyo' ghcr.io/fullaxx/ubuntu-desktop
 ```
 Run the image with FUSE privileges
 ```
-docker run --device /dev/fuse --cap-add SYS_ADMIN -d -p 127.0.0.1:5901:5901 fullaxx/ubuntu-desktop
+docker run --device /dev/fuse --cap-add SYS_ADMIN -d -p 127.0.0.1:5901:5901 ghcr.io/fullaxx/ubuntu-desktop
 ```
 Run the image using host networking binding tigervncserver to port 5909
 ```
-docker run -d --network=host -e VNCPORT='9' fullaxx/ubuntu-desktop
+docker run -d --network=host -e VNCPORT='9' ghcr.io/fullaxx/ubuntu-desktop
 ```
 Run the image on localhost port 5901 with a decent hostname
 ```
-docker run -d -h mycagedbuntu -p 127.0.0.1:5901:5901 fullaxx/ubuntu-desktop
+docker run -d -h mycagedbuntu -p 127.0.0.1:5901:5901 ghcr.io/fullaxx/ubuntu-desktop
 ```
 
 ## Connect using vncviewer or a web browser
