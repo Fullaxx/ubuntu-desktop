@@ -4,8 +4,8 @@ set -e
 export DEBIAN_FRONTEND="noninteractive"
 # https://askubuntu.com/questions/1179273/how-to-remove-snap-completely-without-losing-the-chromium-browser
 
-xterm -T AptGetUpdate -g 100x30 -e sudo apt-get update
-xterm -T AptGetInstall -g 100x30 -e sudo apt-get install -y debian-archive-keyring
+apt-get update
+apt-get install -y debian-archive-keyring
 
 cat >/etc/apt/sources.list.d/debian-stable.list << EOFF
 deb [signed-by=/usr/share/keyrings/debian-archive-keyring.gpg] http://ftp.us.debian.org/debian/ stable main
