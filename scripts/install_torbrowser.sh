@@ -137,7 +137,7 @@ sed -e 's/"`id -u`" -eq 0/`false`/g' -i "${TBSCRIPT}"
 sed -e 's/$SYSARCHITECTURE -ne $TORARCHITECTURE/"$SYSARCHITECTURE" != "$TORARCHITECTURE"/g' -i "${TBSCRIPT}"
 
 # Tor ships every file root-owned and 0700/0600. Hand the tree to the desktop user
-# (VNCUSER via sudo, otherwise root): it must be able to run it, and Tor Browser
+# (the user who ran it via sudo, otherwise root): it must be able to run it, and Tor Browser
 # keeps its profile inside its own tree.
 chown -R "${SUDO_UID:-0}:${SUDO_GID:-0}" "${STAGE}"
 

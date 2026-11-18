@@ -1,7 +1,7 @@
 #!/bin/bash
 # Install the current NoMachine Personal Edition release, after checking its MD5.
 # Run this script as root
-# (as VNCUSER: sudo /app/scripts/install_nomachine_latest.sh)
+# (as the desktop user: sudo /app/scripts/install_nomachine_latest.sh)
 #
 # Which release: NoMachine publishes no feed of its latest version, so this reads its
 # Linux download page, where every package is an <h3> block holding its version, its

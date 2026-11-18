@@ -1,6 +1,6 @@
 #!/bin/bash
 # Run this script as root
-# (as VNCUSER: sudo /app/scripts/install_nomachine_deb.sh)
+# (as the desktop user: sudo /app/scripts/install_nomachine_deb.sh)
 
 set -e
 
