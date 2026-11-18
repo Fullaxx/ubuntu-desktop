@@ -5,7 +5,9 @@ set -e
 export DEBIAN_FRONTEND="noninteractive"
 
 apt-get update
-apt-get install -y apt-transport-https gnupg2 software-properties-common wget
+# gnupg for the key step below; no apt-transport-https (https is built into apt since 1.5)
+# or software-properties-common (add-apt-repository isn't used)
+apt-get install -y gnupg wget
 
 if [ ! -f /usr/share/keyrings/microsoft.gpg ]; then
   wget -q https://packages.microsoft.com/keys/microsoft.asc -O - | gpg --dearmor > /usr/share/keyrings/microsoft.gpg

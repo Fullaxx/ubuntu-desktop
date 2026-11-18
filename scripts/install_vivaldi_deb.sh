@@ -12,7 +12,9 @@ DEB="/tmp/vivaldi.deb"
 KEY="/tmp/vivaldi.pub"
 
 apt-get update
-apt-get install -y gnupg2 software-properties-common apt-transport-https wget chromium-codecs-ffmpeg-extra dpkg-sig
+# gnupg for the key step below; no apt-transport-https (https is built into apt since 1.5)
+# or software-properties-common (add-apt-repository isn't used)
+apt-get install -y gnupg wget chromium-codecs-ffmpeg-extra dpkg-sig
 
 VPKG=`curl -s https://vivaldi.com/download/ 2>/dev/null | tr '"' '\n' | grep vivaldi-stable | grep amd64.deb | head -n1`
 VKEY="https://repo.vivaldi.com/stable/linux_signing_key.pub"
