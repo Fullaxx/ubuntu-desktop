@@ -8,6 +8,8 @@ install -m 0440 /usr/share/ubuntu-desktop/sudo /etc/sudoers.d/ubuntudesktop
 # test case: docker restart ubuntu-desktop
 rm -f /tmp/.X*-lock
 rm -f /tmp/.X11-unix/*
+# and the stale system dbus pid file: dbus-daemon refuses to start while it exists
+rm -f /run/dbus/pid
 
 # Necessary for many applications
 # (i.e. Chrome, terminator, ktorrent, ...)
@@ -46,9 +48,12 @@ fi
 
 # $HOME should always be set at this point
 # Set umask in all future bash shell instances
+# (only append it once: the container may be restarted and $HOME may persist)
 if [ -n "${VNCUMASK}" ]; then
-  echo >> ${HOME}/.bashrc
-  echo "umask ${VNCUMASK}" >> ${HOME}/.bashrc
+  if ! grep -qx "umask ${VNCUMASK}" ${HOME}/.bashrc 2>/dev/null; then
+    echo >> ${HOME}/.bashrc
+    echo "umask ${VNCUMASK}" >> ${HOME}/.bashrc
+  fi
 fi
 
 # VNC configuration
