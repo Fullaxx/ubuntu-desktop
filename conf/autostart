@@ -4,13 +4,6 @@
 # to run user-specific things.
 #
 
-# if VNCUMASK was set at docker cmdline
-# make sure we set umask here also during autostart
-if [ -n "${VNCUMASK}" ]; then
-  umask "${VNCUMASK}"
-# touch /tmp/TEST (test case should show umask taking affect)
-fi
-
 # https://github.com/jessfraz/dockerfiles/issues/4
 # +si:localuser:root admits only root's own clients (local:root admitted every local connection)
 xhost +si:localuser:root

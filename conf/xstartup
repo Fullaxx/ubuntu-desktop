@@ -1,4 +1,10 @@
 #!/bin/bash
 
+# if VNCUMASK was set at docker cmdline
+# apply it to the whole openbox session (and every app started from it)
+if [ -n "${VNCUMASK}" ]; then
+  umask "${VNCUMASK}"
+fi
+
 /usr/bin/vncconfig -nowin &
 exec /usr/bin/openbox-session
