@@ -1,14 +1,15 @@
 # ------------------------------------------------------------------------------
-# Base Image : Ubuntu 24.04 LTS (Noble Numbat)
-# Support    : Apr 2024 - May 2029
-FROM ubuntu:24.04
+# Base Image : Ubuntu 26.04 LTS (Resolute Raccoon)
+# Support    : Apr 2026 - May 2031
+FROM ubuntu:26.04
+
 LABEL author="Brett Kuskie <fullaxx@gmail.com>"
 
 # ------------------------------------------------------------------------------
 # Set environment variables
 ENV DEBIAN_FRONTEND="noninteractive"
 ENV WINDOWMANAGER="openbox"
-ENV FBPANELDIST="noble"
+ENV FBPANELDIST="resolute"
 ENV FBPANELVERS="8.5.2"
 ENV LOCALE="en_US"
 
