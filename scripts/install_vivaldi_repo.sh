@@ -16,5 +16,11 @@ echo "deb http://repo.vivaldi.com/stable/deb/ stable main" > /etc/apt/sources.li
 apt-get update
 apt-get install -y vivaldi-stable
 
+# vivaldi-stable sets up its own repository (vivaldi.sources, signed by its own keyring in /usr/share/keyrings),
+# so the bootstrap source and key above would make apt see the repository twice (W: warnings): drop them
+if [ -f /etc/apt/sources.list.d/vivaldi.sources ]; then
+  rm -f /etc/apt/sources.list.d/vivaldi.list /etc/apt/trusted.gpg.d/vivaldi.gpg
+fi
+
 # I wish there was a better way ...
 source /app/scripts/wait_for_vivaldi_media_codecs.sh
