@@ -12,12 +12,14 @@ if [ -n "${VNCUMASK}" ]; then
 fi
 
 # https://github.com/jessfraz/dockerfiles/issues/4
-xhost local:root
+# +si:localuser:root admits only root's own clients (local:root admitted every local connection)
+xhost +si:localuser:root
 
 fbpanel &
 
 if [ -n "${WALLPAPER}" ]; then
-  /usr/bin/set_wallpaper.sh ${WALLPAPER} ${WPLAYOUT}
+  # quoted, so each value stays one argument
+  /usr/bin/set_wallpaper.sh "${WALLPAPER}" "${WPLAYOUT}"
 else
   hsetroot -solid "#333333"
 fi
