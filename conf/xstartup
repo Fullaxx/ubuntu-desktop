@@ -6,5 +6,9 @@ if [ -n "${VNCUMASK}" ]; then
   umask "${VNCUMASK}"
 fi
 
+# Skip the GTK accessibility bridge: there is no AT-SPI bus in the container,
+# so every GTK app would log "AT-SPI: Error retrieving accessibility bus address"
+export NO_AT_BRIDGE=1
+
 /usr/bin/vncconfig -nowin &
 exec /usr/bin/openbox-session
