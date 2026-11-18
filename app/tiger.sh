@@ -8,6 +8,10 @@ VNCDEPTH=${VNCDEPTH:-24}
 VNCSTART="${VNCDIR}/xstartup"
 VNCPORT=${VNCPORT:-1}
 
+# VNC configuration
+mkdir -p ${VNCDIR}
+install -m 0755 /usr/share/ubuntu-desktop/vnc/xstartup ${VNCSTART}
+
 # If a password was specified on the command line
 if [ -n "${VNCPASS}" ]; then
   echo "${VNCPASS}" | vncpasswd -f > ${VNCDIR}/passwd

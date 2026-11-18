@@ -4,85 +4,8 @@
 # sudo configuration for ubuntu-desktop
 install -m 0440 /usr/share/ubuntu-desktop/sudo /etc/sudoers.d/ubuntudesktop
 
-# Delete old temp files in case the images was restarted
-# test case: docker restart ubuntu-desktop
-rm -f /tmp/.X*-lock
-rm -f /tmp/.X11-unix/*
-# and the stale system dbus pid file: dbus-daemon refuses to start while it exists
-rm -f /run/dbus/pid
-
 # Necessary for many applications
 # (i.e. Chrome, terminator, ktorrent, ...)
 /etc/init.d/x11-common start
 mkdir -p /run/dbus
 dbus-daemon --system --fork
-
-if [ -n "${VNCUSER}" ] && [ -n "${VNCUID}" ]; then
-# if VNCGROUP/VNCGID is unset, set it to VNCUSER/VNCUID
-  VNCGROUP=${VNCGROUP:-$VNCUSER}
-  VNCGID=${VNCGID:-$VNCUID}
-# If the GROUP already exists, use the existing GID (Thanks to elisionducoeur)
-  if grep -q "^${VNCGROUP}:x:" /etc/group; then
-    VNCGID=`grep "^${VNCGROUP}:x:" /etc/group | cut -d: -f3`
-  fi
-# If the GID exists, but the GROUP is incorrect
-  if grep -q ":x:${VNCGID}:$" /etc/group; then
-    if ! grep -q "^${VNCGROUP}:x:${VNCGID}:$" /etc/group; then
-      VNCGROUP=`grep ":x:${VNCGID}:$" /etc/group | cut -d: -f1`
-    fi
-  fi
-  groupadd -g ${VNCGID} ${VNCGROUP}
-  useradd -u ${VNCUID} -g ${VNCGID} -G sudo -s /bin/bash -m -d /home/${VNCUSER} ${VNCUSER}
-
-  export USER="${VNCUSER}"
-  export GROUP="${VNCGROUP}"
-  if [ -n "${ACCTPASS}" ]; then
-    echo "${VNCUSER}:${ACCTPASS}" | chpasswd
-    unset ACCTPASS
-  fi
-fi
-
-if [ -n "${USER}" ]; then
-  export HOME=`getent passwd ${USER} | cut -d: -f6`
-fi
-
-# $HOME should always be set at this point
-# Set umask in all future bash shell instances
-# (only append it once: the container may be restarted and $HOME may persist)
-if [ -n "${VNCUMASK}" ]; then
-  if ! grep -qx "umask ${VNCUMASK}" ${HOME}/.bashrc 2>/dev/null; then
-    echo >> ${HOME}/.bashrc
-    echo "umask ${VNCUMASK}" >> ${HOME}/.bashrc
-  fi
-fi
-
-# VNC configuration
-mkdir -p ${HOME}/.vnc
-install -m 0755 /usr/share/ubuntu-desktop/vnc/xstartup ${HOME}/.vnc/xstartup
-
-# Openbox/FBPanel configuration
-if [ "${WINDOWMANAGER}" == "openbox" ]; then
-  if [ ! -d ${HOME}/.config/openbox ]; then
-    mkdir -p ${HOME}/.config/openbox
-  fi
-  if [ ! -f ${HOME}/.config/openbox/autostart ]; then
-    install -m 0755 /usr/share/ubuntu-desktop/openbox/autostart ${HOME}/.config/openbox/autostart
-  fi
-  if [ ! -f ${HOME}/.config/openbox/menu.xml ]; then
-    install -m 0644 /usr/share/ubuntu-desktop/openbox/menu.xml ${HOME}/.config/openbox/menu.xml
-  fi
-  if [ ! -f ${HOME}/.config/openbox/rc.xml ]; then
-    install -m 0644 /usr/share/ubuntu-desktop/openbox/rc.xml ${HOME}/.config/openbox/rc.xml
-  fi
-
-  if [ ! -d ${HOME}/.config/fbpanel ]; then
-    mkdir -p ${HOME}/.config/fbpanel
-  fi
-  if [ ! -f ${HOME}/.config/fbpanel/default ]; then
-#    install -m 0644 /usr/share/ubuntu-desktop/fbpanel/default ${HOME}/.config/fbpanel/default
-    install -m 0644 /usr/share/fbpanel/config/default ${HOME}/.config/fbpanel/default
-  fi
-  if [ ! -f ${HOME}/.gtkrc-2.0 ]; then
-    echo 'gtk-icon-theme-name = "gnome"' >${HOME}/.gtkrc-2.0
-  fi
-fi

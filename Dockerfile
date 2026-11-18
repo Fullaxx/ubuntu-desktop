@@ -69,7 +69,7 @@ RUN mkdir -p /usr/share/ubuntu-desktop/openbox && \
 
 # ------------------------------------------------------------------------------
 # Install scripts and configuration files
-COPY app/app.sh app/imagestart.sh app/tiger.sh /app/
+COPY app/*.sh /app/
 COPY bin/set_wallpaper.sh /usr/bin/
 COPY conf/xstartup /usr/share/ubuntu-desktop/vnc/
 COPY conf/autostart conf/menu.xml /usr/share/ubuntu-desktop/openbox/
