@@ -1,7 +1,6 @@
 # ------------------------------------------------------------------------------
 # Base Image : Ubuntu 24.04 LTS (Noble Numbat)
 # Support    : Apr 2024 - May 2029
-# Pull base image
 FROM ubuntu:24.04
 LABEL author="Brett Kuskie <fullaxx@gmail.com>"
 
