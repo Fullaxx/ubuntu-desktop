@@ -15,7 +15,8 @@ case "$1" in
   7) WPURL="https://images.rapidlinux.org/udwp/circularlogicHDfree.jpg" ;;
   8) WPURL="https://images.rapidlinux.org/udwp/gardener2k121HDfree.jpg" ;;
   9) WPURL="https://images.rapidlinux.org/udwp/overseer2k141_single_1920x1080.jpg" ;;
-  *) WPURL="0" ;;
+  # an unknown number is an error, not a silent no-op
+  *) echo "$0: unknown wallpaper: $1" >&2; exit 1 ;;
 esac
 
 case "$2" in
@@ -28,6 +29,6 @@ case "$2" in
          *) HSRCMD="-center" ;;
 esac
 
-if [ -n "${WPURL}" ] && [ "${WPURL}" != "0" ]; then
-  wget "${WPURL}" -O /tmp/wpimg && hsetroot "${HSRCMD}" /tmp/wpimg && rm /tmp/wpimg
-fi
+# -q keeps progress lines out of the session log; -T 20 -t 2 gives up after 2 tries of 20 s
+# (wget's defaults are 20 tries and a 900 s read timeout)
+wget -q -T 20 -t 2 "${WPURL}" -O /tmp/wpimg && hsetroot "${HSRCMD}" /tmp/wpimg && rm /tmp/wpimg
