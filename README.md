@@ -71,7 +71,7 @@ Pre-Req: VNCUSER and VNCUID must be set
 -e ACCTPASS='mysecretpassword'
 ```
 Optional: Set umask to define permission for new files \
-Default: 0022
+Default: 0022 for root, 0002 for a non-root VNCUSER whose group has the same name
 ```
 -e VNCUMASK='0002'
 ```
