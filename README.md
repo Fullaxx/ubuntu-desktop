@@ -48,9 +48,10 @@ Default: No Authentication
 -e VNCPASS='vncpass' -e VNCPASSRO='readonly'
 ```
 Optional: Run as a new non-root user \
-Default: root (UID: 0)
+Default: root (UID: 0) \
+Note: Ubuntu 24.04 already has a user `ubuntu` with UID and GID 1000: use 1001 or above for a new user, or `-e VNCUSER='ubuntu' -e VNCUID='1000'` to run as `ubuntu`
 ```
--e VNCUSER='guest' -e VNCUID='1000'
+-e VNCUSER='guest' -e VNCUID='1001'
 ```
 Optional: If you want your non-root user to be part of the users group \
 Default: same as VNCUSER and VNCUID \
@@ -62,7 +63,7 @@ Optional: Define a new group for non-root user \
 Default: same as VNCUSER and VNCUID \
 Pre-Req: VNCUSER and VNCUID must be set
 ```
--e VNCGROUP='guests' -e VNCGID='1001'
+-e VNCGROUP='guests' -e VNCGID='1002'
 ```
 Optional: Set a password for the VNCUSER account \
 Default: none and the account is locked \
@@ -157,13 +158,17 @@ Run the image with Read-Write and Read-Only password (Using R/O pass requires R/
 ```
 docker run -d -p 127.0.0.1:5901:5901 -e VNCPASS='vncpass' -e VNCPASSRO='readonly' ghcr.io/fullaxx/ubuntu-desktop
 ```
+Run the image as the built-in ubuntu user account
+```
+docker run -d -p 127.0.0.1:5901:5901 -e VNCUSER='ubuntu' -e VNCUID='1000' ghcr.io/fullaxx/ubuntu-desktop
+```
 Run the image as a non-root user account
 ```
-docker run -d -p 127.0.0.1:5901:5901 -e VNCUSER='guest' -e VNCUID='1000' ghcr.io/fullaxx/ubuntu-desktop
+docker run -d -p 127.0.0.1:5901:5901 -e VNCUSER='guest' -e VNCUID='1001' ghcr.io/fullaxx/ubuntu-desktop
 ```
 Run the image as a non-root user account with custom group
 ```
-docker run -d -p 127.0.0.1:5901:5901 -e VNCUSER='guest' -e VNCUID='1000' -e VNCGROUP='guests' -e VNCGID='1001' ghcr.io/fullaxx/ubuntu-desktop
+docker run -d -p 127.0.0.1:5901:5901 -e VNCUSER='guest' -e VNCUID='1001' -e VNCGROUP='guests' -e VNCGID='1002' ghcr.io/fullaxx/ubuntu-desktop
 ```
 Run the image in Tokyo
 ```
