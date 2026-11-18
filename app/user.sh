@@ -4,42 +4,93 @@
 # user.sh: set up the desktop user
 # Sourced by app.sh after imagestart.sh (system services) and before tiger.sh (VNC server).
 #
-# Without VNCUSER/VNCUID the desktop runs as root (HOME=/root).
+# Without VNCUSERMAP the desktop runs as root (HOME=/root).
 #
-# With VNCUSER and VNCUID set, a non-root account is created:
-#   VNCUSER   account name (required)
-#   VNCUID    account UID (required)
-#   VNCGROUP  primary group name (default: VNCUSER)
-#   VNCGID    primary group GID (default: VNCUID)
-#   ACCTPASS  optional password for the account (otherwise it stays locked)
-# If VNCGROUP already exists its GID is used; if VNCGID already belongs to
-# another group, that group is used. The account joins the sudo group
-# (NOPASSWD rules in conf/sudo). USER, GROUP and HOME are exported for tiger.sh.
+# Variables:
+#   VNCUSERMAP   the account as name/uid, e.g. guest/1001 (enables the non-root desktop)
+#   VNCGROUPMAP  its primary group as name/gid, e.g. guests/1002 (default: same as VNCUSERMAP)
+#   ACCTPASS     optional password for the account (otherwise it stays locked)
+#   VNCUMASK     optional umask, appended once to ~/.bashrc (root or the account)
+# These replace VNCUSER/VNCUID/VNCGROUP/VNCGID. An old setup without VNCUSERMAP
+# runs as root, and a notice explains what to change: in docker logs, and in the
+# desktop (xstartup shows /tmp/ubuntu-desktop-notice.txt with xmessage).
+# With VNCUSERMAP set, the old variables are ignored.
 #
-# For root or the account, VNCUMASK (optional) is appended once to ~/.bashrc.
+# Why there are two paths:
+# These scripts were written for ubuntu:22.04, which had no default user.
+# Ubuntu 24.04 and later images ship a user named "ubuntu" (UID/GID 1000),
+# and the old example VNCUSER=guest VNCUID=1000 collided with it.
+# Users and groups are never renamed or deleted; each one either exists or is created:
 #
-# Known issue: this was written for ubuntu:22.04, which had no default user.
-# Ubuntu 24.04+ images ship "ubuntu" (UID/GID 1000), so groupadd/useradd fail
-# for it: VNCUSER=ubuntu silently reuses that account whatever VNCUID says,
-# and another name with VNCUID=1000 can't be created (HOME ends up empty and
-# the container exits). Also, the VNCGID check only finds groups without members.
+# 1) The user already exists: the built-in "ubuntu", or the account that a
+#    previous start of this container created (docker restart).
+#    It is used as is: its UID and primary group must match the maps,
+#    e.g. VNCUSERMAP=ubuntu/1000. A mismatch stops the container.
+#
+# 2) Any other name: a new account and a new primary group are created,
+#    e.g. VNCUSERMAP=guest/1001 (group guest/1001) or with VNCGROUPMAP=guests/1002.
+#    The UID and the GID must both be free and above 1000, and the group
+#    name must not exist yet.
+#    The account joins sudo (NOPASSWD rules in conf/sudo), audio (--device /dev/snd)
+#    and video (/dev/dri), like the built-in "ubuntu" account.
+#
+# Errors print the reason (see docker logs) and stop the container (exit 1).
+#
+# For a non-root account, USER, GROUP and HOME are exported for tiger.sh.
 
-if [ -n "${VNCUSER}" ] && [ -n "${VNCUID}" ]; then
-# if VNCGROUP/VNCGID is unset, set it to VNCUSER/VNCUID
-  VNCGROUP=${VNCGROUP:-$VNCUSER}
-  VNCGID=${VNCGID:-$VNCUID}
-# If the GROUP already exists, use the existing GID (Thanks to elisionducoeur)
-  if grep -q "^${VNCGROUP}:x:" /etc/group; then
-    VNCGID=`grep "^${VNCGROUP}:x:" /etc/group | cut -d: -f3`
+# Startup notice for the desktop: xstartup shows this file with xmessage
+NOTICE=/tmp/ubuntu-desktop-notice.txt
+rm -f "${NOTICE}"
+# The old variables were replaced by VNCUSERMAP/VNCGROUPMAP
+if [ -n "${VNCUSER}${VNCUID}${VNCGROUP}${VNCGID}" ]; then
+  if [ -z "${VNCUSERMAP}" ]; then
+    cat > "${NOTICE}" <<'EOF'
+This container was started with VNCUSER/VNCUID (VNCGROUP/VNCGID),
+which were replaced by VNCUSERMAP=name/uid and VNCGROUPMAP=name/gid.
+The desktop is running as root instead.
+Recreate the container with:
+-e VNCUSERMAP=guest/1001 (see README.md).
+EOF
+    cat "${NOTICE}" >&2
+  else
+    echo "NOTE: VNCUSER/VNCUID/VNCGROUP/VNCGID are ignored, VNCUSERMAP/VNCGROUPMAP are used" >&2
   fi
-# If the GID exists, but the GROUP is incorrect
-  if grep -q ":x:${VNCGID}:$" /etc/group; then
-    if ! grep -q "^${VNCGROUP}:x:${VNCGID}:$" /etc/group; then
-      VNCGROUP=`grep ":x:${VNCGID}:$" /etc/group | cut -d: -f1`
+fi
+
+if [ -n "${VNCUSERMAP}" ]; then
+  VNCGROUPMAP=${VNCGROUPMAP:-$VNCUSERMAP}
+# Both maps are name/number
+  for MAP in "${VNCUSERMAP}" "${VNCGROUPMAP}"; do
+    if ! [[ "${MAP}" =~ ^[^/]+/[0-9]+$ ]]; then
+      echo "ERROR: ${MAP} is not name/number (e.g. guest/1001)" >&2
+      exit 1
     fi
+  done
+  VNCUSER=${VNCUSERMAP%/*};   VNCUID=${VNCUSERMAP#*/}
+  VNCGROUP=${VNCGROUPMAP%/*}; VNCGID=${VNCGROUPMAP#*/}
+
+  if getent passwd "${VNCUSER}" >/dev/null; then
+# 1) Use the existing account as is: the maps must match it
+    if [ "$(id -u "${VNCUSER}")" != "${VNCUID}" ] || [ "$(id -gn "${VNCUSER}")" != "${VNCGROUP}" ] || [ "$(id -g "${VNCUSER}")" != "${VNCGID}" ]; then
+      echo "ERROR: ${VNCUSER} already exists as ${VNCUSER}/$(id -u "${VNCUSER}") with group $(id -gn "${VNCUSER}")/$(id -g "${VNCUSER}")," >&2
+      echo "ERROR: but VNCUSERMAP/VNCGROUPMAP ask for ${VNCUSERMAP} with group ${VNCGROUPMAP}" >&2
+      exit 1
+    fi
+  else
+# 2) Create a new account and group: free IDs above 1000, an unused group name
+    if [ "${VNCUID}" -le 1000 ] || getent passwd "${VNCUID}" >/dev/null; then
+      echo "ERROR: UID ${VNCUID} can't be used for a new account (${VNCUSER})," >&2
+      echo "ERROR: choose a free UID above 1000, or use VNCUSERMAP=ubuntu/1000" >&2
+      exit 1
+    fi
+    if [ "${VNCGID}" -le 1000 ] || getent group "${VNCGID}" >/dev/null || getent group "${VNCGROUP}" >/dev/null; then
+      echo "ERROR: group ${VNCGROUPMAP} can't be created for ${VNCUSER}," >&2
+      echo "ERROR: choose an unused group name with a free GID above 1000" >&2
+      exit 1
+    fi
+    groupadd -g "${VNCGID}" "${VNCGROUP}" || exit 1
+    useradd -u "${VNCUID}" -g "${VNCGID}" -G sudo,audio,video -s /bin/bash -m -d "/home/${VNCUSER}" "${VNCUSER}" || exit 1
   fi
-  groupadd -g ${VNCGID} ${VNCGROUP}
-  useradd -u ${VNCUID} -g ${VNCGID} -G sudo -s /bin/bash -m -d /home/${VNCUSER} ${VNCUSER}
 
   export USER="${VNCUSER}"
   export GROUP="${VNCGROUP}"
@@ -50,7 +101,8 @@ if [ -n "${VNCUSER}" ] && [ -n "${VNCUID}" ]; then
 fi
 
 if [ -n "${USER}" ]; then
-  export HOME=`getent passwd ${USER} | cut -d: -f6`
+  HOME=$(getent passwd "${USER}" | cut -d: -f6)
+  export HOME
 fi
 
 # $HOME should always be set at this point

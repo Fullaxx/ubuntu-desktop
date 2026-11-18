@@ -47,35 +47,52 @@ Default: No Authentication
 ```
 -e VNCPASS='vncpass' -e VNCPASSRO='readonly'
 ```
-Optional: Run as a new non-root user \
-Default: root (UID: 0) \
-Note: Ubuntu 24.04 already has a user `ubuntu` with UID and GID 1000: use 1001 or above for a new user, or `-e VNCUSER='ubuntu' -e VNCUID='1000'` to run as `ubuntu`
+Optional: Run as a non-root user (see [Non-root users](#non-root-users)) \
+Default: root (UID: 0)
 ```
--e VNCUSER='guest' -e VNCUID='1001'
+-e VNCUSERMAP='guest/1001'
 ```
-Optional: If you want your non-root user to be part of the users group \
-Default: same as VNCUSER and VNCUID \
-Pre-Req: VNCUSER and VNCUID must be set
+Optional: Set the primary group of a new non-root user \
+Default: same name and number as VNCUSERMAP \
+Pre-Req: VNCUSERMAP must be set; the group is created, its GID must be free and greater than 1000
 ```
--e VNCGROUP='users'
+-e VNCGROUPMAP='guests/1002'
 ```
-Optional: Define a new group for non-root user \
-Default: same as VNCUSER and VNCUID \
-Pre-Req: VNCUSER and VNCUID must be set
-```
--e VNCGROUP='guests' -e VNCGID='1002'
-```
-Optional: Set a password for the VNCUSER account \
+Optional: Set a password for the non-root user \
 Default: none and the account is locked \
-Pre-Req: VNCUSER and VNCUID must be set
+Pre-Req: VNCUSERMAP must be set
 ```
 -e ACCTPASS='mysecretpassword'
 ```
 Optional: Set umask to define permission for new files \
-Default: 0022 for root, 0002 for a non-root VNCUSER whose group has the same name
+Default: 0022 for root, 0002 for a non-root user whose group has the same name
 ```
 -e VNCUMASK='0002'
 ```
+
+## Non-root users
+Ubuntu 24.04 and later images (this one is 26.04) already contain a user named `ubuntu` with UID and GID 1000.
+The startup scripts were written for Ubuntu 22.04, which had no such user, so the old example
+`-e VNCUSER='guest' -e VNCUID='1000'` collided with it and the container exited.
+There are now two distinct ways to run as a non-root user, each set with `VNCUSERMAP=name/uid`
+(and optionally `VNCGROUPMAP=name/gid` for the primary group).
+
+Use the built-in `ubuntu` account as is \
+The maps must match it (VNCGROUPMAP, if set, must be ubuntu/1000)
+```
+-e VNCUSERMAP='ubuntu/1000'
+```
+Create your own account with any other name \
+Its UID and GID must be free and greater than 1000, and its group is created too \
+It joins the sudo, audio and video groups, like the built-in account
+```
+-e VNCUSERMAP='guest/1001'
+-e VNCUSERMAP='guest/1001' -e VNCGROUPMAP='guests/1002'
+```
+Anything else, such as `-e VNCUSERMAP='guest/1000'`, stops the container, and `docker logs` explains why.
+
+`VNCUSER`, `VNCUID`, `VNCGROUP` and `VNCGID` were replaced by `VNCUSERMAP` and `VNCGROUPMAP`. \
+A container started with only the old variables runs as root and shows a notice in the desktop and in `docker logs`.
 
 ## TimeZone Configuration
 Set the timezone to be used inside the container \
@@ -160,15 +177,15 @@ docker run -d -p 127.0.0.1:5901:5901 -e VNCPASS='vncpass' -e VNCPASSRO='readonly
 ```
 Run the image as the built-in ubuntu user account
 ```
-docker run -d -p 127.0.0.1:5901:5901 -e VNCUSER='ubuntu' -e VNCUID='1000' ghcr.io/fullaxx/ubuntu-desktop
+docker run -d -p 127.0.0.1:5901:5901 -e VNCUSERMAP='ubuntu/1000' ghcr.io/fullaxx/ubuntu-desktop
 ```
-Run the image as a non-root user account
+Run the image as a new non-root user account
 ```
-docker run -d -p 127.0.0.1:5901:5901 -e VNCUSER='guest' -e VNCUID='1001' ghcr.io/fullaxx/ubuntu-desktop
+docker run -d -p 127.0.0.1:5901:5901 -e VNCUSERMAP='guest/1001' ghcr.io/fullaxx/ubuntu-desktop
 ```
-Run the image as a non-root user account with custom group
+Run the image as a new non-root user account with custom group
 ```
-docker run -d -p 127.0.0.1:5901:5901 -e VNCUSER='guest' -e VNCUID='1001' -e VNCGROUP='guests' -e VNCGID='1002' ghcr.io/fullaxx/ubuntu-desktop
+docker run -d -p 127.0.0.1:5901:5901 -e VNCUSERMAP='guest/1001' -e VNCGROUPMAP='guests/1002' ghcr.io/fullaxx/ubuntu-desktop
 ```
 Run the image in Tokyo
 ```
