@@ -8,4 +8,4 @@ done
 
 git pull
 
-docker build -t "ghcr.io/fullaxx/ubuntu-desktop" .
+docker build -t "ghcr.io/fullaxx/ubuntu-desktop:24.04" .

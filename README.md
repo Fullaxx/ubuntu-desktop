@@ -1,24 +1,19 @@
 # Ubuntu Desktop running Openbox in VNC/RDP
 
+**This is the `24.04` branch:** Ubuntu 24.04 (noble), published as `ghcr.io/fullaxx/ubuntu-desktop:24.04`. \
+It gets fixes only, no new features or breaking changes. For the latest release, see the `master` branch (`:latest`).
+
 ## Base Docker Image
-[Ubuntu](https://hub.docker.com/_/ubuntu) (x64)
+[Ubuntu](https://hub.docker.com/_/ubuntu) 24.04 (x64)
 
 ## Get the image
 ```
-docker pull ghcr.io/fullaxx/ubuntu-desktop
-docker pull ghcr.io/fullaxx/ubuntu-desktop:jammy
-docker pull ghcr.io/fullaxx/ubuntu-desktop:focal
-docker pull ghcr.io/fullaxx/ubuntu-desktop:bionic
-docker pull ghcr.io/fullaxx/ubuntu-desktop:rdp
+docker pull ghcr.io/fullaxx/ubuntu-desktop:24.04
 ```
 
 ## Build it locally using the github repository
 ```
-docker build -t="ghcr.io/fullaxx/ubuntu-desktop"        github.com/Fullaxx/ubuntu-desktop
-docker build -t="ghcr.io/fullaxx/ubuntu-desktop:jammy"  github.com/Fullaxx/ubuntu-desktop#jammy
-docker build -t="ghcr.io/fullaxx/ubuntu-desktop:focal"  github.com/Fullaxx/ubuntu-desktop#focal
-docker build -t="ghcr.io/fullaxx/ubuntu-desktop:bionic" github.com/Fullaxx/ubuntu-desktop#bionic
-docker build -t="ghcr.io/fullaxx/ubuntu-desktop:rdp"    github.com/Fullaxx/ubuntu-desktop#rdp
+docker build -t="ghcr.io/fullaxx/ubuntu-desktop:24.04" github.com/Fullaxx/ubuntu-desktop#24.04
 ```
 
 ## VNC Options
@@ -140,51 +135,51 @@ Thanks to [jlesage](https://hub.docker.com/r/jlesage/firefox/#increasing-shared-
 ## Run the image
 Run the image on localhost port 5901 with default configuration
 ```
-docker run -d -p 127.0.0.1:5901:5901 ghcr.io/fullaxx/ubuntu-desktop
+docker run -d -p 127.0.0.1:5901:5901 ghcr.io/fullaxx/ubuntu-desktop:24.04
 ```
 Run the image with Depth 16
 ```
-docker run -d -p 127.0.0.1:5901:5901 -e VNCDEPTH='16' ghcr.io/fullaxx/ubuntu-desktop
+docker run -d -p 127.0.0.1:5901:5901 -e VNCDEPTH='16' ghcr.io/fullaxx/ubuntu-desktop:24.04
 ```
 Run the image with 1920x1080 Resolution
 ```
-docker run -d -p 127.0.0.1:5901:5901 -e VNCRES='1920x1080' ghcr.io/fullaxx/ubuntu-desktop
+docker run -d -p 127.0.0.1:5901:5901 -e VNCRES='1920x1080' ghcr.io/fullaxx/ubuntu-desktop:24.04
 ```
 Run the image with Password Authentication
 ```
-docker run -d -p 127.0.0.1:5901:5901 -e VNCPASS='vncpass' ghcr.io/fullaxx/ubuntu-desktop
+docker run -d -p 127.0.0.1:5901:5901 -e VNCPASS='vncpass' ghcr.io/fullaxx/ubuntu-desktop:24.04
 ```
 Run the image with Read-Write and Read-Only password (Using R/O pass requires R/W pass)
 ```
-docker run -d -p 127.0.0.1:5901:5901 -e VNCPASS='vncpass' -e VNCPASSRO='readonly' ghcr.io/fullaxx/ubuntu-desktop
+docker run -d -p 127.0.0.1:5901:5901 -e VNCPASS='vncpass' -e VNCPASSRO='readonly' ghcr.io/fullaxx/ubuntu-desktop:24.04
 ```
 Run the image as the built-in ubuntu user account
 ```
-docker run -d -p 127.0.0.1:5901:5901 -e VNCUSER='ubuntu' -e VNCUID='1000' ghcr.io/fullaxx/ubuntu-desktop
+docker run -d -p 127.0.0.1:5901:5901 -e VNCUSER='ubuntu' -e VNCUID='1000' ghcr.io/fullaxx/ubuntu-desktop:24.04
 ```
 Run the image as a non-root user account
 ```
-docker run -d -p 127.0.0.1:5901:5901 -e VNCUSER='guest' -e VNCUID='1001' ghcr.io/fullaxx/ubuntu-desktop
+docker run -d -p 127.0.0.1:5901:5901 -e VNCUSER='guest' -e VNCUID='1001' ghcr.io/fullaxx/ubuntu-desktop:24.04
 ```
 Run the image as a non-root user account with custom group
 ```
-docker run -d -p 127.0.0.1:5901:5901 -e VNCUSER='guest' -e VNCUID='1001' -e VNCGROUP='guests' -e VNCGID='1002' ghcr.io/fullaxx/ubuntu-desktop
+docker run -d -p 127.0.0.1:5901:5901 -e VNCUSER='guest' -e VNCUID='1001' -e VNCGROUP='guests' -e VNCGID='1002' ghcr.io/fullaxx/ubuntu-desktop:24.04
 ```
 Run the image in Tokyo
 ```
-docker run -d -p 127.0.0.1:5901:5901 -e TZ='Asia/Tokyo' ghcr.io/fullaxx/ubuntu-desktop
+docker run -d -p 127.0.0.1:5901:5901 -e TZ='Asia/Tokyo' ghcr.io/fullaxx/ubuntu-desktop:24.04
 ```
 Run the image with FUSE privileges
 ```
-docker run --device /dev/fuse --cap-add SYS_ADMIN -d -p 127.0.0.1:5901:5901 ghcr.io/fullaxx/ubuntu-desktop
+docker run --device /dev/fuse --cap-add SYS_ADMIN -d -p 127.0.0.1:5901:5901 ghcr.io/fullaxx/ubuntu-desktop:24.04
 ```
 Run the image using host networking binding tigervncserver to port 5909
 ```
-docker run -d --network=host -e VNCPORT='9' ghcr.io/fullaxx/ubuntu-desktop
+docker run -d --network=host -e VNCPORT='9' ghcr.io/fullaxx/ubuntu-desktop:24.04
 ```
 Run the image on localhost port 5901 with a decent hostname
 ```
-docker run -d -h mycagedbuntu -p 127.0.0.1:5901:5901 ghcr.io/fullaxx/ubuntu-desktop
+docker run -d -h mycagedbuntu -p 127.0.0.1:5901:5901 ghcr.io/fullaxx/ubuntu-desktop:24.04
 ```
 
 ## Connect using vncviewer or a web browser

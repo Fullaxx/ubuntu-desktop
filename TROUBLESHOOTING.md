@@ -6,5 +6,5 @@ If you see errors like the following: \
 ![Openbox Error Message 2](images/openbox_error_2.jpg) \
 try adding --security-opt seccomp=unconfined to your docker run command:
 ```
-docker run -it --rm --name ud --security-opt seccomp=unconfined -p 5901:5901 fullaxx/ubuntu-desktop
+docker run -it --rm --name ud --security-opt seccomp=unconfined -p 5901:5901 ghcr.io/fullaxx/ubuntu-desktop:24.04
 ```
