@@ -1,4 +1,5 @@
 #!/bin/bash
+# This script runs as root
 
 VNCDIR="/root/.vnc"
 VNCRES="-geometry 1280x800"

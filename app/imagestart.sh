@@ -1,4 +1,5 @@
 #!/bin/bash
+# This script runs as root
 
 # sudo configuration for ubuntu-desktop
 install -m 0440 /usr/share/ubuntu-desktop/sudo /etc/sudoers.d/ubuntudesktop
