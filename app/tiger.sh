@@ -22,7 +22,9 @@ if [ -n "${USER}" ]; then
   SUDOUSEROPT="-u ${USER}"
 fi
 
-# -fg will allow the openbox exit button to bring us down
+# -fg keeps tigervncserver in the foreground until the desktop session ends
+# (without it, tigervncserver returns once the server is up, and the container stops)
+# so ending the desktop session (log out / exit) will bring us down
 # using sudo here will allow 'docker stop' to bring us down quickly
 exec sudo ${SUDOUSEROPT} tigervncserver :${VNCPORT} -fg -localhost no \
 ${VNCAUTH} -geometry ${VNCRES} -depth ${VNCDEPTH} -xstartup ${VNCSTART}
