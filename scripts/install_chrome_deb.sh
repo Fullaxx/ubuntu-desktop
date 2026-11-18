@@ -7,5 +7,8 @@ URL="https://dl.google.com/linux/direct/google-chrome-stable_current_amd64.deb"
 DEB="/tmp/chrome.deb"
 
 wget ${URL} -O ${DEB}
-dpkg -i ${DEB} || (set -e; apt-get update; apt-get install -f -y)
+# apt-get (not dpkg -i) resolves the package's dependencies before installing, and fails if it can't
+# (dpkg -i || apt-get install -f removed an uninstallable package and still exited 0)
+apt-get update
+apt-get install -y ${DEB}
 rm ${DEB}
