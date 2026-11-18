@@ -1,8 +1,8 @@
 #!/bin/bash
 # Install Tor Browser inside the ubuntu-desktop image with the real installer, as root (the
 # image's default user), and check what tests/tor.sh cannot: that the installer's packages
-# still exist on noble, that the tarball still unpacks, that the root-check patch still
-# applies, and that the bundled browser and tor still run. Used by monthly.yml:
+# still exist in the image's release, that the tarball still unpacks, that the root-check
+# patch still applies, and that the bundled browser and tor still run. Used by monthly.yml:
 #   docker run --rm -v "$PWD/tests:/tests:ro" IMAGE /tests/tor_install.sh
 
 set -euo pipefail
