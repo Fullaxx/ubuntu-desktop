@@ -107,6 +107,21 @@ A name that isn't in /usr/share/zoneinfo is reported in `docker logs`
 -e TZ='America/New_York'
 ```
 
+## Locale Configuration
+Set the locale of the desktop: how dates, times and numbers are written, and the sort order \
+Default: en_US \
+Menus and dialogs stay in English, because the image has no translations \
+A new locale is generated at the first start, which takes a second or two \
+A name that isn't a UTF-8 locale in /usr/share/i18n/SUPPORTED is reported in `docker logs`
+```
+-e LOCALE='de_DE'
+-e LOCALE='fr_FR'
+-e LOCALE='es_MX'
+-e LOCALE='pt_BR'
+-e LOCALE='ja_JP'
+-e LOCALE='hi_IN'
+```
+
 ## Wallpaper Configuration
 Set a background image for the openbox desktop \
 Default: None \
@@ -191,6 +206,10 @@ docker run -d -p 127.0.0.1:5901:5901 -e VNCUSERMAP='guest/1001' -e VNCGROUPMAP='
 Run the image in Tokyo
 ```
 docker run -d -p 127.0.0.1:5901:5901 -e TZ='Asia/Tokyo' ghcr.io/fullaxx/ubuntu-desktop
+```
+Run the image in Berlin, with German dates and numbers
+```
+docker run -d -p 127.0.0.1:5901:5901 -e TZ='Europe/Berlin' -e LOCALE='de_DE' ghcr.io/fullaxx/ubuntu-desktop
 ```
 Run the image with FUSE privileges
 ```
