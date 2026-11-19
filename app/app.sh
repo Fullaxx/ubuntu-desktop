@@ -7,6 +7,9 @@ source /app/cleanup.sh
 # Timezone: /etc/localtime follows TZ
 source /app/timezone.sh
 
+# Locale of the desktop session: LANG and LC_ALL follow LOCALE
+source /app/locale.sh
+
 # System services: sudo rules, X11 socket dirs, system dbus
 source /app/imagestart.sh
 
