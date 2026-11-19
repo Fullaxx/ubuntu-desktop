@@ -11,7 +11,6 @@ ENV DEBIAN_FRONTEND="noninteractive"
 ENV WINDOWMANAGER="openbox"
 ENV FBPANELDIST="resolute"
 ENV FBPANELVERS="8.5.2"
-ENV LOCALE="en_US"
 
 # ------------------------------------------------------------------------------
 # Install tigervnc,openbox and clean up
@@ -54,9 +53,10 @@ RUN wget https://github.com/Fullaxx/fbpanel/releases/download/v${FBPANELVERS}/fb
 
 # ------------------------------------------------------------------------------
 # Configure locale
-RUN echo "LC_ALL=${LOCALE}.UTF-8" >> /etc/environment && \
-    echo "LANG=${LOCALE}.UTF-8" > /etc/locale.conf && \
-    echo "${LOCALE}.UTF-8 UTF-8" >> /etc/locale.gen && \
+# (en_US is the image's default: at startup, app/locale.sh switches to docker run's -e LOCALE, or else -e LANG)
+RUN echo "LC_ALL=en_US.UTF-8" >> /etc/environment && \
+    echo "LANG=en_US.UTF-8" > /etc/locale.conf && \
+    echo "en_US.UTF-8 UTF-8" >> /etc/locale.gen && \
     locale-gen
 
 # ------------------------------------------------------------------------------
