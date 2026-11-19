@@ -17,6 +17,8 @@ if [ "$?" -ne "0" ]; then
   case "${OSV}" in
     '18.04') SOURCE="ubuntu" ;;
     '22.04') SOURCE="ubuntu" ;;
+    '24.04') SOURCE="ubuntu" ;;
+    '26.04') SOURCE="ubuntu" ;;
           *) bailmsg "${BINARY} is not supported in Ubuntu ${OSV}" ;;
   esac
 
