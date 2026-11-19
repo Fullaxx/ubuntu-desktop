@@ -7,9 +7,9 @@
 # start (about a second) and kept for restarts.
 # sudo's pam_env gives the session LANG from /etc/locale.conf (/etc/default/locale links to it) and
 # LC_ALL from /etc/environment, so both are rewritten. A LANG from docker run also reaches docker exec
-# shells, which then find its locale generated.
-# It changes formats (dates, times, numbers, sorting), not the language of menus: the Ubuntu base
-# image leaves out translations.
+# shells, which then find its locale generated when it's written with its codeset (de_DE.UTF-8).
+# It changes formats (dates, times, numbers, sorting) and, where the image keeps translations, the
+# language of menus and dialogs; docker run's -e LANGUAGE (en, de, ...) sets the language on its own (sudo keeps it).
 # LOCALE wins over LANG; the message names whichever was used
 LOCALEVAR=LOCALE
 LOCALEREQ="${LOCALE}"

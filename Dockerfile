@@ -13,6 +13,13 @@ ENV FBPANELDIST="resolute"
 ENV FBPANELVERS="8.5.2"
 
 # ------------------------------------------------------------------------------
+# Keep translations
+# (the Ubuntu base image's dpkg excludes leave out every package's translations; without that line,
+# the packages installed below and by the launcher scripts keep theirs, and their messages follow
+# the desktop's locale)
+RUN sed -e '\#^path-exclude=/usr/share/locale/#d' -i /etc/dpkg/dpkg.cfg.d/excludes
+
+# ------------------------------------------------------------------------------
 # Install tigervnc,openbox and clean up
 RUN apt-get update && \
     apt-get install -y --no-install-recommends \
