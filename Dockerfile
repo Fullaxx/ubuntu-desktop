@@ -72,12 +72,17 @@ RUN mkdir -p /usr/share/ubuntu-desktop/openbox && \
 # ------------------------------------------------------------------------------
 # Install scripts and configuration files
 COPY app/*.sh /app/
-COPY bin/set_wallpaper.sh /usr/bin/
 COPY conf/xstartup /usr/share/ubuntu-desktop/vnc/
-COPY conf/autostart conf/menu.xml /usr/share/ubuntu-desktop/openbox/
 COPY conf/sudo /usr/share/ubuntu-desktop/sudo
 COPY conf/bash.colors conf/color_prompt.sh /opt/bash/
 COPY scripts/*.sh /app/scripts/
+
+# ------------------------------------------------------------------------------
+# Install openbox scripts and configuration files
+# (openbox/ holds the files only the openbox session uses; the shared ones are in conf/.
+# app/wm.sh copies autostart and menu.xml into ~/.config/openbox when they're missing)
+COPY openbox/set_wallpaper.sh /usr/bin/
+COPY openbox/autostart openbox/menu.xml /usr/share/ubuntu-desktop/openbox/
 
 # ------------------------------------------------------------------------------
 # Expose ports
