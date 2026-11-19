@@ -95,8 +95,9 @@ Anything else, such as `-e VNCUSERMAP='guest/1000'`, stops the container, and `d
 A container started with only the old variables runs as root and shows a notice in the desktop and in `docker logs`.
 
 ## TimeZone Configuration
-Set the timezone to be used inside the container \
-Default: UTC
+Set the timezone to be used inside the container (it also sets /etc/localtime) \
+Default: UTC \
+A name that isn't in /usr/share/zoneinfo is reported in `docker logs`
 ```
 -e TZ='Asia/Tokyo'
 -e TZ='Europe/London'
