@@ -73,8 +73,9 @@ Default: 0022 for root, 0002 for a non-root VNCUSER whose group has the same nam
 ```
 
 ## TimeZone Configuration
-Set the timezone to be used inside the container \
-Default: UTC
+Set the timezone to be used inside the container (it also sets /etc/localtime) \
+Default: UTC \
+A name that isn't in /usr/share/zoneinfo is reported in `docker logs`
 ```
 -e TZ='Asia/Tokyo'
 -e TZ='Europe/London'

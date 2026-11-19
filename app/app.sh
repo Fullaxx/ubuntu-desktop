@@ -4,6 +4,9 @@
 # Remove leftovers from a previous run (docker restart)
 source /app/cleanup.sh
 
+# Timezone: /etc/localtime follows TZ
+source /app/timezone.sh
+
 # System services: sudo rules, X11 socket dirs, system dbus
 source /app/imagestart.sh
 
