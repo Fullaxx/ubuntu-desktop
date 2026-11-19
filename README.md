@@ -90,7 +90,8 @@ Set the locale of the desktop: how dates, times and numbers are written, and the
 Default: en_US \
 Menus and dialogs stay in English, because the image has no translations \
 A new locale is generated at the first start, which takes a second or two \
-A name that isn't a UTF-8 locale in /usr/share/i18n/SUPPORTED is reported in `docker logs`
+A name that isn't a UTF-8 locale in /usr/share/i18n/SUPPORTED is reported in `docker logs` \
+`-e LANG='de_DE.UTF-8'` works too, and also sets the locale of `docker exec` shells; if both are set, LOCALE wins
 ```
 -e LOCALE='de_DE'
 -e LOCALE='fr_FR'
