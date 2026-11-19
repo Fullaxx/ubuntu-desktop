@@ -75,7 +75,7 @@ Default: 0022 for root, 0002 for a non-root VNCUSER whose group has the same nam
 ## TimeZone Configuration
 Set the timezone to be used inside the container (it also sets /etc/localtime) \
 Default: UTC \
-A name that isn't in /usr/share/zoneinfo is reported in `docker logs`
+A name that isn't in /usr/share/zoneinfo is reported in `docker logs`; all the details: [LOCALE.md](LOCALE.md#time-zone-tz)
 ```
 -e TZ='Asia/Tokyo'
 -e TZ='Europe/London'
@@ -86,20 +86,36 @@ A name that isn't in /usr/share/zoneinfo is reported in `docker logs`
 ```
 
 ## Locale Configuration
-Set the locale of the desktop: how dates, times and numbers are written, and the sort order \
-Default: en_US \
-Menus and dialogs stay in English, because the image has no translations \
-A new locale is generated at the first start, which takes a second or two \
-A name that isn't a UTF-8 locale in /usr/share/i18n/SUPPORTED is reported in `docker logs` \
-`-e LANG='de_DE.UTF-8'` works too, and also sets the locale of `docker exec` shells; if both are set, LOCALE wins
+Set the language of programs that have a translation, and how dates, times and numbers are written \
+Openbox's right-click menu stays English: [what gets translated](LOCALE.md#what-gets-translated) \
+All the details, more examples and how it works: [LOCALE.md](LOCALE.md)
+
+Optional: Set the locale \
+Default: en_US (English, 11/19/2026, 03:12:31 PM, 1,234,567.89) \
+Chinese, Japanese, Korean, Hindi, Thai and some other languages need a font first: [LOCALE.md](LOCALE.md#fonts) \
+This image leaves those fonts out to stay small; [ubuntu-desktop-xfce](https://github.com/Fullaxx/ubuntu-desktop-xfce) has them built in
 ```
+-e LOCALE='en_GB'
 -e LOCALE='de_DE'
 -e LOCALE='fr_FR'
 -e LOCALE='es_MX'
 -e LOCALE='pt_BR'
--e LOCALE='ja_JP'
--e LOCALE='hi_IN'
+-e LOCALE='ru_RU'
 ```
+Optional: Set the locale with LANG instead, so that `docker exec` shells use it too \
+Default: en_US.UTF-8 in the desktop, none (ASCII only) in `docker exec` shells \
+Write it with .UTF-8; if LOCALE is set too, LOCALE wins
+```
+-e LANG='de_DE.UTF-8'
+-e LANG='fr_FR.UTF-8'
+```
+Optional: Set only the language of programs that have a translation, and keep the locale's dates and numbers \
+Default: the locale's language
+```
+-e LOCALE='de_DE' -e LANGUAGE='en'
+-e LANGUAGE='de'
+```
+Use these instead of LC_ALL, LC_TIME and the other LC_ variables, which don't work here: [LOCALE.md](LOCALE.md#dont)
 
 ## Wallpaper Configuration
 Set a background image for the openbox desktop \
