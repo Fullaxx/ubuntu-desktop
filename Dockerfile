@@ -30,6 +30,7 @@ RUN apt-get update && \
       nano \
       obconf \
       openbox \
+      python3-xdg \
       sudo \
       tigervnc-common \
       tigervnc-standalone-server \
