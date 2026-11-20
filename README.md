@@ -1,20 +1,25 @@
 # Ubuntu Desktop running Openbox in VNC/RDP
 
 ## Base Docker Image
-[Ubuntu](https://hub.docker.com/_/ubuntu) (x64)
+[Ubuntu](https://hub.docker.com/_/ubuntu) 26.04 (x64), and older releases on their own branches
 
 ## Get the image
 ```
 docker pull ghcr.io/fullaxx/ubuntu-desktop
+docker pull ghcr.io/fullaxx/ubuntu-desktop:24.04
 docker pull ghcr.io/fullaxx/ubuntu-desktop:jammy
 docker pull ghcr.io/fullaxx/ubuntu-desktop:focal
-docker pull ghcr.io/fullaxx/ubuntu-desktop:bionic
-docker pull ghcr.io/fullaxx/ubuntu-desktop:rdp
+```
+Older releases, from 2025, are on Docker Hub
+```
+docker pull fullaxx/ubuntu-desktop:bionic
+docker pull fullaxx/ubuntu-desktop:rdp
 ```
 
 ## Build it locally using the github repository
 ```
 docker build -t="ghcr.io/fullaxx/ubuntu-desktop"        https://github.com/Fullaxx/ubuntu-desktop.git
+docker build -t="ghcr.io/fullaxx/ubuntu-desktop:24.04"  https://github.com/Fullaxx/ubuntu-desktop.git#24.04
 docker build -t="ghcr.io/fullaxx/ubuntu-desktop:jammy"  https://github.com/Fullaxx/ubuntu-desktop.git#jammy
 docker build -t="ghcr.io/fullaxx/ubuntu-desktop:focal"  https://github.com/Fullaxx/ubuntu-desktop.git#focal
 docker build -t="ghcr.io/fullaxx/ubuntu-desktop:bionic" https://github.com/Fullaxx/ubuntu-desktop.git#bionic
