@@ -2,7 +2,7 @@
 
 set -e
 
-BBTJAVAVERS=${BBTJAVAVERS:-11}
+BBTJAVAVERS=${BBTJAVAVERS:-25}
 DEBIAN_FRONTEND="noninteractive"
 BBTINSTSCR="/tmp/BiglyBT_Installer.sh"
 
@@ -16,7 +16,7 @@ fi
 
 # Install java
 apt-get update
-apt-get install -y --no-install-recommends ${OPENJDKPKG} webkit2gtk-driver
+apt-get install -y --no-install-recommends ${OPENJDKPKG} webkitgtk-webdriver
 if grep -q '^assistive_technologies' /etc/java-${BBTJAVAVERS}-openjdk/accessibility.properties; then
   sed -e 's/^assistive_technologies/#assistive_technologies/' -i /etc/java-${BBTJAVAVERS}-openjdk/accessibility.properties
 fi
