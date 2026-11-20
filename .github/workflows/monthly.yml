@@ -1,15 +1,15 @@
 # Once a month, on the 1st: what changes upstream without a commit here. Tor's release feed
-# and signing key, SourceForge's deadbeef download, NoMachine's download page and
-# ubuntu:noble's packages all move on their own schedule. The image is also rebuilt from
-# scratch and republished, so :latest picks up noble's security updates even when nothing
-# is pushed for months.
+# and signing key, SourceForge's deadbeef download and ubuntu:26.04's packages all move
+# on their own schedule. The image is also rebuilt from scratch and republished, so
+# :latest picks up 26.04's security updates even when nothing is pushed for months.
 #
 # GitHub pauses scheduled workflows in a public repo after 60 days without activity, and
 # scheduled runs do not count. This repo has quiet spells longer than that; after one:
 #   gh workflow enable monthly.yml          (any push also resets the clock)
 #
-# By hand:  gh workflow run monthly.yml                   test only, pushes nothing
-#           gh workflow run monthly.yml -f publish=true   test and publish
+# By hand, from master (on any other branch both jobs are skipped):
+#   gh workflow run monthly.yml                   test only, pushes nothing
+#   gh workflow run monthly.yml -f publish=true   test and publish
 name: monthly
 
 on:
@@ -28,7 +28,10 @@ permissions:
 jobs:
   downloads:
     name: Download and verify what the install scripts fetch
-    runs-on: ubuntu-24.04
+    # Only from master: the schedule already runs only there, and this also
+    # skips a run started by hand on any other branch
+    if: github.ref == 'refs/heads/master'
+    runs-on: ubuntu-26.04
     timeout-minutes: 15
     steps:
       - uses: actions/checkout@v7
@@ -41,11 +44,12 @@ jobs:
           cd tests
           ./tor.sh
           ./deadbeef.sh
-          ./nomachine.sh
 
   image:
     name: Rebuild, test and publish the image
-    runs-on: ubuntu-24.04
+    # Only from master, like the downloads job
+    if: github.ref == 'refs/heads/master'
+    runs-on: ubuntu-26.04
     timeout-minutes: 30
     permissions:
       contents: read
@@ -68,7 +72,7 @@ jobs:
             type=raw,value=latest
             type=raw,value=monthly-{{date 'YYYYMMDD'}}
 
-      # A fresh base and no cache: the point is today's noble packages
+      # A fresh base and no cache: the point is today's 26.04 packages
       - name: Build the image
         uses: docker/build-push-action@v7
         with:
@@ -103,6 +107,6 @@ jobs:
 
       # After publishing on purpose: the published image has no Tor in it, so a failure
       # here is drift in the Tor installer, not a bad image, and should not hold back
-      # noble's security updates. It still fails the run, which is what sends the email.
+      # 26.04's security updates. It still fails the run, which is what sends the email.
       - name: Check Tor Browser installs in the image
         run: docker run --rm -v "${PWD}/tests:/tests:ro" "${TEST_TAG}" /tests/tor_install.sh

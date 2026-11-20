@@ -16,6 +16,8 @@ if [ "$?" -ne "0" ]; then
   OSV=`grep VERSION_ID /etc/os-release | cut -d\" -f2`
   case "${OSV}" in
     '18.04') SOURCE="ubuntu" ;;
+    '24.04') SOURCE="ubuntu" ;;
+    '26.04') SOURCE="ubuntu" ;;
           *) bailmsg "${BINARY} is not supported in Ubuntu ${OSV}" ;;
   esac
 
