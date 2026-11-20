@@ -13,7 +13,7 @@ docker pull ghcr.io/fullaxx/ubuntu-desktop:24.04
 
 ## Build it locally using the github repository
 ```
-docker build -t="ghcr.io/fullaxx/ubuntu-desktop:24.04" github.com/Fullaxx/ubuntu-desktop#24.04
+docker build -t="ghcr.io/fullaxx/ubuntu-desktop:24.04" https://github.com/Fullaxx/ubuntu-desktop.git#24.04
 ```
 
 ## VNC Options
