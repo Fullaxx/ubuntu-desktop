@@ -2,6 +2,7 @@
 # This script runs as root
 # Per-user window manager config for the image's WINDOWMANAGER (it needs HOME from user.sh);
 # only openbox needs any: xfce4 reads its defaults from /etc/xdg
+# It also puts glycin's bwrap workaround in front of /usr/bin/bwrap (PRIVILEGES.md)
 
 # Openbox/FBPanel configuration
 if [ "${WINDOWMANAGER}" == "openbox" ]; then
@@ -27,4 +28,11 @@ if [ "${WINDOWMANAGER}" == "openbox" ]; then
   if [ ! -f ${HOME}/.gtkrc-2.0 ]; then
     echo 'gtk-icon-theme-name = "gnome"' >${HOME}/.gtkrc-2.0
   fi
+fi
+
+# glycin's sandbox test goes through /usr/share/ubuntu-desktop/bwrap, so GTK programs load images
+# without the sandbox where it can't start, instead of aborting (PRIVILEGES.md);
+# BUBBLEWRAP_WORKAROUND=0 leaves /usr/bin/bwrap alone
+if [ "${BUBBLEWRAP_WORKAROUND}" != "0" ]; then
+  install -m 0755 /usr/share/ubuntu-desktop/bwrap /usr/local/bin/bwrap
 fi
