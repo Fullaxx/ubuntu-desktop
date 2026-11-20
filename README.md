@@ -14,11 +14,11 @@ docker pull ghcr.io/fullaxx/ubuntu-desktop:rdp
 
 ## Build it locally using the github repository
 ```
-docker build -t="ghcr.io/fullaxx/ubuntu-desktop"        github.com/Fullaxx/ubuntu-desktop
-docker build -t="ghcr.io/fullaxx/ubuntu-desktop:jammy"  github.com/Fullaxx/ubuntu-desktop#jammy
-docker build -t="ghcr.io/fullaxx/ubuntu-desktop:focal"  github.com/Fullaxx/ubuntu-desktop#focal
-docker build -t="ghcr.io/fullaxx/ubuntu-desktop:bionic" github.com/Fullaxx/ubuntu-desktop#bionic
-docker build -t="ghcr.io/fullaxx/ubuntu-desktop:rdp"    github.com/Fullaxx/ubuntu-desktop#rdp
+docker build -t="ghcr.io/fullaxx/ubuntu-desktop"        https://github.com/Fullaxx/ubuntu-desktop.git
+docker build -t="ghcr.io/fullaxx/ubuntu-desktop:jammy"  https://github.com/Fullaxx/ubuntu-desktop.git#jammy
+docker build -t="ghcr.io/fullaxx/ubuntu-desktop:focal"  https://github.com/Fullaxx/ubuntu-desktop.git#focal
+docker build -t="ghcr.io/fullaxx/ubuntu-desktop:bionic" https://github.com/Fullaxx/ubuntu-desktop.git#bionic
+docker build -t="ghcr.io/fullaxx/ubuntu-desktop:rdp"    https://github.com/Fullaxx/ubuntu-desktop.git#rdp
 ```
 
 ## VNC Options
