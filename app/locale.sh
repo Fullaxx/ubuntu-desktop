@@ -15,9 +15,10 @@ LOCALEVAR=LOCALE
 LOCALEREQ="${LOCALE}"
 if [ -z "${LOCALEREQ}" ]; then LOCALEVAR=LANG; LOCALEREQ="${LANG}"; fi
 if [ -n "${LOCALEREQ}" ]; then
-  # the name without its codeset: de_DE.UTF-8 -> de_DE, sr_RS.UTF-8@latin -> sr_RS@latin
-  LOCALEBASE="${LOCALEREQ/.UTF-8/}"
-  LOCALEBASE="${LOCALEBASE/.utf8/}"
+  # the name without its codeset, which glibc reads in any letter case, with or without the dash:
+  # de_DE.UTF-8, de_DE.utf-8, de_DE.utf8 -> de_DE; sr_RS.UTF-8@latin -> sr_RS@latin
+  LOCALEBASE="${LOCALEREQ/.[Uu][Tt][Ff]-8/}"
+  LOCALEBASE="${LOCALEBASE/.[Uu][Tt][Ff]8/}"
   # SUPPORTED lists a UTF-8 locale with its codeset (de_DE.UTF-8) or, if it has no other, without (hi_IN)
   LOCALELINE=""
   case "${LOCALEBASE}" in
