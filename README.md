@@ -3,9 +3,25 @@
 ## Base Docker Image
 [Ubuntu](https://hub.docker.com/_/ubuntu) 26.04 (x64), and older releases on their own branches
 
+## Branches and tags
+Each branch publishes its own tags of `ghcr.io/fullaxx/ubuntu-desktop`, rebuilt at every push:
+
+| Tag | Branch | Ubuntu |
+| --- | --- | --- |
+| `:latest`, `:26.04` | [`master`](https://github.com/Fullaxx/ubuntu-desktop/tree/master) | 26.04 (resolute) |
+| `:24.04` | [`24.04`](https://github.com/Fullaxx/ubuntu-desktop/tree/24.04) | 24.04 (noble) |
+| `:jammy` | [`jammy`](https://github.com/Fullaxx/ubuntu-desktop/tree/jammy) | 22.04 (jammy) |
+| `:focal` | [`focal`](https://github.com/Fullaxx/ubuntu-desktop/tree/focal) | 20.04 (focal) |
+
+- `:latest` tracks 26.04: every push to `master` publishes the same image as `:latest` and `:26.04`, and so does the monthly rebuild.
+- `24.04` gets fixes only, no new features or breaking changes. Its README uses `:24.04` in every example.
+- Every push to `master` is also tagged `master-<short commit>`, such as `:master-5246e30`. These tags never move.
+- The examples below use `:latest`. Everything in this README works the same with `:26.04`.
+
 ## Get the image
 ```
 docker pull ghcr.io/fullaxx/ubuntu-desktop
+docker pull ghcr.io/fullaxx/ubuntu-desktop:26.04
 docker pull ghcr.io/fullaxx/ubuntu-desktop:24.04
 docker pull ghcr.io/fullaxx/ubuntu-desktop:jammy
 docker pull ghcr.io/fullaxx/ubuntu-desktop:focal

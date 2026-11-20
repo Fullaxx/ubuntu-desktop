@@ -56,6 +56,7 @@ jobs:
           password: ${{ secrets.GITHUB_TOKEN }}
 
       # Extract metadata for Docker
+      # (master is Ubuntu 26.04: :latest and :26.04 are the same image, plus master-<short sha>)
       - name: Extract Docker metadata
         if: github.event_name == 'push' && github.ref == 'refs/heads/master'
         id: meta
@@ -64,6 +65,7 @@ jobs:
           images: ghcr.io/${{ github.repository }}
           tags: |
             type=raw,value=latest,enable={{is_default_branch}}
+            type=raw,value=26.04,enable={{is_default_branch}}
             type=sha,prefix={{branch}}-
 
       # Build and push Docker image

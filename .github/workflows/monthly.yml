@@ -1,7 +1,7 @@
 # Once a month, on the 1st: what changes upstream without a commit here. Tor's release feed
 # and signing key, SourceForge's deadbeef download and ubuntu:26.04's packages all move
 # on their own schedule. The image is also rebuilt from scratch and republished, so
-# :latest picks up 26.04's security updates even when nothing is pushed for months.
+# :latest and :26.04 pick up 26.04's security updates even when nothing is pushed for months.
 #
 # GitHub pauses scheduled workflows in a public repo after 60 days without activity, and
 # scheduled runs do not count. This repo has quiet spells longer than that; after one:
@@ -18,7 +18,7 @@ on:
   workflow_dispatch:
     inputs:
       publish:
-        description: Push the rebuilt image to ghcr.io as :latest and :monthly-YYYYMMDD
+        description: Push the rebuilt image to ghcr.io as :latest, :26.04 and :monthly-YYYYMMDD
         type: boolean
         default: false
 
@@ -70,6 +70,7 @@ jobs:
           images: ghcr.io/${{ github.repository }}
           tags: |
             type=raw,value=latest
+            type=raw,value=26.04
             type=raw,value=monthly-{{date 'YYYYMMDD'}}
 
       # A fresh base and no cache: the point is today's 26.04 packages
