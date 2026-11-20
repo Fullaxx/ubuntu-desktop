@@ -13,14 +13,11 @@
 	<item label="terminator"><action name="Execute"><command>/app/scripts/terminator.sh</command></action></item>
 	<item label="tilix"><action name="Execute"><command>/app/scripts/tilix.sh</command></action></item>
 	<item label="tilda"><action name="Execute"><command>/app/scripts/tilda.sh</command></action></item>
-	<item label="Archipelago (AI)"><action name="Execute"><command>/app/scripts/archipelago.AI.sh</command></action></item>
-	<item label="hyper (AI)"><action name="Execute"><command>/app/scripts/hyper.AI.sh</command></action></item>
 	<item label="PowerShell"><action name="Execute"><command>/app/scripts/powershell.sh</command></action></item>
 </menu>
 
 <menu id="apps-office-menu" label="Office">
 	<item label="LibreOffice"><action name="Execute"><command>/app/scripts/libreoffice.sh</command></action></item>
-	<item label="LibreOffice (AI)"><action name="Execute"><command>/app/scripts/libreoffice.AI.sh</command></action></item>
 </menu>
 
 <menu id="apps-editors-menu" label="Editors">
@@ -34,7 +31,6 @@
 	<item label="VSCode"><action name="Execute"><command>/app/scripts/vscode.sh</command></action></item>
 	<item label="NetBeans"><action name="Execute"><command>/app/scripts/netbeans.sh</command></action></item>
 	<item label="CherryTree"><action name="Execute"><command>/app/scripts/cherrytree.sh</command></action></item>
-	<item label="PanWriter (AI)"><action name="Execute"><command>/app/scripts/panwriter.AI.sh</command></action></item>
 	<item label="XFW"><action name="Execute"><command>/app/scripts/xfw.sh</command></action></item>
 </menu>
 
@@ -54,7 +50,6 @@
 	<item label="Tor"><action name="Execute"><command>/app/scripts/torbrowser.sh</command></action></item>
 	<!-- <item label="Seamonkey"><action name="Execute"><command>/app/scripts/seamonkey.sh</command></action></item> -->
 	<item label="Pale Moon"><action name="Execute"><command>/app/scripts/palemoon.sh</command></action></item>
-	<item label="NCSA Mosiac (AI)"><action name="Execute"><command>/app/scripts/ncsa_mosiac.AI.sh</command></action></item>
 </menu>
 
 <menu id="apps-network-bittorrent-menu" label="BitTorrent">
@@ -64,7 +59,6 @@
 	<item label="Ktorrent"><action name="Execute"><command>/app/scripts/ktorrent.sh</command></action></item>
 	<item label="TransmissionGtk"><action name="Execute"><command>/app/scripts/transmissiongtk.sh</command></action></item>
 	<item label="Bitstormlite"><action name="Execute"><command>/app/scripts/bitstormlite.sh</command></action></item>
-	<item label="Electorrent (AI)"><action name="Execute"><command>/app/scripts/electorrent.AI.sh</command></action></item>
 </menu>
 
 <menu id="apps-network-chat-menu" label="Chat">
@@ -144,18 +138,11 @@
 	<item label="openshot"><action name="Execute"><command>/app/scripts/openshot.sh</command></action></item>
 	<item label="vidcutter"><action name="Execute"><command>/app/scripts/vidcutter.sh</command></action></item>
 	<item label="videocut"><action name="Execute"><command>/app/scripts/videocut.sh</command></action></item>
-	<item label="avidemux (AI)"><action name="Execute"><command>/app/scripts/avidemux.AI.sh</command></action></item>
 </menu>
 
 <menu id="apps-utilities-menu" label="Utilities">
 	<item label="Galculator"><action name="Execute"><command>/app/scripts/galculator.sh</command></action></item>
 	<item label="Kcalc"><action name="Execute"><command>/app/scripts/kcalc.sh</command></action></item>
-</menu>
-
-<menu id="apps-re-menu" label="Rev Eng">
-	<item label="Cutter (AI)"><action name="Execute"><command>/app/scripts/cutter.AI.sh</command></action></item>
-	<item label="Packet Sender (AI)"><action name="Execute"><command>/app/scripts/pktsender.AI.sh</command></action></item>
-	<item label="ngrev (AI)"><action name="Execute"><command>/app/scripts/ngrev.AI.sh</command></action></item>
 </menu>
 
 <menu id="apps-misc-menu" label="Misc">
@@ -184,7 +171,6 @@
 	<menu id="apps-graphics-menu"/>
 	<menu id="apps-av-menu"/>
 	<menu id="apps-utilities-menu"/>
-	<menu id="apps-re-menu"/>
 	<menu id="apps-misc-menu"/>
 	<separator label="System" />
 	<menu id="system-menu"/>
