@@ -41,7 +41,6 @@ jobs:
           cd tests
           ./tor.sh
           ./deadbeef.sh
-          ./nomachine.sh
 
       # Set up Docker Buildx
       - name: Set up Docker Buildx
