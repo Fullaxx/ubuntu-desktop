@@ -1,0 +1,22 @@
+#!/bin/sh
+# bwrap workaround for glycin, the image loader behind GTK's icons and pictures
+# (PRIVILEGES.md; unless BUBBLEWRAP_WORKAROUND=0, app/wm.sh installs this as
+# /usr/local/bin/bwrap: glycin runs "bwrap" through PATH, and /usr/local/bin comes before /usr/bin,
+# in sudo's secure_path too)
+#
+# glycin decodes every image in a helper process that it sandboxes with bwrap. Before a program's
+# first image, it tests the sandbox on /usr/bin/true. When the test fails because the container blocks
+# namespaces (a default docker run), glycin decodes without a sandbox and prints "WARNING: Glycin
+# running without sandbox.". When the test fails any other way, glycin keeps the sandbox, every image
+# fails to load, and GTK programs abort, the desktop session too. That happens where the container
+# lets bwrap create its namespaces but refuses a later step, as on an Ubuntu 24.04 host with
+# --cap-add SYS_ADMIN (a mount) or --privileged (the loopback network, for users other than root).
+# So when glycin's test fails, this says so in the words glycin falls back on.
+# Every other bwrap run, glycin's real sandboxes included, goes straight to /usr/bin/bwrap.
+for last; do :; done
+if [ "$last" = /usr/bin/true ]; then
+	err=$(/usr/bin/bwrap "$@" 2>&1 >/dev/null) && exit 0
+	echo "bwrap: Creating new namespace failed (glycin's test sandbox can't start here: ${err#bwrap: })" >&2
+	exit 1
+fi
+exec /usr/bin/bwrap "$@"

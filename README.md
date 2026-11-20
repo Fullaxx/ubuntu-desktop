@@ -181,26 +181,11 @@ Default Layout: center
 -e WALLPAPER='5' -e WPLAYOUT='cover'
 ```
 
-## Sound Configuration (to support audio)
-Passthrough for audio devices inside the container
-```
---device /dev/snd
-or
---privileged
-```
+## Extra privileges
+Sound, FUSE (sshfs), FlatPak and VeraCrypt need extra docker run options, each with its own cost: [PRIVILEGES.md](PRIVILEGES.md)
 
-## Privileged Mode (to support FlatPak)
-Set privileged mode to allow FlatPaks to work properly inside the container
-```
---privileged
-```
-
-## Shared Memory Modification (to support Web Browsers)
-Increase the size of shared memory to prevent web browsers from crashing \
-Thanks to [jlesage](https://hub.docker.com/r/jlesage/firefox/#increasing-shared-memory-size)
-```
---shm-size 2g
-```
+## Troubleshooting
+Known problems and their fixes, such as browser tabs crashing: [troubleshooting/](troubleshooting/)
 
 ## Run the image
 Run the image on localhost port 5901 with default configuration
