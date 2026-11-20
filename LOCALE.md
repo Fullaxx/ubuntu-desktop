@@ -87,7 +87,7 @@ The same locale in `docker exec` shells too: use `LANG` instead of `LOCALE`
 Chinese, Japanese, Korean, Hindi, Thai, Hebrew, Arabic, Vietnamese and some other languages need a font first: see [Fonts](#fonts).
 
 ### Values
-- **A UTF-8 locale from `/usr/share/i18n/SUPPORTED`**, with or without its codeset: `de_DE`, `de_DE.UTF-8` and `de_DE.utf8` are the same for the desktop; `LANG` needs its codeset for `docker exec` shells (see below). Write the codeset as `.UTF-8` or `.utf8`: `de_DE.utf-8` isn't accepted.
+- **A UTF-8 locale from `/usr/share/i18n/SUPPORTED`**, with or without its codeset: `de_DE`, `de_DE.UTF-8`, `de_DE.utf-8` and `de_DE.utf8` are the same for the desktop (the codeset in any letter case, with or without its dash); `LANG` needs its codeset for `docker exec` shells (see below).
 - **Modifiers** come last: `sr_RS@latin`, `ca_ES@valencia`.
 - **`C` or `C.UTF-8`:** English, with POSIX formats (`Thu Nov 19 15:12:31 2026`).
 - **Not accepted:** locales that aren't UTF-8, such as `de_DE.ISO-8859-1` or `de_DE@euro`.
@@ -95,7 +95,7 @@ Chinese, Japanese, Korean, Hindi, Thai, Hebrew, Arabic, Vietnamese and some othe
 
 ### LOCALE or LANG
 - They take the same names. `LOCALE` wins when both are set; an empty `LOCALE` counts as not set.
-- `LANG` also reaches `docker exec` shells, and its locale is generated for them, so commands run there use it too. Those shells use the value as it is, so write it with its codeset (`de_DE.UTF-8` or `de_DE.utf8`). With `LANG='de_DE'` the desktop is German, but `docker exec` shells stay POSIX, and perl warns.
+- `LANG` also reaches `docker exec` shells, and its locale is generated for them, so commands run there use it too. Those shells use the value as it is, so write it with its codeset (`de_DE.UTF-8`, `de_DE.utf-8` or `de_DE.utf8`). With `LANG='de_DE'` the desktop is German, but `docker exec` shells stay POSIX, and perl warns.
 - `LOCALE` doesn't reach `docker exec` shells: they stay POSIX.
 - If `LOCALE` and `LANG` name different locales, the desktop follows `LOCALE`. `docker exec` shells get `LANG`, whose locale isn't generated, so perl prints `perl: warning: Setting locale failed` (in `apt-get`, for example).
 
@@ -106,7 +106,7 @@ Chinese, Japanese, Korean, Hindi, Thai, Hebrew, Arabic, Vietnamese and some othe
 ### Errors
 A name that isn't a UTF-8 locale doesn't stop the container. `docker logs` says
 ```
-LOCALE='de_DE.utf-8' is not a UTF-8 locale in /usr/share/i18n/SUPPORTED; keeping LANG=en_US.UTF-8
+LOCALE='de' is not a UTF-8 locale in /usr/share/i18n/SUPPORTED; keeping LANG=en_US.UTF-8
 ```
 (it names `LANG` when the name came from `LANG`), and the desktop keeps `en_US`.
 
