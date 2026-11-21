@@ -36,7 +36,8 @@
 #
 # Errors print the reason (see docker logs) and stop the container (exit 1).
 #
-# For a non-root account, USER, GROUP and HOME are exported for tiger.sh.
+# For a non-root account, USER, GROUP and HOME are exported for the later stages
+# (wm.sh, prepare.sh, tiger.sh).
 
 # Startup notice for the desktop: xstartup shows this file with xmessage
 NOTICE=/tmp/ubuntu-desktop-notice.txt

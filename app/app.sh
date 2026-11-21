@@ -19,5 +19,8 @@ source /app/user.sh
 # Window manager: per-user config for the image's WINDOWMANAGER
 source /app/wm.sh
 
-# VNC server: its config and passwords, then run it as the desktop user
+# VNC server setup: its settings, xstartup and passwords, then HOME goes to the desktop user
+source /app/prepare.sh
+
+# VNC server: run it as the desktop user until the desktop session ends
 source /app/tiger.sh
