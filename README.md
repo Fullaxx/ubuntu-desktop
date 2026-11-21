@@ -252,7 +252,7 @@ Terminals:
 * [xterm](https://invisible-island.net/xterm/), uxterm, [Eterm](https://sourceforge.net/projects/eterm/), [kitty](https://github.com/kovidgoyal/kitty), [sakura](http://www.pleyades.net/david/projects/sakura), [terminology](https://www.enlightenment.org/about-terminology.md), [terminator](https://gnome-terminator.org/), [tilix](https://gnunn1.github.io/tilix-web/), [tilda](https://github.com/lanoxx/tilda), [powershell](https://github.com/PowerShell/PowerShell)
 
 Browsers:
-* [chrome](https://www.google.com/chrome/), [chromium](https://www.chromium.org/), [firefox](https://www.mozilla.org/en-US/firefox/), [vivaldi](https://vivaldi.com/), [tor browser](https://www.torproject.org/), [edge](https://www.microsoftedgeinsider.com/en-us/download/), [Pale Moon](https://www.palemoon.org/)
+* [chrome](https://www.google.com/chrome/), [chromium](https://www.chromium.org/), [firefox](https://www.mozilla.org/en-US/firefox/), [vivaldi](https://vivaldi.com/), [opera](https://www.opera.com/), [tor browser](https://www.torproject.org/), [edge](https://www.microsoftedgeinsider.com/en-us/download/), [Pale Moon](https://www.palemoon.org/)
 
 Office:
 * [libreoffice](https://www.libreoffice.org/)
