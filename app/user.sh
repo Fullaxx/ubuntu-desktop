@@ -14,7 +14,8 @@
 #   ACCTPASS  optional password for the account (otherwise it stays locked)
 # If VNCGROUP already exists its GID is used; if VNCGID already belongs to
 # another group, that group is used. The account joins the sudo group
-# (NOPASSWD rules in conf/sudo). USER, GROUP and HOME are exported for tiger.sh.
+# (NOPASSWD rules in conf/sudo). USER, GROUP and HOME are exported for the
+# later stages (wm.sh, prepare.sh, tiger.sh).
 #
 # For root or the account, VNCUMASK (optional) is appended once to ~/.bashrc.
 #
