@@ -145,6 +145,13 @@ Passthrough for audio devices inside the container
 or
 --privileged
 ```
+Discord's voice chat needs a PulseAudio server, which the image doesn't run, so `--device /dev/snd` isn't enough.
+On a Linux desktop, let the container use your own sound server (PipeWire or PulseAudio), as a desktop user with your user ID on the host (`id -u`; 1000 here)
+```
+-v /run/user/1000/pulse:/run/pulse -e VNCUSER='ubuntu' -e VNCUID='1000'
+```
+As root (the default session) with PulseAudio, also add your cookie: `-v $HOME/.config/pulse/cookie:/root/.config/pulse/cookie:ro`.
+The container can then play sound and record from your microphone. VNC carries no sound, so this works only on the machine that runs Docker.
 
 ## FUSE Configuration (to support AppImages)
 Set privileges to allow FUSE to work properly inside the container
