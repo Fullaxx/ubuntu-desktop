@@ -7,6 +7,7 @@ Tested on an Ubuntu 24.04 host (kernel 6.8, AppArmor) with Docker 29.9.2, as roo
 
 - [Quick reference](#quick-reference)
 - [Sound](#sound)
+- [Discord's voice chat (the host's sound server)](#discords-voice-chat-the-hosts-sound-server)
 - [FUSE (sshfs and other FUSE filesystems)](#fuse-sshfs-and-other-fuse-filesystems)
 - [Privileged mode (FlatPak, VeraCrypt)](#privileged-mode-flatpak-veracrypt)
 - [GTK images and bubblewrap](#gtk-images-and-bubblewrap)
@@ -16,6 +17,7 @@ Tested on an Ubuntu 24.04 host (kernel 6.8, AppArmor) with Docker 29.9.2, as roo
 | For | docker run options | Gives the container |
 |---|---|---|
 | Sound | `--device /dev/snd` | the host's sound devices |
+| Discord's voice chat | `-v /run/user/1000/pulse:/run/pulse` (1000: your user ID on the host) | your desktop's sound server: playing sound and recording from your microphone |
 | FUSE: sshfs and other FUSE filesystems | `--device /dev/fuse --cap-add SYS_ADMIN --security-opt apparmor=unconfined` | FUSE mounts. Root in the container can also mount other filesystems, and Docker's AppArmor profile is off |
 | FlatPak, VeraCrypt volumes | `--privileged` | every host device and capability, with no AppArmor or seccomp profile |
 
@@ -27,6 +29,28 @@ Passthrough for audio devices inside the container
 --device /dev/snd
 ```
 `--privileged` works too, but gives far more (see [Privileged mode](#privileged-mode-flatpak-veracrypt)).
+Discord's voice chat needs more: see the next section.
+
+## Discord's voice chat (the host's sound server)
+Let the container use the sound server of the Linux desktop that runs Docker (PipeWire or PulseAudio)
+```
+-v /run/user/1000/pulse:/run/pulse
+```
+Run the image with it, as a desktop user with your user ID on the host (`id -u`; 1000 in these examples)
+```
+docker run -d -p 127.0.0.1:5901:5901 -v /run/user/1000/pulse:/run/pulse -e VNCUSERMAP=ubuntu/1000 ghcr.io/fullaxx/ubuntu-desktop
+```
+- **Why Discord needs it:** Discord's voice chat talks to a PulseAudio server, and the image runs none. `--device /dev/snd` gives the container your sound devices, but Discord's voice engine uses PulseAudio, not the devices directly.
+- **Why this option:** `/run/user/1000/pulse` holds the socket of your sound server's PulseAudio service: PipeWire's (Ubuntu 22.10 and later) or PulseAudio's own. Programs in the container find it at `/run/pulse/native` by themselves; nothing needs to be set. Mount the directory, not the socket: a mounted socket stops working when your sound server restarts.
+- **Who can use it:**
+  - A desktop user with your user ID on the host (`VNCUSERMAP=<name>/<your ID>`). A user with another ID can't open the directory.
+  - Root, the default session. With PulseAudio, root also needs your cookie:
+    ```
+    -v $HOME/.config/pulse/cookie:/root/.config/pulse/cookie:ro
+    ```
+- **Only on the machine that runs Docker:** VNC carries no sound, so a desktop on a remote server gets none this way.
+- **Tested** with stand-ins for both sound servers (PipeWire 1.6.2 and PulseAudio 17.0, as user 1000): playback and recording as root and as a `VNCUSERMAP` user with ID 1000, and connecting again after the server restarts. A call in Discord needs an account and wasn't tested.
+- **The cost:** the container can play sound through your speakers and record from your microphone.
 
 ## FUSE (sshfs and other FUSE filesystems)
 Allow FUSE mounts, such as sshfs, inside the container
