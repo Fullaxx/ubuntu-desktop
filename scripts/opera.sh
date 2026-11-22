@@ -9,4 +9,4 @@ if [ "$?" -ne "0" ]; then
   xterm -T InstallOpera -g 100x30 -e sudo /app/scripts/install_opera_deb.sh
 fi
 
-dbus-launch ${BINARY} --no-sandbox --disable-gpu
+${BINARY} --no-sandbox --disable-gpu
