@@ -11,4 +11,6 @@ fi
 export NO_AT_BRIDGE=1
 
 /usr/bin/vncconfig -nowin &
-exec /usr/bin/openbox-session
+# Run the session on a D-Bus session bus of its own, as a desktop login does (a VNC session gets none):
+# the programs started from it share that one bus instead of starting their own, and it ends with the session
+exec dbus-launch --exit-with-session /usr/bin/openbox-session
