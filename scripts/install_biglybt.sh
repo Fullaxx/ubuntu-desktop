@@ -11,7 +11,7 @@ esac
 
 BBTJAVAVERS=${BBTJAVAVERS:-25}
 DEBIAN_FRONTEND="noninteractive"
-BBTLOCALINSTALLER="/data/installer/BiglyBT_Installer.sh"
+BBTLOCALINSTALLER="/app/installer/BiglyBT_Installer.sh"
 BBTINSTSCR="/tmp/BiglyBT_Installer.sh"
 
 if [ "${BBTGUIINSTALL}" == "1" ]; then
