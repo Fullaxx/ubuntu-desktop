@@ -14,8 +14,9 @@
 #   ACCTPASS  optional password for the account (otherwise it stays locked)
 # If VNCGROUP already exists its GID is used; if VNCGID already belongs to
 # another group, that group is used. The account joins the sudo group
-# (NOPASSWD rules in conf/sudo). USER, GROUP and HOME are exported for the
-# later stages (wm.sh, prepare.sh, tiger.sh).
+# (NOPASSWD rules in conf/sudo), and audio and video, like the image's own
+# ubuntu account. USER, GROUP and HOME are exported for the later stages
+# (wm.sh, prepare.sh, tiger.sh).
 #
 # For root or the account, VNCUMASK (optional) is appended once to ~/.bashrc.
 #
@@ -40,7 +41,9 @@ if [ -n "${VNCUSER}" ] && [ -n "${VNCUID}" ]; then
     fi
   fi
   groupadd -g ${VNCGID} ${VNCGROUP}
-  useradd -u ${VNCUID} -g ${VNCGID} -G sudo -s /bin/bash -m -d /home/${VNCUSER} ${VNCUSER}
+  # audio and video: the sound and GPU devices that docker run passes in (--device /dev/snd,
+  # /dev/dri) belong to those groups, so a user outside them can't open them
+  useradd -u ${VNCUID} -g ${VNCGID} -G sudo,audio,video -s /bin/bash -m -d /home/${VNCUSER} ${VNCUSER}
 
   export USER="${VNCUSER}"
   export GROUP="${VNCGROUP}"
