@@ -32,7 +32,7 @@ fi
 # Download BiglyBT (if not provided locally)
 if [ -x ${BBTLOCALINSTALLER} ]; then
   echo "Installing ${BBTLOCALINSTALLER} ..."
-  cp -v ${BBTLOCALINSTALLER} ${BBTINSTSCR}
+  install -v -m 0755 ${BBTLOCALINSTALLER} ${BBTINSTSCR}
 else
   wget https://files.biglybt.com/installer/BiglyBT_Installer.sh -O ${BBTINSTSCR}
   chmod +x ${BBTINSTSCR}
