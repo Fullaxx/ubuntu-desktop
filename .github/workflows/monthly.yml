@@ -2,6 +2,8 @@
 # and signing key, SourceForge's deadbeef download and ubuntu:26.04's packages all move
 # on their own schedule. The image is also rebuilt from scratch and republished, so
 # :latest and :26.04 pick up 26.04's security updates even when nothing is pushed for months.
+# ci.yml checks nothing before it builds, so this is the only place the downloads are checked:
+# on the 1st, or by hand (below).
 #
 # GitHub pauses scheduled workflows in a public repo after 60 days without activity, and
 # scheduled runs do not count. This repo has quiet spells longer than that; after one:

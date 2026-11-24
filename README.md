@@ -15,7 +15,7 @@ Each branch publishes its own tags of `ghcr.io/fullaxx/ubuntu-desktop`, rebuilt 
 
 - `:latest` tracks 26.04: every push to `master` publishes the same image as `:latest` and `:26.04`, and so does the monthly rebuild.
 - `24.04` gets fixes only, no new features or breaking changes. Its README uses `:24.04` in every example.
-- Every push to `master` is also tagged `master-<short commit>`, such as `:master-5246e30`. These tags never move.
+- Every push to `master` or `24.04` is also tagged `<branch>-<short commit>`, such as `:master-5246e30`. These tags don't move to later commits (a manual CI run of the same commit pushes its tag again).
 - The examples below use `:latest`. Everything in this README works the same with `:26.04`.
 
 ## Get the image
