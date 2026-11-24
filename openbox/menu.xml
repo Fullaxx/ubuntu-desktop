@@ -48,7 +48,6 @@
 	<item label="Edge (beta)"><action name="Execute"><command>/app/scripts/edge_beta.sh</command></action></item>
 	<item label="Edge (dev)"><action name="Execute"><command>/app/scripts/edge_dev.sh</command></action></item>
 	<item label="Tor"><action name="Execute"><command>/app/scripts/torbrowser.sh</command></action></item>
-	<!-- <item label="Seamonkey"><action name="Execute"><command>/app/scripts/seamonkey.sh</command></action></item> -->
 	<item label="Pale Moon"><action name="Execute"><command>/app/scripts/palemoon.sh</command></action></item>
 </menu>
 
