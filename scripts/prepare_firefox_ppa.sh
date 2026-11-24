@@ -13,8 +13,15 @@ apt-get update
 apt-get install -y gnupg2 software-properties-common
 add-apt-repository -y ppa:mozillateam/ppa
 
+# The PPA's packages above Ubuntu's, and Ubuntu's own firefox (1:1snap…, a stub for the snap that a container
+# can't run) never: when the PPA can't be reached (apt-get update only warns), installing firefox then fails
+# instead of falling back to that stub
 echo '
 Package: *
 Pin: release o=LP-PPA-mozillateam
 Pin-Priority: 1001
+
+Package: firefox
+Pin: version 1:1snap*
+Pin-Priority: -1
 ' | tee /etc/apt/preferences.d/mozilla-firefox
