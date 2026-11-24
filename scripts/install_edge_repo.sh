@@ -1,6 +1,9 @@
 #!/bin/bash
 # install_edge_repo.sh microsoft-edge-stable|microsoft-edge-beta|microsoft-edge-dev
 # Installs that Edge package from Microsoft's repository (edge_stable.sh, edge_beta.sh and edge_dev.sh run it)
+# One script, not a prepare_ script plus an install: 1) add our source, 2) install the package, 3) remove
+# our source once the package has set up its own, so that the vendor's source has priority. Step 3 can only
+# follow step 2, so the three can't be split the way prepare_firefox_ppa_direct.sh and a later install are
 
 set -e
 

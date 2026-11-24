@@ -1,6 +1,11 @@
 #!/bin/bash
 # https://www.omgubuntu.co.uk/2022/04/how-to-install-firefox-deb-apt-ubuntu-22-04
 # https://www.addictivetips.com/ubuntu-linux-tips/how-to-disable-firefox-snap-package-in-ubuntu-22-04-lts/
+#
+# prepare_, not install_: this adds the Mozilla Team PPA and its pin, so that Firefox can be installed from
+# it, and installs nothing itself. Keep it that way, and keep the name. firefox.sh installs right after it,
+# but other images' Dockerfiles run it in a RUN line of its own and install firefox later, together with the
+# rest of their packages (ubuntu-desktop-xfce-biglybt, ubuntu-desktop-xfce-qbittorrent)
 
 set -e
 
