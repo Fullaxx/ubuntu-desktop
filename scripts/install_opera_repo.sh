@@ -5,17 +5,39 @@ set -e
 export DEBIAN_FRONTEND="noninteractive"
 
 apt-get update
-# gnupg for the key step below; no apt-transport-https (https is built into apt since 1.5)
+# gnupg to dearmor the key below; no apt-transport-https (https is built into apt since 1.5)
 # or software-properties-common (add-apt-repository isn't used)
 apt-get install -y gnupg wget
 
-# apt-key is gone in Ubuntu 26.04: write the dearmored key where apt-key used to put it
-wget -q https://deb.opera.com/archive.key -O- | gpg --dearmor > /etc/apt/trusted.gpg.d/opera.gpg
-# opera-archive.list, the file Opera's manual setup uses (https://deb.opera.com/manual.html): opera-stable
-# finds its repository here and doesn't add its own opera-stable.sources, which would conflict with it
-echo "deb https://deb.opera.com/opera-stable/ stable non-free" > /etc/apt/sources.list.d/opera-archive.list
+# What this script wrote before (a one-line source, and a key apt trusted for every repository): next to
+# the .sources file below, apt would see the repository twice, with conflicting Signed-By values, and refuse
+# to update
+rm -f /etc/apt/sources.list.d/opera-archive.list /etc/apt/trusted.gpg.d/opera.gpg
+
+# Opera's manual setup (https://deb.opera.com/manual.html) in deb822: its key in /usr/share/keyrings, and a
+# .sources file that names it in Signed-By, so the key is trusted for this repository only (for one-line
+# sources without signed-by, apt 3's update suggests "apt modernize-sources"). Not named opera-stable.*:
+# opera-stable looks for its repository in other files and then adds no source of its own. None is written
+# if its own opera-stable.sources is already there: for the same address with a second Signed-By value, apt
+# would refuse to update
+if [ ! -f /etc/apt/sources.list.d/opera-stable.sources ]; then
+  wget -q https://deb.opera.com/archive.key -O- | gpg --dearmor > /usr/share/keyrings/opera-browser.gpg
+  cat > /etc/apt/sources.list.d/opera-archive.sources <<EOF
+Types: deb
+URIs: https://deb.opera.com/opera-stable/
+Suites: stable
+Components: non-free
+Signed-By: /usr/share/keyrings/opera-browser.gpg
+EOF
+fi
 
 apt-get update
 # gsettings-desktop-schemas: Opera reads the org.gnome.desktop.background schema at startup and aborts
 # without it; its package doesn't depend on it
 apt-get install -y opera-stable gsettings-desktop-schemas
+
+# On 26.04 the package adds its opera-stable.sources anyway (during the install its check misses this file,
+# though it finds it when run by hand): the package's own source then has priority, so drop ours
+if [ -f /etc/apt/sources.list.d/opera-stable.sources ]; then
+  rm -f /etc/apt/sources.list.d/opera-archive.sources /usr/share/keyrings/opera-browser.gpg
+fi

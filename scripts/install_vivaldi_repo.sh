@@ -5,22 +5,36 @@ set -e
 export DEBIAN_FRONTEND="noninteractive"
 
 apt-get update
-# gnupg for the key step below; no apt-transport-https (https is built into apt since 1.5)
+# gnupg to dearmor the key below; no apt-transport-https (https is built into apt since 1.5)
 # or software-properties-common (add-apt-repository isn't used)
 apt-get install -y gnupg wget
 
-# apt-key is gone in Ubuntu 26.04: write the dearmored key where apt-key used to put it
-wget -q https://repo.vivaldi.com/stable/linux_signing_key.pub -O- | gpg --dearmor > /etc/apt/trusted.gpg.d/vivaldi.gpg
+# What this script wrote before: a one-line source, and a key apt trusted for every repository
+rm -f /etc/apt/sources.list.d/vivaldi.list /etc/apt/trusted.gpg.d/vivaldi.gpg
 
-echo "deb http://repo.vivaldi.com/stable/deb/ stable main" > /etc/apt/sources.list.d/vivaldi.list
+# vivaldi-stable sets up its own repository when it installs (vivaldi.sources, signed by its own keyring in
+# /usr/share/keyrings), so this script's source is only a bootstrap: a deb822 .sources file with a key of its
+# own, removed again below. None is written if vivaldi.sources is already there (Vivaldi was installed
+# before): for the same address with a second Signed-By value, apt would refuse to update
+if [ ! -f /etc/apt/sources.list.d/vivaldi.sources ]; then
+  install -d -m 0755 /etc/apt/keyrings
+  wget -q https://repo.vivaldi.com/stable/linux_signing_key.pub -O- | gpg --dearmor > /etc/apt/keyrings/vivaldi-bootstrap.gpg
+  cat > /etc/apt/sources.list.d/vivaldi-bootstrap.sources <<EOF
+Types: deb
+URIs: https://repo.vivaldi.com/stable/deb/
+Suites: stable
+Components: main
+Architectures: amd64
+Signed-By: /etc/apt/keyrings/vivaldi-bootstrap.gpg
+EOF
+fi
 
 apt-get update
 apt-get install -y vivaldi-stable
 
-# vivaldi-stable sets up its own repository (vivaldi.sources, signed by its own keyring in /usr/share/keyrings),
-# so the bootstrap source and key above would make apt see the repository twice (W: warnings): drop them
+# The package's own source has priority: drop the bootstrap
 if [ -f /etc/apt/sources.list.d/vivaldi.sources ]; then
-  rm -f /etc/apt/sources.list.d/vivaldi.list /etc/apt/trusted.gpg.d/vivaldi.gpg
+  rm -f /etc/apt/sources.list.d/vivaldi-bootstrap.sources /etc/apt/keyrings/vivaldi-bootstrap.gpg
 fi
 
 # I wish there was a better way ...
