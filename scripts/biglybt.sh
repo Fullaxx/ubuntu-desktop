@@ -1,7 +1,5 @@
 #!/bin/bash
 
-set -e
-
 if [ ! -d /opt/biglybt ]; then
   xterm -T InstallBiglyBT -g 100x30 -e sudo /app/scripts/install_biglybt.sh
 fi

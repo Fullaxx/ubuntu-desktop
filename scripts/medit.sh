@@ -11,8 +11,6 @@ BINARY="medit"
 
 BINARYLOC=`which ${BINARY}`
 if [ "$?" -ne "0" ]; then
-  set -e
-
   OSV=`grep VERSION_ID /etc/os-release | cut -d\" -f2`
   case "${OSV}" in
     '18.04') SOURCE="ubuntu" ;;

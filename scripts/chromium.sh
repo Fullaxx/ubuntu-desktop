@@ -15,7 +15,6 @@ CMDARGS="--disable-gpu --disable-accelerated-2d-canvas --disable-gpu-rasterizati
 BINARY="chromium"
 BINARYLOC=`which ${BINARY}`
 if [ "$?" -ne "0" ]; then
-  set -e
   # Linux Mint's .deb build (Ubuntu's chromium package only installs the snap)
   xterm -T InstallChromium -g 100x30 -e sudo /app/scripts/install_chromium_mint_deb.sh
 fi
