@@ -2,10 +2,11 @@
 # https://www.omgubuntu.co.uk/2022/04/how-to-install-firefox-deb-apt-ubuntu-22-04
 # https://www.addictivetips.com/ubuntu-linux-tips/how-to-disable-firefox-snap-package-in-ubuntu-22-04-lts/
 #
-# prepare_, not install_: this adds the Mozilla Team PPA and its pin, so that Firefox can be installed from
-# it, and installs nothing itself. Keep it that way, and keep the name. firefox.sh installs right after it,
-# but other images' Dockerfiles run it in a RUN line of its own and install firefox later, together with the
-# rest of their packages (ubuntu-desktop-xfce-biglybt, ubuntu-desktop-xfce-qbittorrent)
+# prepare_, not install_: this adds the Mozilla Team PPA and its pin, so that Firefox and Thunderbird can be
+# installed from it, and installs nothing itself. Keep it that way, and keep the name. firefox.sh and
+# thunderbird.sh install right after it, but other images' Dockerfiles run it in a RUN line of its own and
+# install firefox later, together with the rest of their packages (ubuntu-desktop-xfce-biglybt,
+# ubuntu-desktop-xfce-qbittorrent)
 
 set -e
 
@@ -33,9 +34,9 @@ Components: main
 Signed-By: /etc/apt/keyrings/mozillateam-ubuntu-ppa.asc
 EOF
 
-# The PPA's packages above Ubuntu's, and Ubuntu's own firefox (1:1snap…, a stub for the snap that a container
-# can't run) never: when the PPA can't be reached (apt-get update only warns), installing firefox then fails
-# instead of falling back to that stub
+# The PPA's packages above Ubuntu's, and Ubuntu's own firefox (1:1snap…) and thunderbird (2:1snap…), stubs for
+# snaps that a container can't run, never: when the PPA can't be reached (apt-get update only warns), installing
+# either then fails instead of falling back to its stub
 echo '
 Package: *
 Pin: release o=LP-PPA-mozillateam
@@ -43,5 +44,9 @@ Pin-Priority: 1001
 
 Package: firefox
 Pin: version 1:1snap*
+Pin-Priority: -1
+
+Package: thunderbird
+Pin: version 2:1snap*
 Pin-Priority: -1
 ' | tee /etc/apt/preferences.d/mozilla-firefox

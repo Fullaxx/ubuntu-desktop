@@ -80,6 +80,13 @@
 	<item label="Xchat"><action name="Execute"><command>/app/scripts/xchat.sh</command></action></item>
 </menu>
 
+<!-- The mail clients; each script installs its client on first use -->
+<menu id="apps-network-mail-menu" label="Mail">
+	<item label="Claws Mail"><action name="Execute"><command>/app/scripts/claws-mail.sh</command></action></item>
+	<item label="Sylpheed"><action name="Execute"><command>/app/scripts/sylpheed.sh</command></action></item>
+	<item label="Thunderbird"><action name="Execute"><command>/app/scripts/thunderbird.sh</command></action></item>
+</menu>
+
 <menu id="apps-network-tools-menu" label="Tools">
 	<item label="Gftp"><action name="Execute"><command>/app/scripts/gftp.sh</command></action></item>
 	<item label="Zenmap"><action name="Execute"><command>/app/scripts/zenmap.sh</command></action></item>
@@ -89,6 +96,7 @@
 	<menu id="apps-network-browsers-menu"/>
 	<menu id="apps-network-bittorrent-menu"/>
 	<menu id="apps-network-chat-menu"/>
+	<menu id="apps-network-mail-menu"/>
 	<menu id="apps-network-tools-menu"/>
 </menu>
 
