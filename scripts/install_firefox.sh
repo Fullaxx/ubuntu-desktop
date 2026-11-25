@@ -9,11 +9,11 @@ export DEBIAN_FRONTEND="noninteractive"
 
 OSV=`grep VERSION_ID /etc/os-release | cut -d\" -f2`
 # The Mozilla Team PPA: Ubuntu's own firefox package is only that stub
-# (prepare_firefox_ppa.sh is the add-apt-repository version, kept for when the PPA's key changes)
+# (prepare_mozilla_ppa.sh is the add-apt-repository version, kept for when the PPA's key changes)
 case "${OSV}" in
-  '26.04') /app/scripts/prepare_firefox_ppa_direct.sh ;;
-  '24.04') /app/scripts/prepare_firefox_ppa_direct.sh ;;
-  '22.04') /app/scripts/prepare_firefox_ppa_direct.sh ;;
+  '26.04') /app/scripts/prepare_mozilla_ppa_direct.sh ;;
+  '24.04') /app/scripts/prepare_mozilla_ppa_direct.sh ;;
+  '22.04') /app/scripts/prepare_mozilla_ppa_direct.sh ;;
 esac
 
 apt-get update

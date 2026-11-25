@@ -2,7 +2,7 @@
 # https://www.omgubuntu.co.uk/2022/04/how-to-install-firefox-deb-apt-ubuntu-22-04
 # https://www.addictivetips.com/ubuntu-linux-tips/how-to-disable-firefox-snap-package-in-ubuntu-22-04-lts/
 #
-# prepare_, not install_: like prepare_firefox_ppa_direct.sh, which this can stand in for, it only adds the
+# prepare_, not install_: like prepare_mozilla_ppa_direct.sh, which this can stand in for, it only adds the
 # PPA and its pin, and installs nothing itself (see the note there)
 
 set -e

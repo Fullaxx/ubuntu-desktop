@@ -8,10 +8,10 @@ export DEBIAN_FRONTEND="noninteractive"
 
 OSV=`grep VERSION_ID /etc/os-release | cut -d\" -f2`
 # The Mozilla Team PPA, Firefox's: since 24.04, Ubuntu's own thunderbird package is only a stub for the snap
-# (prepare_firefox_ppa_direct.sh adds the PPA and its pins; 22.04's archive still has a real Thunderbird)
+# (prepare_mozilla_ppa_direct.sh adds the PPA and its pins; 22.04's archive still has a real Thunderbird)
 case "${OSV}" in
-  '26.04') /app/scripts/prepare_firefox_ppa_direct.sh ;;
-  '24.04') /app/scripts/prepare_firefox_ppa_direct.sh ;;
+  '26.04') /app/scripts/prepare_mozilla_ppa_direct.sh ;;
+  '24.04') /app/scripts/prepare_mozilla_ppa_direct.sh ;;
 esac
 
 apt-get update
