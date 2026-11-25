@@ -140,8 +140,13 @@
 </menu>
 
 <menu id="apps-utilities-menu" label="Utilities">
+	<!-- A choice of calculators, from simple to advanced; each script installs its calculator on first use -->
 	<item label="Galculator"><action name="Execute"><command>/app/scripts/galculator.sh</command></action></item>
+	<item label="GNOME Calculator"><action name="Execute"><command>/app/scripts/gnome-calculator.sh</command></action></item>
 	<item label="Kcalc"><action name="Execute"><command>/app/scripts/kcalc.sh</command></action></item>
+	<item label="MATE Calculator"><action name="Execute"><command>/app/scripts/mate-calc.sh</command></action></item>
+	<item label="Qalculate!"><action name="Execute"><command>/app/scripts/qalculate.sh</command></action></item>
+	<item label="SpeedCrunch"><action name="Execute"><command>/app/scripts/speedcrunch.sh</command></action></item>
 </menu>
 
 <menu id="apps-misc-menu" label="Misc">

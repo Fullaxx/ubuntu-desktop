@@ -282,7 +282,7 @@ File Managers:
 * [4pane](http://www.4pane.co.uk/), [caja](https://github.com/mate-desktop/caja), [doublecommander](https://doublecmd.sourceforge.io/), [krusader](https://krusader.org/), [nemo](https://github.com/linuxmint/nemo), [pcmanfm](https://wiki.lxde.org/en/PCManFM), [spacefm](https://ignorantguru.github.io/spacefm/), [thunar](https://docs.xfce.org/xfce/thunar/start), [xfe](http://roland65.free.fr/xfe/), [worker](http://www.boomerangsworld.de/cms/worker/)
 
 Utilities:
-* [galculator](http://galculator.mnim.org/), [kcalc](https://apps.kde.org/kcalc/)
+* [galculator](http://galculator.mnim.org/), [gnome-calculator](https://apps.gnome.org/Calculator/), [kcalc](https://apps.kde.org/kcalc/), [mate-calc](https://github.com/mate-desktop/mate-calc), [qalculate](https://qalculate.github.io/), [speedcrunch](https://speedcrunch.org/)
 
 Misc:
 * [veracrypt](https://veracrypt.fr/), [dropbox](https://www.dropbox.com/), [slack](https://slack.com/), [gtkstresstesting (FP)](https://gitlab.com/leinardi/gst)
