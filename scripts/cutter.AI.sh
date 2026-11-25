@@ -1,12 +1,19 @@
 #!/bin/bash
 
+BINARY="${HOME}/AI/Cutter.AppImage"
+
 if [ ! -c /dev/fuse ]; then
   xmessage "AppImages require FUSE (run this image with --device /dev/fuse --cap-add SYS_ADMIN)" &
   exit 1
 fi
 
-if [ ! -x ${HOME}/AI/Cutter.AppImage ]; then
+if [ ! -x ${BINARY} ]; then
   xterm -T InstallCutter -g 100x30 -e /app/scripts/install_cutter.AI.sh
 fi
 
-${HOME}/AI/Cutter.AppImage
+# If the app isn't there (its install failed), say so instead of nothing happening
+if [ -x ${BINARY} ]; then
+  ${BINARY}
+else
+  xmessage "${BINARY} not found!" &
+fi
