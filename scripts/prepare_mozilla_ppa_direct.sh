@@ -6,7 +6,7 @@
 # installed from it, and installs nothing itself. Keep it that way, and keep the name. firefox.sh and
 # thunderbird.sh install right after it, but other images' Dockerfiles run it in a RUN line of its own and
 # install firefox later, together with the rest of their packages (ubuntu-desktop-xfce-biglybt,
-# ubuntu-desktop-xfce-qbittorrent)
+# ubuntu-desktop-xfce-qbittorrent, and brettdev through its add_firefox_ppa.sh)
 
 set -e
 
@@ -17,7 +17,7 @@ export DEBIAN_FRONTEND="noninteractive"
 # software-properties-common, which pulls in packagekit, polkitd and unattended-upgrades
 # (73 packages on noble, 85 on 26.04); this needs only wget.
 # If the PPA's signing key changes, apt-get update fails with a signature error:
-# prepare_firefox_ppa.sh (add-apt-repository fetches the current key) still works,
+# prepare_mozilla_ppa.sh (add-apt-repository fetches the current key) still works,
 # and PPAKEY needs the new fingerprint from the PPA's Launchpad page
 PPAKEY="738BEB9321D1AAEC13EA9391AEBDF4819BE21867"
 . /etc/os-release
