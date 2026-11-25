@@ -18,8 +18,6 @@ dpkg-query -W -f='${Version}' ${BINARY} 2>/dev/null | grep -q '^1:1snap' && SNAP
 # is one. All its steps are in that one script, run in one xterm window: xterm returns 0 whatever its command did,
 # so separate windows couldn't stop after a failed step
 if [ "${MISSING}" = "yes" ] || [ "${SNAPSTUB}" = "yes" ]; then
-  set -e
-
   xterm -T InstallFirefox -g 100x30 -e sudo /app/scripts/install_firefox.sh
 fi
 

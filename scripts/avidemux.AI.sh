@@ -6,8 +6,6 @@ if [ ! -c /dev/fuse ]; then
 fi
 
 if [ ! -x ${HOME}/AI/avidemux.AppImage ]; then
-  set -e
-
   xterm -T InstallAviDemux -g 100x30 -e /app/scripts/install_avidemux.AI.sh
 fi
 

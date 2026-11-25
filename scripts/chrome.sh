@@ -7,8 +7,6 @@ CMDARGS="--disable-gpu --disable-accelerated-2d-canvas --disable-gpu-rasterizati
 
 BINARYLOC=`which ${BINARY}`
 if [ "$?" -ne "0" ]; then
-  set -e
-
   xterm -T InstallChrome -g 100x30 -e sudo /app/scripts/install_chrome_deb.sh
 fi
 
