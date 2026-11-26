@@ -258,6 +258,9 @@ Chat:
 Mail:
 * [claws-mail](https://www.claws-mail.org/), [sylpheed](https://sylpheed.sraoss.jp/en/), [thunderbird](https://www.thunderbird.net/)
 
+Network Tools:
+* [filezilla](https://filezilla-project.org/), [gftp](https://github.com/masneyb/gftp), [zenmap](https://nmap.org/zenmap/)
+
 Games:
 * [Steam](https://store.steampowered.com/)
 
