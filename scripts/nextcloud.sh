@@ -1,6 +1,5 @@
 #!/bin/bash
 
-export DEBIAN_FRONTEND="noninteractive"
 BINARY="nextcloud"
 
 # Most of the menu's apps aren't in the image, so this launcher installs its app when it's missing
@@ -8,8 +7,8 @@ MISSING="no"
 which ${BINARY} >/dev/null || MISSING="yes"
 
 if [ "${MISSING}" = "yes" ]; then
-  xterm -T AptGetUpdate -g 100x30 -e sudo apt-get update
-  xterm -T AptGetInstall -g 100x30 -e sudo apt-get install -y nextcloud-desktop
+  # From the Nextcloud team's PPA, not Ubuntu's archive (see install_nextcloud_ppa_direct.sh)
+  xterm -T InstallNextcloud -g 100x30 -e sudo /app/scripts/install_nextcloud_ppa_direct.sh
 fi
 
 # Check again, rather than trust the install: xterm returns 0 whatever its command did
@@ -18,9 +17,7 @@ fi
 MISSING="no"
 which ${BINARY} >/dev/null || MISSING="yes"
 if [ "${MISSING}" = "no" ]; then
-  # Nextcloud 4 starts Qt WebEngine (Chromium), whose sandbox Docker's default seccomp profile blocks, and which
-  # refuses to start as root with it ("Running as root without --no-sandbox is not supported")
-  export QTWEBENGINE_DISABLE_SANDBOX=1
+  # The PPA's Nextcloud doesn't use Qt WebEngine, so unlike Ubuntu's 4.0.6 it needs no QTWEBENGINE_DISABLE_SANDBOX
   exec ${BINARY}
 else
   xmessage "${BINARY} not found!" &
