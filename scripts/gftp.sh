@@ -18,7 +18,14 @@ fi
 MISSING="no"
 which ${BINARY} >/dev/null || MISSING="yes"
 if [ "${MISSING}" = "no" ]; then
-  exec ${BINARY}
+  # gftp starts its GTK client if it's there (24.04), and its text client otherwise (26.04, where Debian
+  # dropped gftp-gtk, bug #967390). The text client has no window of its own, so it runs in an xterm like
+  # PowerShell's: the same colors and TrueType monospace font, titled gFTP
+  if which gftp-gtk >/dev/null; then
+    exec ${BINARY}
+  else
+    exec xterm -T gFTP -g 100x30 -bg '#012456' -fg '#CCCCCC' -cr '#FFFFFF' -fa Monospace -fs 11 -e gftp-text
+  fi
 else
   xmessage "${BINARY} not found!" &
 fi
