@@ -92,6 +92,16 @@
 	<item label="Thunderbird"><action name="Execute"><command>/app/scripts/thunderbird.sh</command></action></item>
 </menu>
 
+<!-- The cloud storage clients; each script installs its client on first use -->
+<menu id="apps-network-cloud-menu" label="Cloud Storage">
+	<item label="Dropbox"><action name="Execute"><command>/app/scripts/dropbox.sh</command></action></item>
+	<item label="MEGA"><action name="Execute"><command>/app/scripts/megasync.sh</command></action></item>
+	<item label="Nextcloud"><action name="Execute"><command>/app/scripts/nextcloud.sh</command></action></item>
+	<item label="ownCloud"><action name="Execute"><command>/app/scripts/owncloud.sh</command></action></item>
+	<item label="Rclone Browser"><action name="Execute"><command>/app/scripts/rclone-browser.sh</command></action></item>
+	<item label="Seafile"><action name="Execute"><command>/app/scripts/seafile.sh</command></action></item>
+</menu>
+
 <menu id="apps-network-tools-menu" label="Tools">
 	<item label="FileZilla"><action name="Execute"><command>/app/scripts/filezilla.sh</command></action></item>
 	<item label="Gftp"><action name="Execute"><command>/app/scripts/gftp.sh</command></action></item>
@@ -103,6 +113,7 @@
 	<menu id="apps-network-bittorrent-menu"/>
 	<menu id="apps-network-chat-menu"/>
 	<menu id="apps-network-mail-menu"/>
+	<menu id="apps-network-cloud-menu"/>
 	<menu id="apps-network-tools-menu"/>
 </menu>
 
@@ -193,7 +204,6 @@
 
 <menu id="apps-misc-menu" label="Misc">
 	<item label="VeraCrypt"><action name="Execute"><command>/app/scripts/veracrypt.sh</command></action></item>
-	<item label="Dropbox"><action name="Execute"><command>/app/scripts/dropbox.sh</command></action></item>
 	<item label="GtkStressTesting"><action name="Execute"><command>/app/scripts/gst.FP.sh</command></action></item>
 </menu>
 

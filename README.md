@@ -258,6 +258,9 @@ Chat:
 Mail:
 * [claws-mail](https://www.claws-mail.org/), [sylpheed](https://sylpheed.sraoss.jp/en/), [thunderbird](https://www.thunderbird.net/)
 
+Cloud Storage:
+* [dropbox](https://www.dropbox.com/), [mega](https://mega.io/desktop), [nextcloud](https://nextcloud.com/), [owncloud](https://owncloud.com/), [rclone browser](https://github.com/kapitainsky/RcloneBrowser), [seafile](https://www.seafile.com/)
+
 Network Tools:
 * [filezilla](https://filezilla-project.org/), [gftp](https://github.com/masneyb/gftp), [zenmap](https://nmap.org/zenmap/)
 
@@ -289,4 +292,4 @@ Reverse Engineering:
 * [cutter (AI)](https://github.com/radareorg/cutter), [packet sender (AI)](https://github.com/dannagle/PacketSender), [ngrev (AI)](https://github.com/mgechev/ngrev)
 
 Misc:
-* [veracrypt](https://veracrypt.fr/), [dropbox](https://www.dropbox.com/), [gtkstresstesting (FP)](https://gitlab.com/leinardi/gst)
+* [veracrypt](https://veracrypt.fr/), [gtkstresstesting (FP)](https://gitlab.com/leinardi/gst)
