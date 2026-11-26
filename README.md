@@ -240,20 +240,20 @@ You will find a number of convenience scripts for running applications.
 Terminals:
 * [xterm](https://invisible-island.net/xterm/), uxterm, [Eterm](https://sourceforge.net/projects/eterm/), [kitty](https://github.com/kovidgoyal/kitty), [sakura](http://www.pleyades.net/david/projects/sakura), [terminology](https://www.enlightenment.org/about-terminology.md), [terminator](https://gnome-terminator.org/), [tilix](https://gnunn1.github.io/tilix-web/), [tilda](https://github.com/lanoxx/tilda), [archipelago (AI)](https://github.com/npezza93/archipelago), [hyper (AI)](https://github.com/zeit/hyper), [powershell](https://github.com/PowerShell/PowerShell)
 
-Browsers:
-* [chrome](https://www.google.com/chrome/), [chromium](https://www.chromium.org/), [firefox](https://www.mozilla.org/en-US/firefox/), [vivaldi](https://vivaldi.com/), [opera](https://www.opera.com/), [tor browser](https://www.torproject.org/), [ncsa mosiac (AI)](https://github.com/alandipert/ncsa-mosaic), [edge](https://www.microsoftedgeinsider.com/en-us/download/), [Pale Moon](https://www.palemoon.org/)
-
 Office:
 * [libreoffice](https://www.libreoffice.org/), [libreoffice fresh (AI)](https://www.libreoffice.org/download/appimage/)
 
 Editors:
-* [gedit](https://wiki.gnome.org/Apps/Gedit), gvim, [medit](http://mooedit.sourceforge.net/), [bluefish](http://bluefish.openoffice.nl/), [geany](https://www.geany.org/), [SublimeText](https://www.sublimetext.com/), [vscode](https://github.com/microsoft/vscode), [netbeans](https://netbeans.org/), [CherryTree](https://www.giuspen.com/cherrytree/), [panwriter (AI)](https://github.com/mb21/panwriter), xfw
+* [gedit](https://wiki.gnome.org/Apps/Gedit), gvim, [medit](http://mooedit.sourceforge.net/), [bluefish](http://bluefish.openoffice.nl/), [geany](https://www.geany.org/), [thonny](https://thonny.org/), [SublimeText](https://www.sublimetext.com/), [vscode](https://github.com/microsoft/vscode), [netbeans](https://netbeans.org/), [CherryTree](https://www.giuspen.com/cherrytree/), [panwriter (AI)](https://github.com/mb21/panwriter), xfw
 
-Torrenting:
-* [BiglyBT](https://www.biglybt.com/), [qbittorrent](https://www.qbittorrent.org/), [ktorrent](https://apps.kde.org/ktorrent/), [deluge](https://deluge-torrent.org/), transmission-gtk, [bitstormlite](https://sourceforge.net/projects/bbom/), [electorrent (AI)](https://github.com/tympanix/Electorrent)
+Browsers:
+* [chrome](https://www.google.com/chrome/), [chromium](https://www.chromium.org/), [vivaldi](https://vivaldi.com/), [firefox](https://www.mozilla.org/en-US/firefox/), [zen browser](https://zen-browser.app/), [opera](https://www.opera.com/), [brave](https://brave.com/), [brave beta](https://brave.com/download-beta/), [brave nightly](https://brave.com/download-nightly/), [edge](https://www.microsoft.com/en-us/edge/download), [edge beta](https://www.microsoftedgeinsider.com/en-us/download/), [edge dev](https://www.microsoftedgeinsider.com/en-us/download/dev), [tor browser](https://www.torproject.org/), [Pale Moon](https://www.palemoon.org/), [ncsa mosiac (AI)](https://github.com/alandipert/ncsa-mosaic)
+
+BitTorrent:
+* [BiglyBT](https://www.biglybt.com/), [deluge](https://deluge-torrent.org/), [qbittorrent](https://www.qbittorrent.org/), [ktorrent](https://apps.kde.org/ktorrent/), transmission-gtk, [bitstormlite](https://sourceforge.net/projects/bbom/), [electorrent (AI)](https://github.com/tympanix/Electorrent)
 
 Chat:
-* [discord] (https://discord.com/), [empathy](https://wiki.gnome.org/action/show/Apps/Empathy), [hexchat](https://hexchat.github.io/), [loqui](https://launchpad.net/loqui), [konversation](https://konversation.kde.org/), [kopete](https://kde.org/applications/internet/org.kde.kopete), [kvirc](https://www.kvirc.net/), [pidgin](https://pidgin.im/), [polari](https://wiki.gnome.org/Apps/Polari), qchat, [quassel](https://quassel-irc.org/), ring, [signal](https://signal.org/), [slack](https://slack.com/), [srain](https://srain.silverrainz.me/), [xchat](http://xchat.org/)
+* [discord](https://discord.com/), [empathy](https://wiki.gnome.org/action/show/Apps/Empathy), [hexchat](https://hexchat.github.io/), [loqui](https://launchpad.net/loqui), [konversation](https://konversation.kde.org/), [kopete](https://kde.org/applications/internet/org.kde.kopete), [kvirc](https://www.kvirc.net/), [pidgin](https://pidgin.im/), [polari](https://wiki.gnome.org/Apps/Polari), qchat, [quassel](https://quassel-irc.org/), ring, [signal](https://signal.org/), [slack](https://slack.com/), [srain](https://srain.silverrainz.me/), [xchat](http://xchat.org/)
 
 Mail:
 * [claws-mail](https://www.claws-mail.org/), [sylpheed](https://sylpheed.sraoss.jp/en/), [thunderbird](https://www.thunderbird.net/)
@@ -263,6 +263,9 @@ Cloud Storage:
 
 Network Tools:
 * [filezilla](https://filezilla-project.org/), [gftp](https://github.com/masneyb/gftp), [zenmap](https://nmap.org/zenmap/)
+
+File Managers:
+* [4pane](http://www.4pane.co.uk/), [caja](https://github.com/mate-desktop/caja), [doublecommander](https://doublecmd.sourceforge.io/), [krusader](https://krusader.org/), [nemo](https://github.com/linuxmint/nemo), [pcmanfm](https://wiki.lxde.org/en/PCManFM), [spacefm](https://ignorantguru.github.io/spacefm/), [thunar](https://docs.xfce.org/xfce/thunar/start), [xfe](http://roland65.free.fr/xfe/), [worker](http://www.boomerangsworld.de/cms/worker/)
 
 Games:
 * [Steam](https://store.steampowered.com/)
@@ -274,10 +277,7 @@ Graphics:
 * [gimp](https://www.gimp.org/), [inkscape](https://inkscape.org/), [krita](https://krita.org/), [blender](https://www.blender.org/)
 
 AV:
-* [guvcview](https://guvcview.sourceforge.net/), [kdenlive](https://kdenlive.org/), [winff](https://github.com/WinFF/winff), [flowblade](https://jliljebl.github.io/flowblade/), [lives](http://www.lives-video.com/), [shotcut](https://www.shotcut.org/), [olive](https://www.olivevideoeditor.org/), [gopchop](https://gopchop.org/), [openshot](https://www.openshot.org/), [vidcutter](https://github.com/ozmartian/vidcutter), [videocut](https://github.com/kanehekili/VideoCut), [avidemux](https://avidemux.sourceforge.net/)
-
-File Managers:
-* [4pane](http://www.4pane.co.uk/), [caja](https://github.com/mate-desktop/caja), [doublecommander](https://doublecmd.sourceforge.io/), [krusader](https://krusader.org/), [nemo](https://github.com/linuxmint/nemo), [pcmanfm](https://wiki.lxde.org/en/PCManFM), [spacefm](https://ignorantguru.github.io/spacefm/), [thunar](https://docs.xfce.org/xfce/thunar/start), [xfe](http://roland65.free.fr/xfe/), [worker](http://www.boomerangsworld.de/cms/worker/)
+* [guvcview](https://guvcview.sourceforge.net/), [kdenlive](https://kdenlive.org/), [winff](https://github.com/WinFF/winff), [flowblade](https://jliljebl.github.io/flowblade/), [lives](http://www.lives-video.com/), [shotcut](https://www.shotcut.org/), [olive](https://www.olivevideoeditor.org/), [gopchop](https://gopchop.org/), [openshot](https://www.openshot.org/), [vidcutter](https://github.com/ozmartian/vidcutter), [videocut](https://github.com/kanehekili/VideoCut), [avidemux (AI)](https://avidemux.sourceforge.net/)
 
 Calculators:
 * [galculator](http://galculator.mnim.org/), [gnome-calculator](https://apps.gnome.org/Calculator/), [kcalc](https://apps.kde.org/kcalc/), [mate-calc](https://github.com/mate-desktop/mate-calc), [qalculate](https://qalculate.github.io/), [speedcrunch](https://speedcrunch.org/)
