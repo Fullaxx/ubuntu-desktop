@@ -80,6 +80,7 @@
 	<item label="Quassel"><action name="Execute"><command>/app/scripts/quassel.sh</command></action></item>
 	<item label="Ring"><action name="Execute"><command>/app/scripts/ring.sh</command></action></item>
 	<item label="Signal"><action name="Execute"><command>/app/scripts/signal.sh</command></action></item>
+	<item label="Slack"><action name="Execute"><command>/app/scripts/slack.sh</command></action></item>
 	<item label="Srain"><action name="Execute"><command>/app/scripts/srain.sh</command></action></item>
 	<item label="Xchat"><action name="Execute"><command>/app/scripts/xchat.sh</command></action></item>
 </menu>
@@ -193,7 +194,6 @@
 <menu id="apps-misc-menu" label="Misc">
 	<item label="VeraCrypt"><action name="Execute"><command>/app/scripts/veracrypt.sh</command></action></item>
 	<item label="Dropbox"><action name="Execute"><command>/app/scripts/dropbox.sh</command></action></item>
-	<item label="Slack"><action name="Execute"><command>/app/scripts/slack.sh</command></action></item>
 	<item label="GtkStressTesting"><action name="Execute"><command>/app/scripts/gst.FP.sh</command></action></item>
 </menu>
 
