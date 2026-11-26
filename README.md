@@ -264,7 +264,7 @@ Torrenting:
 * [BiglyBT](https://www.biglybt.com/), [qbittorrent](https://www.qbittorrent.org/), [ktorrent](https://apps.kde.org/ktorrent/), [deluge](https://deluge-torrent.org/), transmission-gtk, [bitstormlite](https://sourceforge.net/projects/bbom/)
 
 Chat:
-* [discord] (https://discord.com/), [empathy](https://wiki.gnome.org/action/show/Apps/Empathy), [hexchat](https://hexchat.github.io/), [loqui](https://launchpad.net/loqui), [konversation](https://konversation.kde.org/), [kopete](https://kde.org/applications/internet/org.kde.kopete), [kvirc](https://www.kvirc.net/), [pidgin](https://pidgin.im/), [polari](https://wiki.gnome.org/Apps/Polari), qchat, [quassel](https://quassel-irc.org/), ring, [signal](https://signal.org/), [srain](https://srain.silverrainz.me/), [xchat](http://xchat.org/)
+* [discord] (https://discord.com/), [empathy](https://wiki.gnome.org/action/show/Apps/Empathy), [hexchat](https://hexchat.github.io/), [loqui](https://launchpad.net/loqui), [konversation](https://konversation.kde.org/), [kopete](https://kde.org/applications/internet/org.kde.kopete), [kvirc](https://www.kvirc.net/), [pidgin](https://pidgin.im/), [polari](https://wiki.gnome.org/Apps/Polari), qchat, [quassel](https://quassel-irc.org/), ring, [signal](https://signal.org/), [slack](https://slack.com/), [srain](https://srain.silverrainz.me/), [xchat](http://xchat.org/)
 
 Mail:
 * [claws-mail](https://www.claws-mail.org/), [sylpheed](https://sylpheed.sraoss.jp/en/), [thunderbird](https://www.thunderbird.net/)
@@ -297,4 +297,4 @@ Archive Managers:
 * [engrampa](https://github.com/mate-desktop/engrampa)
 
 Misc:
-* [veracrypt](https://veracrypt.fr/), [dropbox](https://www.dropbox.com/), [slack](https://slack.com/), [gtkstresstesting (FP)](https://gitlab.com/leinardi/gst)
+* [veracrypt](https://veracrypt.fr/), [dropbox](https://www.dropbox.com/), [gtkstresstesting (FP)](https://gitlab.com/leinardi/gst)
