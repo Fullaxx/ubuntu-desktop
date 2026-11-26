@@ -247,7 +247,7 @@ Editors:
 * [gedit](https://wiki.gnome.org/Apps/Gedit), gvim, [medit](http://mooedit.sourceforge.net/), [bluefish](http://bluefish.openoffice.nl/), [geany](https://www.geany.org/), [thonny](https://thonny.org/), [SublimeText](https://www.sublimetext.com/), [vscode](https://github.com/microsoft/vscode), [netbeans](https://netbeans.org/), [CherryTree](https://www.giuspen.com/cherrytree/), [panwriter (AI)](https://github.com/mb21/panwriter), xfw
 
 Browsers:
-* [chrome](https://www.google.com/chrome/), [chromium](https://www.chromium.org/), [vivaldi](https://vivaldi.com/), [firefox](https://www.mozilla.org/en-US/firefox/), [zen browser](https://zen-browser.app/), [opera](https://www.opera.com/), [brave](https://brave.com/), [edge](https://www.microsoft.com/en-us/edge/download), [tor browser](https://www.torproject.org/), [Pale Moon](https://www.palemoon.org/), [ncsa mosiac (AI)](https://github.com/alandipert/ncsa-mosaic)
+* [firefox](https://www.mozilla.org/en-US/firefox/), [chromium](https://www.chromium.org/), [chrome](https://www.google.com/chrome/), [edge](https://www.microsoft.com/en-us/edge/download), [vivaldi](https://vivaldi.com/), [brave](https://brave.com/), [opera](https://www.opera.com/), [tor browser](https://www.torproject.org/), [zen browser](https://zen-browser.app/), [Pale Moon](https://www.palemoon.org/), [ncsa mosiac (AI)](https://github.com/alandipert/ncsa-mosaic)
 
 BitTorrent:
 * [BiglyBT](https://www.biglybt.com/), [deluge](https://deluge-torrent.org/), [qbittorrent](https://www.qbittorrent.org/), [ktorrent](https://apps.kde.org/ktorrent/), transmission-gtk, [bitstormlite](https://sourceforge.net/projects/bbom/), [electorrent (AI)](https://github.com/tympanix/Electorrent)

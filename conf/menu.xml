@@ -39,16 +39,16 @@
 </menu>
 
 <menu id="apps-network-browsers-menu" label="Browsers">
-	<item label="Chrome"><action name="Execute"><command>/app/scripts/chrome.sh</command></action></item>
-	<item label="Chromium"><action name="Execute"><command>/app/scripts/chromium.sh</command></action></item>
-	<item label="Vivaldi"><action name="Execute"><command>/app/scripts/vivaldi.sh</command></action></item>
-	<item label="Firefox"><action name="Execute"><command>/app/scripts/firefox.sh</command></action></item>
-	<item label="ZenBrowser"><action name="Execute"><command>/app/scripts/zenbrowser.sh</command></action></item>
-	<item label="Opera"><action name="Execute"><command>/app/scripts/opera.sh</command></action></item>
-	<item label="Brave"><action name="Execute"><command>/app/scripts/brave_release.sh</command></action></item>
-	<item label="Edge"><action name="Execute"><command>/app/scripts/edge_stable.sh</command></action></item>
 	<!-- Brave Beta and Nightly, and Edge Beta and Dev, are out of the menu: the other browsers have one entry each. Their scripts stay in /app/scripts (brave_beta.sh, brave_nightly.sh, edge_beta.sh, edge_dev.sh) -->
+	<item label="Firefox"><action name="Execute"><command>/app/scripts/firefox.sh</command></action></item>
+	<item label="Chromium"><action name="Execute"><command>/app/scripts/chromium.sh</command></action></item>
+	<item label="Chrome"><action name="Execute"><command>/app/scripts/chrome.sh</command></action></item>
+	<item label="Edge"><action name="Execute"><command>/app/scripts/edge_stable.sh</command></action></item>
+	<item label="Vivaldi"><action name="Execute"><command>/app/scripts/vivaldi.sh</command></action></item>
+	<item label="Brave"><action name="Execute"><command>/app/scripts/brave_release.sh</command></action></item>
+	<item label="Opera"><action name="Execute"><command>/app/scripts/opera.sh</command></action></item>
 	<item label="Tor"><action name="Execute"><command>/app/scripts/torbrowser.sh</command></action></item>
+	<item label="ZenBrowser"><action name="Execute"><command>/app/scripts/zenbrowser.sh</command></action></item>
 	<item label="Pale Moon"><action name="Execute"><command>/app/scripts/palemoon.sh</command></action></item>
 	<item label="NCSA Mosiac (AI)"><action name="Execute"><command>/app/scripts/ncsa_mosiac.AI.sh</command></action></item>
 </menu>
