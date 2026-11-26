@@ -158,7 +158,7 @@
 	<item label="avidemux (AI)"><action name="Execute"><command>/app/scripts/avidemux.AI.sh</command></action></item>
 </menu>
 
-<menu id="apps-utilities-menu" label="Utilities">
+<menu id="apps-utilities-calculators-menu" label="Calculators">
 	<!-- A choice of calculators, from simple to advanced; each script installs its calculator on first use -->
 	<item label="Galculator"><action name="Execute"><command>/app/scripts/galculator.sh</command></action></item>
 	<item label="GNOME Calculator"><action name="Execute"><command>/app/scripts/gnome-calculator.sh</command></action></item>
@@ -166,6 +166,21 @@
 	<item label="MATE Calculator"><action name="Execute"><command>/app/scripts/mate-calc.sh</command></action></item>
 	<item label="Qalculate!"><action name="Execute"><command>/app/scripts/qalculate.sh</command></action></item>
 	<item label="SpeedCrunch"><action name="Execute"><command>/app/scripts/speedcrunch.sh</command></action></item>
+</menu>
+
+<menu id="apps-utilities-passwords-menu" label="Passwords">
+	<item label="KeePassXC"><action name="Execute"><command>/app/scripts/keepassxc.sh</command></action></item>
+</menu>
+
+<menu id="apps-utilities-archives-menu" label="Archive Managers">
+	<item label="Engrampa"><action name="Execute"><command>/app/scripts/engrampa.sh</command></action></item>
+</menu>
+
+<menu id="apps-utilities-menu" label="Utilities">
+	<!-- Grouped by what they provide -->
+	<menu id="apps-utilities-calculators-menu"/>
+	<menu id="apps-utilities-passwords-menu"/>
+	<menu id="apps-utilities-archives-menu"/>
 </menu>
 
 <menu id="apps-re-menu" label="Rev Eng">
