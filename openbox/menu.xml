@@ -73,6 +73,7 @@
 	<item label="Qchat"><action name="Execute"><command>/app/scripts/qchat.sh</command></action></item>
 	<item label="Quassel"><action name="Execute"><command>/app/scripts/quassel.sh</command></action></item>
 	<item label="Ring"><action name="Execute"><command>/app/scripts/ring.sh</command></action></item>
+	<item label="Signal"><action name="Execute"><command>/app/scripts/signal.sh</command></action></item>
 	<item label="Srain"><action name="Execute"><command>/app/scripts/srain.sh</command></action></item>
 	<item label="Xchat"><action name="Execute"><command>/app/scripts/xchat.sh</command></action></item>
 </menu>
