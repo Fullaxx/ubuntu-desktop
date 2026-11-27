@@ -2,7 +2,7 @@
 # This script runs as root
 # Per-user window manager config for the image's WINDOWMANAGER (it needs HOME from user.sh);
 # only openbox needs any: xfce4 reads its defaults from /etc/xdg
-# It also puts glycin's bwrap workaround in front of /usr/bin/bwrap (PRIVILEGES.md)
+# On Ubuntu 26.04 it also puts glycin's bwrap workaround in front of /usr/bin/bwrap (PRIVILEGES.md)
 
 # Openbox/FBPanel configuration
 if [ "${WINDOWMANAGER}" == "openbox" ]; then
@@ -33,6 +33,10 @@ fi
 # glycin's sandbox test goes through /usr/share/ubuntu-desktop/bwrap, so GTK programs load images
 # without the sandbox where it can't start, instead of aborting (PRIVILEGES.md);
 # BUBBLEWRAP_WORKAROUND=0 leaves /usr/bin/bwrap alone
-if [ "${BUBBLEWRAP_WORKAROUND}" != "0" ]; then
-  install -m 0755 /usr/share/ubuntu-desktop/bwrap /usr/local/bin/bwrap
+# Only on Ubuntu 26.04 (VERSION_ID in /etc/os-release): its GTK programs load images through
+# glycin, 24.04's don't, and only the 26.04 image ships the wrapper
+if grep -q '^VERSION_ID="26.04"' /etc/os-release; then
+  if [ "${BUBBLEWRAP_WORKAROUND}" != "0" ]; then
+    install -m 0755 /usr/share/ubuntu-desktop/bwrap /usr/local/bin/bwrap
+  fi
 fi
