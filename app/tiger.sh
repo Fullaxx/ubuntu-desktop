@@ -1,7 +1,7 @@
 #!/bin/bash
 # This script runs as root
-# Start the VNC server as the desktop user (app/user.sh), with the settings from app/app.sh and the
-# files from app/prepare.sh
+# Start the VNC server as the desktop user (app/useracct.sh), with the settings from app/app.sh
+# and the files from app/prepare.sh
 
 # Start the desktop session in the session user's home: sudo keeps this working directory, so the
 # session and the programs it starts (a terminal, for example) begin in HOME instead of /

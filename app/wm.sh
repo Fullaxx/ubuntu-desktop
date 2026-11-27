@@ -1,6 +1,6 @@
 #!/bin/bash
 # This script runs as root
-# Per-user window manager config for the image's WINDOWMANAGER (it needs HOME from user.sh);
+# Per-user window manager config for the image's WINDOWMANAGER (it needs HOME from useracct.sh);
 # only openbox needs any: xfce4 reads its defaults from /etc/xdg
 # On Ubuntu 26.04 it also puts glycin's bwrap workaround in front of /usr/bin/bwrap (PRIVILEGES.md)
 

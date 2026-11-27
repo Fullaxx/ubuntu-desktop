@@ -1,7 +1,7 @@
 #!/bin/bash
 # This script runs as root
 #
-# user.sh: set up the desktop user
+# useracct.sh: set up the desktop user
 # Sourced by app.sh after imagestart.sh (system services) and before tiger.sh (VNC server).
 #
 # Without VNCUSERMAP the desktop runs as root (HOME=/root).

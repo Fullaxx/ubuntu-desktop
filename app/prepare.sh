@@ -1,8 +1,9 @@
 #!/bin/bash
 # This script runs as root
-# The VNC server's files in the desktop user's HOME, for app/tiger.sh, which starts it. app/user.sh
-# chose the desktop user: root (HOME=/root), or a non-root account, for which it set USER, GROUP
-# and HOME. VNCDIR, their folder in HOME, is set in app/app.sh with the server's other settings
+# The VNC server's files in the desktop user's HOME, for app/tiger.sh, which starts it.
+# app/useracct.sh chose the desktop user: root (HOME=/root), or a non-root account, for which it
+# set USER, GROUP and HOME. VNCDIR, their folder in HOME, is set in app/app.sh with the server's
+# other settings
 
 # xstartup starts the desktop session. The image's copy is installed at every start, so a HOME kept
 # on a volume gets the current image's xstartup too (changes made to the file don't last)

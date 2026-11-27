@@ -10,7 +10,7 @@ fi
 # so every GTK app would log "AT-SPI: Error retrieving accessibility bus address"
 export NO_AT_BRIDGE=1
 
-# Show a startup notice left by app/user.sh (e.g. replaced variables)
+# Show a startup notice left by app/useracct.sh (e.g. replaced variables)
 if [ -s /tmp/ubuntu-desktop-notice.txt ]; then
   xmessage -center -file /tmp/ubuntu-desktop-notice.txt &
 fi
