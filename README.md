@@ -136,7 +136,7 @@ All the details, more examples and how it works: [LOCALE.md](LOCALE.md)
 Optional: Set the locale \
 Default: en_US (English, 11/19/2026, 03:12:31 PM, 1,234,567.89) \
 Chinese, Japanese, Korean, Hindi, Thai, Hebrew, Arabic, Vietnamese and some other languages need a font first: [LOCALE.md](LOCALE.md#fonts) \
-This image leaves those fonts out to stay small; [ubuntu-desktop-xfce](https://github.com/Fullaxx/ubuntu-desktop-xfce) has them built in
+This image leaves those fonts out to stay small; an [input method](#input-method-configuration) for the language brings its font, and [ubuntu-desktop-xfce](https://github.com/Fullaxx/ubuntu-desktop-xfce) has them built in
 ```
 -e LOCALE='en_GB'
 -e LOCALE='de_DE'
@@ -159,6 +159,24 @@ Default: the locale's language
 -e LANGUAGE='de'
 ```
 Use these instead of LC_ALL, LC_TIME and the other LC_ variables, which don't work here: [LOCALE.md](LOCALE.md#dont)
+
+## Input Method Configuration
+Type Chinese, Japanese, Korean, Vietnamese, the Indian scripts and more: Ctrl+Space switches between plain letters and the input method \
+All the details, the names for each language and how it works: [INPUT_METHODS.md](INPUT_METHODS.md)
+
+Optional: The input methods, by fcitx5's names, separated by commas \
+Default: None (with it, the container's first start installs fcitx5, those input methods and the fonts they type in: about 15 seconds, and 165 to 360 MB)
+```
+-e INPUT_METHOD='pinyin'
+-e INPUT_METHOD='anthy'
+-e INPUT_METHOD='hangul'
+-e INPUT_METHOD='unikey'
+-e INPUT_METHOD='pinyin,anthy,hangul'
+```
+Mozc (Japanese) needs a non-root desktop user, and is left out on a root desktop: [INPUT_METHODS.md](INPUT_METHODS.md#mozc-and-root)
+```
+-e INPUT_METHOD='mozc' -e VNCUSERMAP='ubuntu/1000'
+```
 
 ## Wallpaper Configuration
 Set a background image for the openbox desktop \

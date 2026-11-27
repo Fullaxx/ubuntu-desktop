@@ -7,6 +7,8 @@ Three things about the desktop can be set when the container starts, with `docke
 
 All of them are optional. They're read every time the container starts, but a container keeps the values it was created with: to change one, start a new container (`docker restart` won't pick up a change). In docker compose they go under `environment:`.
 
+Typing languages that need an input method, such as Chinese, Japanese and Korean, is set up on its own, with `INPUT_METHOD`: [INPUT_METHODS.md](INPUT_METHODS.md).
+
 "The desktop" below means the openbox session and every program started from it, including its terminals.
 
 ## Defaults
@@ -52,6 +54,10 @@ The same locale in `docker exec` shells too: use `LANG` instead of `LOCALE`
 ```
 -e LANG='fr_FR.UTF-8'
 ```
+Chinese, typing with Pinyin; the input method brings the font that Chinese needs ([INPUT_METHODS.md](INPUT_METHODS.md))
+```
+-e LOCALE='zh_CN' -e INPUT_METHOD='pinyin'
+```
 
 ## Time zone (TZ)
 - **Values:** a zone name from `/usr/share/zoneinfo`, usually Region/City: `Europe/Berlin`, `America/New_York`, `Asia/Kolkata`, `Australia/Sydney`, `UTC`.
@@ -84,7 +90,7 @@ The same locale in `docker exec` shells too: use `LANG` instead of `LOCALE`
 | `pt_BR` | `qui 19 nov 2026 15:12:31` | `19/11/2026` | `1.234.567,89` | Sunday |
 | `ja_JP` | `2026年11月19日 15時12分31秒` | `2026年11月19日` | `1,234,567.89` | Sunday |
 
-Chinese, Japanese, Korean, Hindi, Thai, Hebrew, Arabic, Vietnamese and some other languages need a font first: see [Fonts](#fonts).
+Chinese, Japanese, Korean, Hindi, Thai, Hebrew, Arabic, Vietnamese and some other languages need a font first: see [Fonts](#fonts). An input method for the language brings it too ([INPUT_METHODS.md](INPUT_METHODS.md#fonts)).
 
 ### Values
 - **A UTF-8 locale from `/usr/share/i18n/SUPPORTED`**, with or without its codeset: `de_DE`, `de_DE.UTF-8`, `de_DE.utf-8` and `de_DE.utf8` are the same for the desktop (the codeset in any letter case, with or without its dash); `LANG` needs its codeset for `docker exec` shells (see below).
@@ -133,7 +139,7 @@ LOCALE='de' is not a UTF-8 locale in /usr/share/i18n/SUPPORTED; keeping LANG=en_
 ## Fonts
 The image's fonts (the URW fonts, such as Nimbus Sans, the desktop's font) cover Latin, Greek and Cyrillic.
 
-Other scripts show as boxes until a font is added: Chinese, Japanese, Korean, the Indian scripts, Thai, Hebrew, Arabic, Persian, Vietnamese, Armenian, Georgian, Khmer, Burmese, Sinhala and Amharic, for example. This image leaves those fonts out to stay small. [ubuntu-desktop-xfce](https://github.com/Fullaxx/ubuntu-desktop-xfce) has them built in, with these three packages (see its [Dockerfile](https://github.com/Fullaxx/ubuntu-desktop-xfce/blob/master/Dockerfile) and its [LOCALE.md](https://github.com/Fullaxx/ubuntu-desktop-xfce/blob/master/LOCALE.md#fonts)):
+Other scripts show as boxes until a font is added: Chinese, Japanese, Korean, the Indian scripts, Thai, Hebrew, Arabic, Persian, Vietnamese, Armenian, Georgian, Khmer, Burmese, Sinhala and Amharic, for example. This image leaves those fonts out to stay small. `INPUT_METHOD` installs the fonts for the languages it types, at the container's first start ([INPUT_METHODS.md](INPUT_METHODS.md#fonts)). [ubuntu-desktop-xfce](https://github.com/Fullaxx/ubuntu-desktop-xfce) has them built in, with these three packages (see its [Dockerfile](https://github.com/Fullaxx/ubuntu-desktop-xfce/blob/master/Dockerfile) and its [LOCALE.md](https://github.com/Fullaxx/ubuntu-desktop-xfce/blob/master/LOCALE.md#fonts)):
 
 | Package | Covers | Size |
 |---|---|---|
@@ -173,7 +179,7 @@ Name all three: with `fonts-noto-core` in the same install, apt leaves DejaVu ou
 docker build -t ubuntu-desktop:fonts .
 ```
 
-Typing Chinese, Japanese or Korean also needs an input method, such as fcitx5, which the image doesn't include.
+Typing Chinese, Japanese, Korean and more needs an input method: [INPUT_METHODS.md](INPUT_METHODS.md).
 
 ## Don't
 - **`LC_ALL`:** the desktop uses it, but nothing generates its locale, so the desktop falls back to ASCII and English, with no message in `docker logs`. Use `LOCALE` or `LANG`.

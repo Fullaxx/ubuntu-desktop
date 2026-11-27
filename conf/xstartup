@@ -10,6 +10,12 @@ fi
 # so every GTK app would log "AT-SPI: Error retrieving accessibility bus address"
 export NO_AT_BRIDGE=1
 
+# app/input.sh set up fcitx5 (docker run's -e INPUT_METHOD): make the session's programs use it
+# (GTK and Qt through fcitx5's plugins, xterm and Java through XIM, SDL2 and kitty through their own variables)
+if [ -f /etc/xdg/autostart/org.fcitx.Fcitx5.desktop ]; then
+  export XMODIFIERS=@im=fcitx GTK_IM_MODULE=fcitx QT_IM_MODULE=fcitx SDL_IM_MODULE=fcitx GLFW_IM_MODULE=ibus
+fi
+
 # Show a startup notice left by app/useracct.sh (e.g. replaced variables)
 if [ -s /tmp/ubuntu-desktop-notice.txt ]; then
   xmessage -center -file /tmp/ubuntu-desktop-notice.txt &
