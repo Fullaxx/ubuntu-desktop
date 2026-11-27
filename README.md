@@ -1,7 +1,7 @@
 # Ubuntu Desktop running Openbox in VNC/RDP
 
-**This is the `24.04` branch:** Ubuntu 24.04 (noble), published as `ghcr.io/fullaxx/ubuntu-desktop:24.04`. \
-It gets fixes only, no new features or breaking changes. For the latest release (Ubuntu 26.04: `:latest` and `:26.04`), see the `master` branch and its [branches and tags](https://github.com/Fullaxx/ubuntu-desktop#branches-and-tags).
+**This is the `24.04` branch:** Ubuntu 24.04 (noble), published as `ghcr.io/fullaxx/ubuntu-desktop:24.04` and `:noble`. \
+It gets fixes only, no new features or breaking changes. For the latest release (Ubuntu 26.04: `:latest`, `:26.04` and `:resolute`), see the `master` branch and its [branches and tags](https://github.com/Fullaxx/ubuntu-desktop#branches-and-tags).
 
 ## Base Docker Image
 [Ubuntu](https://hub.docker.com/_/ubuntu) 24.04 (x64)
