@@ -8,12 +8,12 @@ Each branch publishes its own tags of `ghcr.io/fullaxx/ubuntu-desktop`, rebuilt 
 
 | Tag | Branch | Ubuntu |
 | --- | --- | --- |
-| `:latest`, `:26.04` | [`master`](https://github.com/Fullaxx/ubuntu-desktop/tree/master) | 26.04 (resolute) |
-| `:24.04` | [`24.04`](https://github.com/Fullaxx/ubuntu-desktop/tree/24.04) | 24.04 (noble) |
+| `:latest`, `:26.04`, `:resolute` | [`master`](https://github.com/Fullaxx/ubuntu-desktop/tree/master) | 26.04 (resolute) |
+| `:24.04`, `:noble` | [`24.04`](https://github.com/Fullaxx/ubuntu-desktop/tree/24.04) | 24.04 (noble) |
 | `:jammy` | [`jammy`](https://github.com/Fullaxx/ubuntu-desktop/tree/jammy) | 22.04 (jammy) |
 | `:focal` | [`focal`](https://github.com/Fullaxx/ubuntu-desktop/tree/focal) | 20.04 (focal) |
 
-- `:latest` tracks 26.04: every push to `master` publishes the same image as `:latest` and `:26.04`, and so does the monthly rebuild.
+- `:latest` tracks 26.04: every push to `master` publishes the same image as `:latest`, `:26.04` and `:resolute`, and so does the monthly rebuild.
 - `24.04` gets fixes only, no new features or breaking changes. Its README uses `:24.04` in every example.
 - Every push to `master` or `24.04` is also tagged `<branch>-<short commit>`, such as `:master-5246e30`. These tags don't move to later commits (a manual CI run of the same commit pushes its tag again).
 - The examples below use `:latest`. Everything in this README works the same with `:26.04`.

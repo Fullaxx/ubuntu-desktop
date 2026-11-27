@@ -1,7 +1,10 @@
 # Builds the image and pushes it to ghcr.io/fullaxx/ubuntu-desktop, tagged by branch:
-#   master -> :latest (the README's docker pull) and :26.04, the same image   24.04 -> :24.04
+#   master -> :latest (the README's docker pull), :26.04 and :resolute, the same image
+#   24.04  -> :24.04 and :noble, the same image
 # plus :<branch>-<short sha> for each build. "Run workflow" in the Actions tab does the same by hand for
 # the branch it runs on (any other branch publishes only its <branch>-<short sha>).
+# The codename tags name each release the way Ubuntu's own image does (ubuntu:resolute is
+# ubuntu:26.04, ubuntu:noble is ubuntu:24.04).
 # The same file is in master and 24.04 (a push runs the ci.yml of the pushed commit), and 24.04 takes
 # CI changes by cherry-pick.
 # Nothing is checked before the build: monthly.yml checks the downloads that the install scripts fetch
@@ -35,8 +38,9 @@ jobs:
           username: ${{ github.actor }}
           password: ${{ secrets.GITHUB_TOKEN }}
 
-      # :latest and :26.04 from master, :24.04 from its branch, plus <branch>-<short sha> for each build
-      # (by branch name, so :latest stays with master even if GitHub's default branch changes)
+      # :latest, :26.04 and :resolute from master, :24.04 and :noble from its branch, plus
+      # <branch>-<short sha> for each build (by branch name, so :latest stays with master even if
+      # GitHub's default branch changes)
       - name: Extract Docker metadata
         id: meta
         uses: docker/metadata-action@v6
@@ -45,7 +49,9 @@ jobs:
           tags: |
             type=raw,value=latest,enable=${{ github.ref == 'refs/heads/master' }}
             type=raw,value=26.04,enable=${{ github.ref == 'refs/heads/master' }}
+            type=raw,value=resolute,enable=${{ github.ref == 'refs/heads/master' }}
             type=raw,value=24.04,enable=${{ github.ref == 'refs/heads/24.04' }}
+            type=raw,value=noble,enable=${{ github.ref == 'refs/heads/24.04' }}
             type=sha,prefix={{branch}}-
 
       # The GitHub Actions cache keeps unchanged layers between pushes

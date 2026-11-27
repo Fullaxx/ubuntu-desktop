@@ -1,7 +1,7 @@
 # Once a month, on the 1st: what changes upstream without a commit here. Tor's release feed
 # and signing key, SourceForge's deadbeef download and ubuntu:26.04's packages all move
-# on their own schedule. The image is also rebuilt from scratch and republished, so
-# :latest and :26.04 pick up 26.04's security updates even when nothing is pushed for months.
+# on their own schedule. The image is also rebuilt from scratch and republished, so :latest,
+# :26.04 and :resolute pick up 26.04's security updates even when nothing is pushed for months.
 # ci.yml checks nothing before it builds, so this is the only place the downloads are checked:
 # on the 1st, or by hand (below).
 #
@@ -20,7 +20,7 @@ on:
   workflow_dispatch:
     inputs:
       publish:
-        description: Push the rebuilt image to ghcr.io as :latest, :26.04 and :monthly-YYYYMMDD
+        description: Push the rebuilt image to ghcr.io as :latest, :26.04, :resolute and :monthly-YYYYMMDD
         type: boolean
         default: false
 
@@ -65,6 +65,8 @@ jobs:
 
       - uses: docker/setup-buildx-action@v4
 
+      # The tags ci.yml gives master's build, so :latest, :26.04 and :resolute stay one image, plus a
+      # dated one
       - name: Extract Docker metadata
         id: meta
         uses: docker/metadata-action@v6
@@ -73,6 +75,7 @@ jobs:
           tags: |
             type=raw,value=latest
             type=raw,value=26.04
+            type=raw,value=resolute
             type=raw,value=monthly-{{date 'YYYYMMDD'}}
 
       # A fresh base and no cache: the point is today's 26.04 packages
