@@ -11,6 +11,10 @@ VNCPORT=${VNCPORT:-1}
 # No password unless docker run's -e VNCPASS sets one (app/prepare.sh writes its password file)
 VNCAUTH="-SecurityTypes=None --I-KNOW-THIS-IS-INSECURE"
 if [ -n "${VNCPASS}" ]; then VNCAUTH=""; fi
+# VNC clients may resize the desktop (TigerVNC's default: noVNC's remote resizing, or a viewer's) unless
+# docker run's -e VNCRESIZE=0 says no: TigerVNC then refuses their requests, so the desktop keeps VNCRES
+VNCRESIZEOPT=""
+if [ "${VNCRESIZE}" = "0" ]; then VNCRESIZEOPT="-AcceptSetDesktopSize=0"; fi
 # TigerVNC's folder, as a path in the desktop user's HOME (set by app/useracct.sh), for xstartup,
 # passwd and the session log (tigervncserver reads passwd from there, and vncpasswd without -f
 # writes it there). It depends on the release's TigerVNC, so VERSION_ID in /etc/os-release picks
