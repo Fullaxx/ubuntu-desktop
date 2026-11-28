@@ -267,7 +267,7 @@ Right-Click to activate the Openbox menu system. \
 You will find a number of convenience scripts for running applications.
 
 Terminals:
-* [xterm](https://invisible-island.net/xterm/), uxterm, [Eterm](https://sourceforge.net/projects/eterm/), [kitty](https://github.com/kovidgoyal/kitty), [sakura](http://www.pleyades.net/david/projects/sakura), [terminology](https://www.enlightenment.org/about-terminology.md), [terminator](https://gnome-terminator.org/), [tilix](https://gnunn1.github.io/tilix-web/), [tilda](https://github.com/lanoxx/tilda), [powershell](https://github.com/PowerShell/PowerShell)
+* [xterm](https://invisible-island.net/xterm/), uxterm, [Eterm](https://sourceforge.net/projects/eterm/), [kitty](https://github.com/kovidgoyal/kitty), [sakura](http://www.pleyades.net/david/projects/sakura), [terminology](https://www.enlightenment.org/about-terminology.md), [terminator](https://gnome-terminator.org/), [tilix](https://gnunn1.github.io/tilix-web/), [tilda](https://github.com/lanoxx/tilda), [guake](https://github.com/Guake/guake), [powershell](https://github.com/PowerShell/PowerShell)
 
 Office:
 * [libreoffice](https://www.libreoffice.org/)
