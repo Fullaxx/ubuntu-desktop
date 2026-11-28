@@ -12,5 +12,7 @@ cd ${HOME}
 # so ending the desktop session (log out / exit) will bring us down
 # using sudo here will allow 'docker stop' to bring us down quickly
 # sudo -u runs it as a non-root desktop user (USER); without USER, it runs as root
+# VNCRESIZEOPT is -AcceptSetDesktopSize=0 when VNCRESIZE=0 keeps VNC clients from resizing the desktop
+# (app/app.sh), and empty otherwise
 exec sudo ${USER:+-u ${USER}} tigervncserver :${VNCPORT} -fg -localhost no \
-${VNCAUTH} -geometry ${VNCRES} -depth ${VNCDEPTH} -xstartup ${HOME}/${VNCDIR}/xstartup
+${VNCAUTH} -geometry ${VNCRES} -depth ${VNCDEPTH} ${VNCRESIZEOPT} -xstartup ${HOME}/${VNCDIR}/xstartup

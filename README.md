@@ -53,6 +53,11 @@ Default: 1280x800
 ```
 -e VNCRES='1920x1080'
 ```
+Optional: Keep the desktop at its size: VNC clients (noVNC's remote resizing, a viewer's) can't resize it \
+Default: clients can resize the desktop
+```
+-e VNCRESIZE='0'
+```
 Optional: Bind to Port 5909 \
 Default: port 5901
 ```
@@ -217,6 +222,10 @@ docker run -d -p 127.0.0.1:5901:5901 -e VNCDEPTH='16' ghcr.io/fullaxx/ubuntu-des
 Run the image with 1920x1080 Resolution
 ```
 docker run -d -p 127.0.0.1:5901:5901 -e VNCRES='1920x1080' ghcr.io/fullaxx/ubuntu-desktop
+```
+Run the image with a desktop clients can't resize
+```
+docker run -d -p 127.0.0.1:5901:5901 -e VNCRESIZE='0' ghcr.io/fullaxx/ubuntu-desktop
 ```
 Run the image with Password Authentication
 ```
